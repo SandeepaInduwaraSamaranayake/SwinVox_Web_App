@@ -1,0 +1,8 @@
+# run test
+python -m unittest Tests/test_process_images.py
+python -m unittest Tests/test_generate_3D_model.py
+python -m unittest Tests/test_flask_app.py
+
+# run main.py
+python main.py
+

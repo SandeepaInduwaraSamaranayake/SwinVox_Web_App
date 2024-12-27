@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwinVox Demo</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+    <h1>SwinVox 3D Reconstruction</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <label for="images">Upload Images:</label>
+        <input type="file" id="images" name="images[]" multiple accept="image/*" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result">
+        <h2>Output:</h2>
+        <img id="voxel-image" src="" alt="Voxel Plot" style="display: none;">
+    </div>
+    <script src="../static/index.js"></script>
+</body>
+</html>
