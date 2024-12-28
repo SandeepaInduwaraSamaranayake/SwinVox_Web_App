@@ -8,6 +8,8 @@ from io import BytesIO
 from model.model_architecture import SwinVoxModel
 from model.config import cfg
 import logging
+import base64
+
 
 
 # Load the SwinVox model
@@ -74,7 +76,12 @@ def generate_3d_model(images_tensor):
     voxel_plot_path = "output/voxel_plot.png"
     save_voxel_plot(voxel_output[0].cpu().numpy(), voxel_plot_path)  # Save first voxel plot
     #logger.info("--------------------------- finishing generate model ---------------------------")
-    return {"voxel_plot_path": voxel_plot_path}
+
+    # Convert the saved image to base64
+    with open(voxel_plot_path, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+
+    return {"voxel_plot_base64": encoded_string}
 
 
 # Save voxel grid as a 3D plot

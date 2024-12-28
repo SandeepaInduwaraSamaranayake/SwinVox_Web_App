@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 import torch
 from model.model_architecture import SwinVoxModel
-from lib.utils import load_model  # Adjust the import based on your file structure
+from lib.utils import load_model 
 from collections import OrderedDict
 from model.config import cfg
 
@@ -37,7 +37,6 @@ def create_mock_checkpoint(original_checkpoint_path):
         else:
             # Copy other keys directly (if any)
             mock_checkpoint[key] = original_checkpoint[key]
-
     return mock_checkpoint
 
 
@@ -69,10 +68,14 @@ class TestLoadModel(unittest.TestCase):
     @patch('torch.load')
     def test_load_model_missing_encoder(self, mock_load):
         # Mock the checkpoint to simulate a missing encoder state dict
-        mock_checkpoint = {
-            "decoder_state_dict": {},
-            "merger_state_dict": {}
-        }
+        # Use the create_mock_checkpoint function to generate a mock checkpoint
+        original_checkpoint_path = "model/Pix2Vox-F-ShapeNet.pth"
+
+        mock_checkpoint = create_mock_checkpoint(original_checkpoint_path)
+
+        # remove encoder
+        mock_checkpoint.pop("encoder_state_dict")
+
         mock_load.return_value = mock_checkpoint
 
         # Create a mock configuration object

@@ -41,7 +41,7 @@ app = Flask(__name__)
 @app.route('/')
 def root():
     app.logger.debug("-----------------------initializing app----------------------")
-    return render_template("index.html")
+    return render_template("index1.html")
 
 @app.route('/upload', methods=['POST'])
 def upload_images():
@@ -66,8 +66,8 @@ def upload_images():
         app.logger.info("Model output: %s", model_output)
 
         # Save and return voxel plot path
-        voxel_plot_path = model_output["voxel_plot_path"]
-        return jsonify({"voxel_plot_path": voxel_plot_path}), 200
+        voxel_plot_base64= model_output["voxel_plot_base64"]
+        return jsonify({"voxel_plot_base64": voxel_plot_base64}), 200
 
     except Exception as e:
         app.logger.error("Error in upload_images: %s", str(e))  # Log the error

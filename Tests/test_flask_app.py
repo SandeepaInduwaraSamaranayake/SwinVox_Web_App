@@ -1,7 +1,7 @@
 import unittest
 import json
 from flask import Flask
-from main import app  # Import your Flask app from the main application file
+from main import app
 from lib.utils import generate_3d_model
 
 class FlaskAppTests(unittest.TestCase):

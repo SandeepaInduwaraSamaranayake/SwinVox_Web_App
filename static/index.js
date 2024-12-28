@@ -12,13 +12,17 @@ form.addEventListener("submit", async (event) => {
 
     const result = await response.json();
 
+    console.log(result)
+
     const voxelImage = document.getElementById("voxel-image");
 
-    if (result.voxel_plot_path) 
-        {
-        voxelImage.src = result.voxel_plot_path;
+    if (result.voxel_plot_base64) 
+    {
+        voxelImage.src = 'data:image/png;base64,' + result.voxel_plot_base64; // Set the source to the base64 string
         voxelImage.style.display = "block";
-    } else {
+    } 
+    else 
+    {
         alert("Error: " + result.error);
     }
 });

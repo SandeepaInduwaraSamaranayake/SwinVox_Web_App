@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f4f8; /* Light background for better contrast */
+}
+
+header {
+    background-color: #264653; /* Dark header */
+    color: white;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #264653; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    background-color: white; /* White background for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2a9d8f; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #264653; /* Darker on hover */
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #264653; /* Border around the result section */
+    border-radius: 8px; /* Rounded corners */
+    background-color: white; /* White background for the result */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#result img {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+#loading {
+    font-size: 1.2em;
+    color: #264653; /* Loading text color */
+    margin-top: 20px;
+}
