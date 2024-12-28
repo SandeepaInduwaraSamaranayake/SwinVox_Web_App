@@ -1,32 +1,24 @@
 # File: model_architecture.py
 import torch
 import torch.nn as nn
+from model.encoder import Encoder
+from model.decoder import Decoder
+from model.merger import Merger
+from model.refiner import Refiner
+from model.config import cfg
 
 class SwinVoxModel(nn.Module):
-    def __init__(self):
+    def __init__(self, cfg):
         super(SwinVoxModel, self).__init__()
-        # Define CNN layers
-        self.cnn = nn.Sequential(
-            nn.Conv2d(3, 16, kernel_size=3, padding=1),  # Output: (16, H, W)
-            nn.ReLU(),
-            nn.Conv2d(16, 32, kernel_size=3, padding=1),  # Output: (32, H, W)
-            nn.ReLU()
-        )
-
-        # Placeholder for fc layer (initialized later)
-        self.fc = None
+        self.encoder = Encoder(cfg)
+        self.decoder = Decoder(cfg)
+        self.merger = Merger(cfg)
+        self.refiner = Refiner(cfg)
 
     def forward(self, x):
-        # Pass through CNN
-        x = self.cnn(x)  # Shape: (batch_size, channels, height, width)
-
-        # Flatten the output for the fully connected layer
-        x = x.view(x.size(0), -1)  # Flatten: (batch_size, channels * height * width)
-
-        # Initialize fc layer dynamically
-        if self.fc is None:
-            self.fc = nn.Linear(x.size(1), 1024).to(x.device)  # Input size matches flattened dimensions
-
-        # Pass through fc layer
-        x = self.fc(x)
-        return x
+        # Forward pass through the model components
+        encoded_features = self.encoder(x)
+        raw_features, decoded_volumes = self.decoder(encoded_features)
+        merged_volumes = self.merger(raw_features, decoded_volumes)
+        refined_volumes = self.refiner(merged_volumes)
+        return refined_volumes

@@ -1,8 +1,27 @@
-# run test
+######################### run test #######################
+
 python -m unittest Tests/test_process_images.py
 python -m unittest Tests/test_generate_3D_model.py
 python -m unittest Tests/test_flask_app.py
 
-# run main.py
+######################### run main.py #########################
+
 python main.py
+
+######################### setup environment after resetting the workspace #########################
+
+source .venv/bin/activate  && python main.py 
+
+
+######################### set encoder.py  pretrained to False #####################################
+
+        # Set pretrained=False to avoid loading standard VGG weights and load our custom weight
+        vgg16_bn = torchvision.models.vgg16_bn(pretrained=False)
+
+
+
+
+
+
+
 

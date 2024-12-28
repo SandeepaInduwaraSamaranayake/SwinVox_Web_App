@@ -6,26 +6,49 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from io import BytesIO
 from model.model_architecture import SwinVoxModel
+from model.config import cfg
+import logging
+
 
 # Load the SwinVox model
-def load_model():
-    model = SwinVoxModel()
-    # Load the checkpoint
-    checkpoint = torch.load("model/Pix2Vox-F-ShapeNet.pth", map_location=torch.device("cpu"), weights_only=False)
+def load_model(cfg):
+    logging.info("--------------------------- *** swinvox model *** ---------------------------")
+    model = SwinVoxModel(cfg)
+    try:
+        # Load the checkpoint
+        checkpoint = torch.load("model/Pix2Vox-F-ShapeNet.pth", map_location=torch.device("cpu"), weights_only=False)
 
-    # Extract the encoder state dictionary
-    if "encoder_state_dict" in checkpoint:
-        model.load_state_dict(checkpoint["encoder_state_dict"], strict=False)
-    else:
-        raise RuntimeError("Checkpoint does not contain 'encoder_state_dict'.")
-    
-    model.eval()
-    return model
+        # Load state dictionaries for each component
+        if "encoder_state_dict" in checkpoint:
+            model.encoder.load_state_dict(checkpoint["encoder_state_dict"], strict=False)
+        else:
+            raise RuntimeError("Checkpoint does not contain 'encoder_state_dict'.")
 
-model = load_model()
+        if "decoder_state_dict" in checkpoint:
+            model.decoder.load_state_dict(checkpoint["decoder_state_dict"], strict=False)
+        else:
+            raise RuntimeError("Checkpoint does not contain 'decoder_state_dict'.")
+
+        if "merger_state_dict" in checkpoint:
+            model.merger.load_state_dict(checkpoint["merger_state_dict"], strict=False)
+        else:
+            raise RuntimeError("Checkpoint does not contain 'merger_state_dict'.")
+
+        model.eval()
+        return model
+
+    except FileNotFoundError:
+        # logging.error("Checkpoint file not found. Please check the path.")
+        raise
+    except Exception as e:
+        # logging.error(f"An error occurred while loading the model: {str(e)}")
+        raise
+
+model = load_model(cfg)
 
 # Preprocess uploaded images
 def process_images(images):
+    #logger.info("--------------------------- starting process images ---------------------------")
     processed_images = []
     transformation = transforms.Compose([
         transforms.Resize((224, 224)),
@@ -39,16 +62,20 @@ def process_images(images):
             processed_images.append(tensor_image)
         except Exception as e:
             raise ValueError(f"Error processing image: {str(e)}")  # Raise a more informative error
-    
-    return torch.cat(processed_images, dim=0)  # Combine into a batch
+
+    #logger.info("--------------------------- finishing process images ---------------------------")
+    return torch.cat(processed_images, dim=0).unsqueeze(1)  # Combine into a batch
 
 # Generate 3D model and save voxel plot
 def generate_3d_model(images_tensor):
+    #logger.info("--------------------------- starting generate model ---------------------------")
     with torch.no_grad():
         voxel_output = model(images_tensor)  # Model generates 3D voxel grid
     voxel_plot_path = "output/voxel_plot.png"
     save_voxel_plot(voxel_output[0].cpu().numpy(), voxel_plot_path)  # Save first voxel plot
+    #logger.info("--------------------------- finishing generate model ---------------------------")
     return {"voxel_plot_path": voxel_plot_path}
+
 
 # Save voxel grid as a 3D plot
 def save_voxel_plot(voxel_data, file_path):
