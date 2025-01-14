@@ -21,6 +21,14 @@ vgg16_bn = torchvision.models.vgg16_bn(pretrained=False)
 
 
 
+######################### Git commands for project ###########################
+
+current branch - git branch --show-current
+
+
+
+
+
 
 
 
