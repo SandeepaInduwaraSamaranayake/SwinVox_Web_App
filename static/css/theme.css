@@ -1,0 +1,39 @@
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-container i {
+    font-size: 1.5rem; /* Adjust icon size */
+    margin-left: 10px; /* Space between icons */
+    color: #f5f5f5; /* Icon color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.toggle-container i:hover {
+    color: #2a9d8f; /* Change color on hover */
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #191919;
+    color: #ffffff;
+}
+
+/* Light mode styles for main */
+body.light-mode main {
+    background-color: #f0f0f0; /* Light background for light mode */
+    color: #000; /* Text color for light mode */
+    border-color: #ccc; /* Lighter border for light mode */
+}
+
+/* Dark mode styles for main */
+body.dark-mode main {
+    background-color: #2c2c2c; /* Dark background for dark mode */
+    color: white; /* Text color for dark mode */
+    border-color: #888; /* Darker border for dark mode */
+}

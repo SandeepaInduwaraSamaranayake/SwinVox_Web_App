@@ -1,0 +1,22 @@
+footer {
+    position: fixed; /* Fix the footer to the bottom right */
+    bottom: 10px; /* Distance from the bottom */
+    right: 10px; /* Distance from the right */
+    color: white; /* Text color */
+    font-size: 0.9rem; /* Font size */
+}
+
+.footer-links {
+    display: flex; /* Use flexbox for layout */
+    gap: 5px; /* Space between links */
+    color: #2a9d8f; /* Link color */
+}
+
+.footer-links a {
+    color: #2a9d8f; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

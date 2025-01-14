@@ -1,0 +1,33 @@
+.upload-area {
+    border: 1px dashed #888;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-area label {
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-area.dragging {
+    background-color: #444;
+    border-color: #aaa;
+}
+
+#chooseFileBtn {
+    padding: 10px 20px;
+    background-color: #2a9d8f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chooseFileBtn:hover {
+    background-color: #264653;
+}

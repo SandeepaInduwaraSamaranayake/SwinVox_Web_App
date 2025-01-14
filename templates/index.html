@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwinVox Demo</title>
-    <link rel="stylesheet" href="../static/index.css">
+    <title>SwinVox 3D Reconstruction</title>
+    <!-- Tab icon of the page -->
+    <link rel="icon" type="image/x-icon" href="../static/icons/icon.ico"> 
+    <!-- index.css -->
+    <link rel="preload" href="../static/css/index.css" as="style">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <!-- upload_area.css -->
+    <link rel="preload" href="../static/css/upload_area.css" as="style">
+    <link rel="stylesheet" type="text/css" href="../static/css/upload_area.css">
+    <!-- theme.css -->
+    <link rel="preload" href="../static/css/theme.css" as="style">
+    <link rel="stylesheet" type="text/css" href="../static/css/theme.css">
+    <!-- footer.css -->
+    <link rel="preload" href="../static/css/footer.css" as="style">
+    <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
+    <!-- uploaded_files_area.css -->
+    <link rel="preload" href="../static/css/uploaded_files_area.css" as="style">
+    <link rel="stylesheet" type="text/css" href="../static/css/uploaded_files_area.css">
+
+    <!--use fontawsome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<!-- The first thing we want to do is simply to add a CSS instruction so that our body 
+     is hidden from the page until it is ready to be unveiled. -->
 <body>
-    <h1>SwinVox 3D Reconstruction</h1>
-    <form id="upload-form" enctype="multipart/form-data">
-        <label for="images">Upload Images:</label>
-        <input type="file" id="images" name="images[]" multiple accept="image/*" required>
-        <button type="submit">Submit</button>
-    </form>
-    <div id="result">
-        <h2>Output:</h2>
-        <img id="voxel-image" src="" alt="Voxel Plot" style="display: none;">
-    </div>
-    <script src="../static/index.js"></script>
+    <header>
+        <h1>
+            <a href="/" style="color: inherit; text-decoration: none;">SwinVox 3D Reconstruction</a>
+        </h1>
+        <div class="toggle-container">
+                <i id="light-theme-icon" class="fas fa-sun" title="Light Theme" style="cursor: pointer;"></i>
+                <i id="dark-theme-icon" class="fas fa-moon" title="Dark Theme" style="cursor: pointer;display: none;"></i>
+        </div>
+    </header>
+    <main>
+        <!-- Drag and drop upload area -->
+        <div class="upload-area" id="upload-area">
+            <form id="upload-form" enctype="multipart/form-data" method="POST">
+                <label for="images" class="upload-label">
+                    <p>Drag and drop images here</p>
+                    <p>or</p>
+                </label>
+                <input type="file" id="images" name="images[]" multiple accept="image/*" required hidden>
+                <button id="chooseFileBtn" type="button"><i class="fas fa-upload"></i> Choose Images</button>
+            </form>
+        </div>
+        <div class="uploaded-files-area" id="uploaded-files-area">
+            <!-- Section to display uploaded files -->
+            <div id="uploaded-files"></div> 
+            <!-- Submit button -->
+            <button id="submitBtn">Submit</button> 
+        </div>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="https://threejs.org" target="_blank">three.js r168</a> |
+            <a href="https://github.com/SandeepaInduwaraSamaranayake/SwinVox_Web_App/issues" target="_blank">help & feedback</a> |
+            <a href="https://github.com/SandeepaInduwaraSamaranayake/SwinVox_Web_App" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <script type="module" src="../static/js/index.js"></script>
+    <script src="../static/js/theme.js"></script>
 </body>
-</html> 
-
-
-
+</html>

@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request, render_template
 from lib.utils import process_images, generate_3d_model
 import torch
 from logging.config import dictConfig
+import base64
+import io
 
 # app.logger.debug("A debug message")
 # app.logger.info("An info message")
@@ -41,7 +43,7 @@ app = Flask(__name__)
 @app.route('/')
 def root():
     app.logger.debug("-----------------------initializing app----------------------")
-    return render_template("index1.html")
+    return render_template("index.html")
 
 @app.route('/upload', methods=['POST'])
 def upload_images():
@@ -61,13 +63,18 @@ def upload_images():
 
         # Generate 3D model
         model_output = generate_3d_model(processed_images)
-        #model_output = generate_3d_model(torch.rand(1, 3, 224, 224))
+        #model_output = generate_3d_model(torch.rand(1, 1, 3, 224, 224))
 
         app.logger.info("Model output: %s", model_output)
 
-        # Save and return voxel plot path
-        voxel_plot_base64= model_output["voxel_plot_base64"]
-        return jsonify({"voxel_plot_base64": voxel_plot_base64}), 200
+
+        # Check if the model output contains the base64 string
+        if "model_path" in model_output:
+            voxel_plot_base64 = model_output["model_path"]
+            return jsonify({"model_path": voxel_plot_base64}), 200
+        else:
+            app.logger.error("Model output does not contain 'model_path'")
+            return jsonify({"error": "Model generation failed"}), 500
 
     except Exception as e:
         app.logger.error("Error in upload_images: %s", str(e))  # Log the error

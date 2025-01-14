@@ -9,6 +9,7 @@ from model.model_architecture import SwinVoxModel
 from model.config import cfg
 import logging
 import base64
+import pygltflib 
 
 
 
@@ -40,10 +41,10 @@ def load_model(cfg):
         return model
 
     except FileNotFoundError:
-        # logging.error("Checkpoint file not found. Please check the path.")
+        logging.error("Checkpoint file not found. Please check the path.")
         raise
     except Exception as e:
-        # logging.error(f"An error occurred while loading the model: {str(e)}")
+        logging.error(f"An error occurred while loading the model: {str(e)}")
         raise
 
 model = load_model(cfg)
@@ -68,26 +69,63 @@ def process_images(images):
     #logger.info("--------------------------- finishing process images ---------------------------")
     return torch.cat(processed_images, dim=0).unsqueeze(1)  # Combine into a batch
 
-# Generate 3D model and save voxel plot
+# # Generate 3D model and save voxel plot
+# def generate_3d_model(images_tensor):
+#     #logger.info("--------------------------- starting generate model ---------------------------")
+#     with torch.no_grad():
+#         voxel_output = model(images_tensor)  # Model generates 3D voxel grid
+
+#     voxel_plot_path = "output/voxel_plot.png"
+#     save_voxel_plot(voxel_output[0].cpu().numpy(), voxel_plot_path)  # Save first voxel plot
+#     #logger.info("--------------------------- finishing generate model ---------------------------")
+
+#     # Convert the saved image to base64
+#     with open(voxel_plot_path, "rb") as image_file:
+#         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+
+#     return {"voxel_plot_base64": encoded_string}
+
+
+# # Save voxel grid as a 3D plot
+# def save_voxel_plot(voxel_data, file_path):
+#     fig = plt.figure()
+#     ax = fig.add_subplot(111, projection="3d")
+#     ax.voxels(voxel_data > 0.5, edgecolor="k")  # Binary threshold
+#     plt.savefig(file_path)
+#     plt.close(fig)
+
+
 def generate_3d_model(images_tensor):
-    #logger.info("--------------------------- starting generate model ---------------------------")
     with torch.no_grad():
         voxel_output = model(images_tensor)  # Model generates 3D voxel grid
-    voxel_plot_path = "output/voxel_plot.png"
-    save_voxel_plot(voxel_output[0].cpu().numpy(), voxel_plot_path)  # Save first voxel plot
-    #logger.info("--------------------------- finishing generate model ---------------------------")
 
-    # Convert the saved image to base64
-    with open(voxel_plot_path, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
+    voxel_data = voxel_output[0].cpu().numpy()  # Get the first voxel output
 
-    return {"voxel_plot_base64": encoded_string}
+    # Convert voxel data to GLTF format
+    # gltf_path = "output/voxel_model.glb"  # Path to save the GLTF model
+    # save_voxel_as_gltf(voxel_data, gltf_path)
+
+    with open('output/model.glb', "rb") as glb_file:
+
+        # Encode the binary data to Base64
+        base64_encoded_data = base64.b64encode(glb_file.read())
+        
+        # Convert Base64 bytes to string
+        base64_string = base64_encoded_data.decode('utf-8')
+
+        
+
+    return {"model_path": base64_string}
 
 
-# Save voxel grid as a 3D plot
-def save_voxel_plot(voxel_data, file_path):
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection="3d")
-    ax.voxels(voxel_data > 0.5, edgecolor="k")  # Binary threshold
-    plt.savefig(file_path)
-    plt.close(fig)
+
+
+# def save_voxel_as_gltf(voxel_data, file_path):
+#     # Create a simple GLTF file from voxel data
+#     gltf = pygltflib.GLTF2()
+
+#     # Add your voxel data to the GLTF object here
+#     # This will require converting the voxel data to a format that GLTF understands
+
+#     # Save the GLTF file
+#     gltf.save(file_path)
