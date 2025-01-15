@@ -7,6 +7,8 @@ const chooseFileBtn = document.getElementById('chooseFileBtn');
 const uploadedFilesDiv = document.getElementById('uploaded-files');
 const submitBtn = document.getElementById('submitBtn');
 const uploadedFilesArea = document.getElementById('uploaded-files-area');
+const loadingSpinner = document.getElementById('loading');
+const modal = document.getElementById('modelModal');
 
 // Array to keep track of uploaded files
 let uploadedFiles = [];
@@ -29,6 +31,11 @@ let domReady = (cb) => {
     // Display body when DOM is loaded
     document.body.style.visibility = 'visible';
   });
+
+// Helper function to show/hide loading spinner
+function toggleLoadingSpinner(show) {
+    loadingSpinner.style.display = show ? 'block' : 'none';
+}
 
 
 // Trigger file input when clicking the "Choose Images" button
@@ -158,31 +165,26 @@ function updateUploadedFilesDisplay() {
 }
 
 
-// Show the submit button when files are uploaded
-submitBtn.addEventListener('click', () => {
-    document.getElementById('upload-form').dispatchEvent(new Event('submit'));
-});
+submitBtn.addEventListener('click', async () => {
+    const formData = new FormData(document.getElementById('upload-form'));
 
+    // Show the modal immediately
+    modal.style.display = 'block';
+    toggleLoadingSpinner(true);
 
-document.getElementById('upload-form').onsubmit = async function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const formData = new FormData(this);
-    const loadingSpinner = document.getElementById('loading');
-    const container = document.getElementById('3d-container');
-
-    // Show the loading spinner
-    loadingSpinner.style.display = 'block';
+    console.log('spinning started');
 
     const response = await fetch('/upload', {
         method: 'POST',
         body: formData
     });
 
-    // Hide the loading spinner after receiving the response
-    loadingSpinner.style.display = 'none';
+    // console.log("response :" + response.json());
+    console.log('spinning stopped');
+    toggleLoadingSpinner(false);
 
     if (response.ok) {
+
         const result = await response.json();
         
         const base64Model = result.model_path; // Get the Base64-encoded model
@@ -202,8 +204,20 @@ document.getElementById('upload-form').onsubmit = async function(event) {
 
         // Initialize Three.js scene
         initThreeJS(modelUrl);
-    } else {
+    } 
+    else {
         const error = await response.json();
         alert('Error: ' + error.error);
+    }
+});
+
+// Close button functionality for the modal
+document.getElementById('closeModal').addEventListener('click', () => {
+    modal.style.display = 'none'; // Hide the modal
+});
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
     }
 };
