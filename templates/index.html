@@ -24,6 +24,9 @@
     <!-- model_container.css -->
     <link rel="preload" href="../static/css/model_container.css" as="style">
     <link rel="stylesheet" type="text/css" href="../static/css/model_container.css">
+    <!-- model_container.css -->
+    <link rel="preload" href="../static/css/model_preview_nav_bar.css" as="style">
+    <link rel="stylesheet" type="text/css" href="../static/css/model_preview_nav_bar.css">
 
     <!--use fontawsome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -68,8 +71,19 @@ is hidden from the page until it is ready to be unveiled. -->
     </footer>
     <div id="modelModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>3D Model</h2>
+
+            <div class="modal-header">
+                <button id="backButton" class="nav-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="nav-controls">
+                    <button id="zoomInButton" class="nav-button"><i class="fas fa-search-plus"></i></button>
+                    <button id="zoomOutButton" class="nav-button"><i class="fas fa-search-minus"></i></button>
+                    <button id="panButton" class="nav-button"><i class="fas fa-arrows-alt"></i></button>
+                    <button id="fullscreenButton" class="nav-button"><i class="fas fa-expand"></i></button>
+                </div>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+
+            <!--span class="close" id="closeModal">&times;</span-->
             <div id="3d-container" style="height: 90%;"></div>
             <!-- Loading spinner -->
             <div id="loading" style="display: none;" class="spinner"></div> 

@@ -73,3 +73,5 @@ export function initThreeJS(modelPath) {
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
 }
+
+

@@ -9,6 +9,11 @@ const submitBtn = document.getElementById('submitBtn');
 const uploadedFilesArea = document.getElementById('uploaded-files-area');
 const loadingSpinner = document.getElementById('loading');
 const modal = document.getElementById('modelModal');
+const modelPreviewbackBtn = document.getElementById('backButton');
+const zoomInBtn = document.getElementById('zoomInButton');
+const zoomOutBtn = document.getElementById('zoomOutButton');
+const panBtn = document.getElementById('panButton');
+const fullscreenBtn = document.getElementById('fullscreenButton');
 
 // Array to keep track of uploaded files
 let uploadedFiles = [];
@@ -221,3 +226,42 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+
+
+// Back button functionality
+modelPreviewbackBtn.addEventListener('click', () => {
+    modal.style.display = 'none'; // Hide the modal
+    uploadedFilesArea.style.display = 'block'; // Show the upload area
+});
+
+// Zoom In functionality
+zoomInBtn.addEventListener('click', () => {
+    camera.zoom += 0.1; // Increase zoom
+    camera.updateProjectionMatrix(); // Update camera projection
+});
+
+// Zoom Out functionality
+zoomOutBtn.addEventListener('click', () => {
+    camera.zoom -= 0.1; // Decrease zoom
+    camera.updateProjectionMatrix(); // Update camera projection
+});
+
+// Pan functionality (toggle)
+let isPanning = false;
+panBtn.addEventListener('click', () => {
+    isPanning = !isPanning; // Toggle panning mode
+    controls.enablePan = isPanning; // Enable or disable panning
+});
+
+// Fullscreen functionality
+fullscreenBtn.addEventListener('click', () => {
+    if (modal.requestFullscreen) {
+        modal.requestFullscreen();
+    } else if (modal.mozRequestFullScreen) { // Firefox
+        modal.mozRequestFullScreen();
+    } else if (modal.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        modal.webkitRequestFullscreen();
+    } else if (modal.msRequestFullscreen) { // IE/Edge
+        modal.msRequestFullscreen();
+    }
+});
