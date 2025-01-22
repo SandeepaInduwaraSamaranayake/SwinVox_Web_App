@@ -10,7 +10,8 @@ python main.py
 
 ######################### setup environment after resetting the workspace #########################
 
-source .venv/bin/activate  && python main.py 
+source .venv/bin/activate  && python main.py (for linux)
+.venv\Scripts\Activate.ps1 && python main.py (for windows)
 
 
 ######################### set encoder.py  pretrained to False #####################################

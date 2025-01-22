@@ -1,1 +1,484 @@
 [2025-01-15 15:02:03,542] INFO in _internal: 127.0.0.1 - - [15/Jan/2025 15:02:03] "POST /upload HTTP/1.1" 200 -
+[2025-01-22 12:54:31,344] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-01-22 12:54:31,345] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-01-22 12:54:31,351] INFO in _internal:  * Restarting with stat
+[2025-01-22 12:54:41,021] WARNING in _internal:  * Debugger is active!
+[2025-01-22 12:54:41,030] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-22 12:54:50,287] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:54:50,342] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:54:50,552] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-01-22 12:54:50,583] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/css/footer.css HTTP/1.1" 200 -
+[2025-01-22 12:54:50,592] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/css/upload_area.css HTTP/1.1" 200 -
+[2025-01-22 12:54:50,641] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-01-22 12:54:50,653] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/css/model_container.css HTTP/1.1" 200 -
+[2025-01-22 12:54:50,660] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-22 12:54:50,728] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/css/uploaded_files_area.css HTTP/1.1" 200 -
+[2025-01-22 12:54:50,742] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/js/theme.js HTTP/1.1" 200 -
+[2025-01-22 12:54:50,757] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:50] "GET /static/js/threejs.js HTTP/1.1" 200 -
+[2025-01-22 12:54:52,300] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:54:52] "GET /static/icons/icon.png HTTP/1.1" 200 -
+[2025-01-22 12:54:59,685] INFO in main: ------------------starting upload route----------------------
+[2025-01-22 12:54:59,740] INFO in main: Received files: ['Sadeepi.jpg']
+[2025-01-22 12:54:59,908] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-22 12:55:01,846] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:55:01] "POST /upload HTTP/1.1" 200 -
+[2025-01-22 12:57:32,437] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:57:32,478] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:57:32,552] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:32,573] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:32,592] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:32,596] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:32,612] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:32,645] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:32,995] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:32] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:33,034] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:33] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:57:33,070] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:57:33] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:58:31,836] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:58:31,839] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /?vscodeBrowserReqId=1737530911812 HTTP/1.1" 200 -
+[2025-01-22 12:58:31,919] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-01-22 12:58:31,923] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /static/css/upload_area.css HTTP/1.1" 200 -
+[2025-01-22 12:58:31,924] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /static/css/footer.css HTTP/1.1" 200 -
+[2025-01-22 12:58:31,942] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-01-22 12:58:31,943] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /static/css/uploaded_files_area.css HTTP/1.1" 200 -
+[2025-01-22 12:58:31,954] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:31] "GET /static/css/model_container.css HTTP/1.1" 200 -
+[2025-01-22 12:58:32,009] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:32] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-22 12:58:32,013] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:32] "GET /static/js/theme.js HTTP/1.1" 200 -
+[2025-01-22 12:58:32,036] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:58:32] "GET /static/js/threejs.js HTTP/1.1" 200 -
+[2025-01-22 12:59:24,784] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:24,787] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:24,838] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,840] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,845] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,848] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,849] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,892] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,893] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,895] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:24,958] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:24] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:25,914] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:25,919] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:25] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:25,956] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:25] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:25,957] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:25] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:25,960] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:25] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:25,968] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:25] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:26,000] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:26] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:26,005] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:26] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:26,029] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:26] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:26,032] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:26] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:26,061] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:26] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,305] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:27,312] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:27,379] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,388] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,409] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,433] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,499] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,504] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,520] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,552] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:27,591] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:27] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,098] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:28,100] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:28,130] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,130] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,135] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,160] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,161] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,165] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,178] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,187] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,209] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,746] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:28,747] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:28,784] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,785] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,786] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,800] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,804] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,806] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,827] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,829] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:28,845] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:28] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,242] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:29,243] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:29,271] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,276] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,279] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,294] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,295] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,297] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,300] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,318] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,339] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,418] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:29,420] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:29,447] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,449] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,456] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,473] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,475] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,478] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,480] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,504] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,510] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,593] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:29,595] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:29,627] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,629] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,629] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,628] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,630] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,630] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,652] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,678] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:29,679] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:29] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,033] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:30,034] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:30,067] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,067] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,087] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,088] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,107] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,108] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,110] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,111] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,146] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,235] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:30,239] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:30,275] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,277] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,280] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,301] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,316] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,344] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,345] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,346] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,379] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,553] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:30,555] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:30,595] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,606] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,613] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,628] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,630] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,640] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,646] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,660] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,683] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,906] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:30,907] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:30,944] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,954] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,955] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,958] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,979] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,980] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:30,982] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:30] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,009] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,010] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,329] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:31,331] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:31,363] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,363] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,368] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,370] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,376] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,378] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,406] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,407] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,424] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,501] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:31,503] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:31,539] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,539] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,540] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,555] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,564] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,575] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,581] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,603] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,605] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,825] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:31,827] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:31,860] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,861] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,862] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,863] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,868] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,916] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,940] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,942] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:31,963] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:31] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,145] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:32,146] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:32,177] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,177] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,181] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,182] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,182] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,182] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,217] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,221] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,238] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,481] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:32,482] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:32,520] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,522] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,524] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,525] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,525] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,533] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,560] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,575] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,583] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,819] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:32,820] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:32,855] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,857] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,859] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,863] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,874] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,882] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,897] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,910] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:32,911] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:32] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,193] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:33,194] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:33,235] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,237] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,238] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,263] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,266] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,266] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,269] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,286] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,306] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,530] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:33,532] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:33,561] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,562] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,575] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,579] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,581] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,593] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,609] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,612] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,628] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,700] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:33,701] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:33,727] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,730] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,744] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,750] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,753] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,762] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,779] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,803] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:33,812] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:33] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,009] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:34,010] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:34,180] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,228] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,238] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,244] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,251] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,258] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,287] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,287] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,305] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,522] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:34,523] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:34,560] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,561] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,562] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,565] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,574] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,614] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,620] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,645] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,646] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,834] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:34,836] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:34,861] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,867] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,871] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,875] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,894] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,896] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,897] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,901] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:34,931] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:34] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,146] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:35,147] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:35,176] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,178] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,181] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,183] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,199] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,211] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,229] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,237] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,250] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,514] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:35,516] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:35,552] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,552] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,554] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,569] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,575] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,591] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,592] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,594] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,633] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,849] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:35,850] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:35,892] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,894] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,900] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,906] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,929] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,932] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,938] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,945] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:35,975] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:35] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,193] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:36,195] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:36,244] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,245] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,247] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,249] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,273] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,283] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,283] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,304] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,306] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,506] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:36,507] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:36,537] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,538] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,539] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,542] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,548] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,562] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,575] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,576] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,604] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,818] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:36,820] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:36,856] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,857] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,860] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,878] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,879] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,883] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,896] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,898] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:36,927] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:36] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,138] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:37,139] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:37,172] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,172] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,188] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,202] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,205] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,294] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,379] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,442] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,462] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,867] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:37,869] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:37,900] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,902] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,904] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,909] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,922] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,940] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,942] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,942] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:37,966] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:37] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,265] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:38,267] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:38,293] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,298] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,312] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,312] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,316] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,331] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,334] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,346] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,365] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,602] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:38,603] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:38,630] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,635] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,638] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,674] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,676] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,678] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,687] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,700] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:38,725] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:38] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:42,803] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:42,816] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:42] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:42,817] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:42,823] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:42] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:42,926] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:42] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:42,989] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:42] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,037] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,082] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,139] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,182] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,218] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,267] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,313] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,452] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:43,455] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:43,522] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,524] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,525] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,527] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,529] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,563] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,567] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,608] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,609] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,737] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:43,739] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:43,778] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,778] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,778] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,781] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,782] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,782] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,821] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,826] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:43,839] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:43] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,003] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 12:59:44,004] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "GET / HTTP/1.1" 200 -
+[2025-01-22 12:59:44,046] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,046] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,048] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,051] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,054] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,078] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,088] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,108] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 12:59:44,124] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 12:59:44] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,317] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-22 13:20:36,318] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "GET / HTTP/1.1" 200 -
+[2025-01-22 13:20:36,422] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,424] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,439] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,444] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,463] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,478] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,513] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,516] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-22 13:20:36,541] INFO in _internal: 127.0.0.1 - - [22/Jan/2025 13:20:36] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-22 13:24:35,800] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\Tests\\test_generate_3D_model.py', reloading
+[2025-01-22 13:24:37,034] INFO in _internal:  * Restarting with stat
+[2025-01-22 13:24:47,086] WARNING in _internal:  * Debugger is active!
+[2025-01-22 13:24:47,101] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-22 13:24:51,254] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\Tests\\test_generate_3D_model.py', reloading
+[2025-01-22 13:24:52,190] INFO in _internal:  * Restarting with stat
+[2025-01-22 13:25:03,426] WARNING in _internal:  * Debugger is active!
+[2025-01-22 13:25:03,436] INFO in _internal:  * Debugger PIN: 369-456-996

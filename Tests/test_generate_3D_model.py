@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 import torch
 import os
-from lib.utils import generate_3d_model, save_voxel_plot
+from lib.utils import generate_3d_model
 
 class TestGenerate3DModel(unittest.TestCase):
 

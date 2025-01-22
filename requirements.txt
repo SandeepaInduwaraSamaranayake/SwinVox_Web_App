@@ -6,3 +6,6 @@ autopep8
 flask
 easydict
 pygltflib
+torchvision
+torch
+matplotlib
