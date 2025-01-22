@@ -8,7 +8,9 @@ export function initThreeJS(modelPath) {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
+    //console.log("client width" + container.clientWidth + "client height" + container.clientHeight);
     renderer.setSize(container.clientWidth, container.clientHeight);
+    container.innerHTML = '';
     container.appendChild(renderer.domElement);
 
     // Add lighting
@@ -26,6 +28,7 @@ export function initThreeJS(modelPath) {
 
     // Load the model (assuming it's in GLTF format)
     const loader = new GLTFLoader();
+
     loader.load(modelPath, function(gltf) {
         console.log('Model loaded successfully:', gltf);
         scene.add(gltf.scene);
@@ -61,4 +64,12 @@ export function initThreeJS(modelPath) {
         controls.update(); // Required for damping
         renderer.render(scene, camera);
     }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Update camera aspect ratio and renderer size
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
 }
