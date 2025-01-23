@@ -225,16 +225,17 @@ submitBtn.addEventListener('click', async () => {
         });
 
         // Pan functionality (toggle)
-        let isPanning = false;
+        controls.enablePan = false; // Disable panning by default
         panBtn.addEventListener('click', () => {
-            isPanning = !isPanning; // Toggle panning mode
-            controls.enablePan = isPanning; // Enable or disable panning
-
+            controls.enablePan = !controls.enablePan; // Enable or disable panning
             // Change the icon based on the panning state
-            if (isPanning) {
+            if (controls.enablePan) 
+            {
                 panBtn.innerHTML = '<i class="fas fa-arrows-alt"></i>'; // Icon for enabled panning
                 panBtn.classList.add('active'); // Optional: Add a class for styling
-            } else {
+            } 
+            else 
+            {
                 panBtn.innerHTML = '<i class="fas fa-ban"></i>'; // Icon for disabled panning
                 panBtn.classList.remove('active'); // Optional: Remove the active class
             }
