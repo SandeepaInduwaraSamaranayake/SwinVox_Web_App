@@ -229,6 +229,15 @@ submitBtn.addEventListener('click', async () => {
         panBtn.addEventListener('click', () => {
             isPanning = !isPanning; // Toggle panning mode
             controls.enablePan = isPanning; // Enable or disable panning
+
+            // Change the icon based on the panning state
+            if (isPanning) {
+                panBtn.innerHTML = '<i class="fas fa-arrows-alt"></i>'; // Icon for enabled panning
+                panBtn.classList.add('active'); // Optional: Add a class for styling
+            } else {
+                panBtn.innerHTML = '<i class="fas fa-ban"></i>'; // Icon for disabled panning
+                panBtn.classList.remove('active'); // Optional: Remove the active class
+            }
         });
     } 
     else 
@@ -256,8 +265,6 @@ modelPreviewbackBtn.addEventListener('click', () => {
     modal.style.display = 'none'; // Hide the modal
     uploadedFilesArea.style.display = 'block'; // Show the upload area
 });
-
-
 
 // Fullscreen functionality
 fullscreenBtn.addEventListener('click', () => {

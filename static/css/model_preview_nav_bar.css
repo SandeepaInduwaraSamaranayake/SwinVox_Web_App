@@ -31,3 +31,8 @@
     font-size: 30px;
     cursor: pointer;
 }
+
+.nav-button.active {
+    color: #2a9d8f; /* Change color when active */
+    font-weight: bold; /* Make it bold */
+}
