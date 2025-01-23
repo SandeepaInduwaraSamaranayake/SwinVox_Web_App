@@ -194,7 +194,8 @@ submitBtn.addEventListener('click', async () => {
     {
         const result = await response.json();
         
-        const base64Model = result.model_path; // Get the Base64-encoded model
+        // Get the Base64-encoded model
+        const base64Model = result.model_path; 
 
         console.log('base64 data :' + base64Model);
 
@@ -214,30 +215,40 @@ submitBtn.addEventListener('click', async () => {
 
         // Zoom In functionality
         zoomInBtn.addEventListener('click', () => {
-            camera.zoom += 0.1; // Increase zoom
-            camera.updateProjectionMatrix(); // Update camera projection
+            // Increase zoom
+            camera.zoom += 0.1; 
+            // Update camera projection
+            camera.updateProjectionMatrix(); 
         });
         
         // Zoom Out functionality
         zoomOutBtn.addEventListener('click', () => {
-            camera.zoom -= 0.1; // Decrease zoom
-            camera.updateProjectionMatrix(); // Update camera projection
+            // Decrease zoom
+            camera.zoom -= 0.1; 
+            // Update camera projection
+            camera.updateProjectionMatrix(); 
         });
 
         // Pan functionality (toggle)
-        controls.enablePan = false; // Disable panning by default
+        // Disable panning by default
+        controls.enablePan = false; 
         panBtn.addEventListener('click', () => {
-            controls.enablePan = !controls.enablePan; // Enable or disable panning
+            // Enable or disable panning
+            controls.enablePan = !controls.enablePan; 
             // Change the icon based on the panning state
             if (controls.enablePan) 
             {
-                panBtn.innerHTML = '<i class="fas fa-arrows-alt"></i>'; // Icon for enabled panning
-                panBtn.classList.add('active'); // Optional: Add a class for styling
+                // Icon for enabled panning
+                panBtn.innerHTML = '<i class="fas fa-arrows-alt"></i>'; 
+                // Optional: Add a class for styling
+                panBtn.classList.add('active'); 
             } 
             else 
             {
-                panBtn.innerHTML = '<i class="fas fa-ban"></i>'; // Icon for disabled panning
-                panBtn.classList.remove('active'); // Optional: Remove the active class
+                // Icon for disabled panning
+                panBtn.innerHTML = '<i class="fas fa-ban"></i>'; 
+                // Optional: Remove the active class
+                panBtn.classList.remove('active'); 
             }
         });
     } 
@@ -250,32 +261,41 @@ submitBtn.addEventListener('click', async () => {
 
 // Close button functionality for the modal
 document.getElementById('closeModal').addEventListener('click', () => {
-    modal.style.display = 'none'; // Hide the modal
+    // Hide the modal
+    modal.style.display = 'none'; 
 });
 
+// Close the modal when clicking outside the modal
 window.onclick = function(event) 
 {
-    if (event.target === modal) {
+    if (event.target === modal) 
+    {
         modal.style.display = 'none';
     }
 };
 
-
 // Back button functionality
 modelPreviewbackBtn.addEventListener('click', () => {
-    modal.style.display = 'none'; // Hide the modal
-    uploadedFilesArea.style.display = 'block'; // Show the upload area
+    // Hide the modal
+    modal.style.display = 'none'; 
+    // Show the upload area
+    uploadedFilesArea.style.display = 'block'; 
 });
 
-// Fullscreen functionality
+// Fullscreen button functionality
 fullscreenBtn.addEventListener('click', () => {
-    if (modal.requestFullscreen) {
-        modal.requestFullscreen();
-    } else if (modal.mozRequestFullScreen) { // Firefox
-        modal.mozRequestFullScreen();
-    } else if (modal.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-        modal.webkitRequestFullscreen();
-    } else if (modal.msRequestFullscreen) { // IE/Edge
-        modal.msRequestFullscreen();
+    const modalContent = document.querySelector('.modal-content');
+
+    if (!document.fullscreenElement) {
+        modalContent.requestFullscreen().catch(err => {
+            console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen();
     }
+});
+
+// Optional: Handle fullscreen change events
+document.addEventListener('fullscreenchange', () => {
+    fullscreenBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
 });
