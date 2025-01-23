@@ -72,6 +72,9 @@ export function initThreeJS(modelPath) {
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
+
+    // Return the camera and controls if needed
+    return { camera, controls };
 }
 
 

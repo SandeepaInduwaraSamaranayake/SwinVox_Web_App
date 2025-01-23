@@ -38,7 +38,8 @@ document.body.style.visibility = 'visible';
 });
 
 // Helper function to show/hide loading spinner
-function toggleLoadingSpinner(show) {
+function toggleLoadingSpinner(show) 
+{
     loadingSpinner.style.display = show ? 'block' : 'none';
 }
 
@@ -94,7 +95,8 @@ function handleFiles(files) {
 }
 
 // Function to update the uploaded files display
-function updateUploadedFilesDisplay() {
+function updateUploadedFilesDisplay() 
+{
     // Clear previous display
     uploadedFilesDiv.innerHTML = ''; 
     // Create a container for files
@@ -188,8 +190,8 @@ submitBtn.addEventListener('click', async () => {
     console.log('spinning stopped');
     toggleLoadingSpinner(false);
 
-    if (response.ok) {
-
+    if (response.ok) 
+    {
         const result = await response.json();
         
         const base64Model = result.model_path; // Get the Base64-encoded model
@@ -207,10 +209,30 @@ submitBtn.addEventListener('click', async () => {
 
         console.log('model url :' + modelUrl);
 
-        // Initialize Three.js scene
-        initThreeJS(modelUrl);
+        // Initialize Three.js scene and get camera
+        const {camera, controls}  = initThreeJS(modelUrl);
+
+        // Zoom In functionality
+        zoomInBtn.addEventListener('click', () => {
+            camera.zoom += 0.1; // Increase zoom
+            camera.updateProjectionMatrix(); // Update camera projection
+        });
+        
+        // Zoom Out functionality
+        zoomOutBtn.addEventListener('click', () => {
+            camera.zoom -= 0.1; // Decrease zoom
+            camera.updateProjectionMatrix(); // Update camera projection
+        });
+
+        // Pan functionality (toggle)
+        let isPanning = false;
+        panBtn.addEventListener('click', () => {
+            isPanning = !isPanning; // Toggle panning mode
+            controls.enablePan = isPanning; // Enable or disable panning
+        });
     } 
-    else {
+    else 
+    {
         const error = await response.json();
         alert('Error: ' + error.error);
     }
@@ -221,7 +243,8 @@ document.getElementById('closeModal').addEventListener('click', () => {
     modal.style.display = 'none'; // Hide the modal
 });
 
-window.onclick = function(event) {
+window.onclick = function(event) 
+{
     if (event.target === modal) {
         modal.style.display = 'none';
     }
@@ -234,24 +257,7 @@ modelPreviewbackBtn.addEventListener('click', () => {
     uploadedFilesArea.style.display = 'block'; // Show the upload area
 });
 
-// Zoom In functionality
-zoomInBtn.addEventListener('click', () => {
-    camera.zoom += 0.1; // Increase zoom
-    camera.updateProjectionMatrix(); // Update camera projection
-});
 
-// Zoom Out functionality
-zoomOutBtn.addEventListener('click', () => {
-    camera.zoom -= 0.1; // Decrease zoom
-    camera.updateProjectionMatrix(); // Update camera projection
-});
-
-// Pan functionality (toggle)
-let isPanning = false;
-panBtn.addEventListener('click', () => {
-    isPanning = !isPanning; // Toggle panning mode
-    controls.enablePan = isPanning; // Enable or disable panning
-});
 
 // Fullscreen functionality
 fullscreenBtn.addEventListener('click', () => {
