@@ -99,7 +99,10 @@ function handleFiles(files)
     }
     // Update the display
     updateUploadedFilesDisplay(); 
-    console.log(uploadedFiles.toString() + " -> no of files :" + uploadedFiles.length);
+    //console.log(uploadedFiles.toString() + " -> no of files :" + uploadedFiles.length);
+
+    // Show notification after files are selected
+    showNotification("Success : " + files.length + ' File(s) selected successfully!', 'success');
 }
 
 // Function to update the uploaded files display
@@ -180,6 +183,25 @@ function updateUploadedFilesDisplay()
 }
 
 
+// Function to show notification banner
+function showNotification(message , type) 
+{
+    const banner = document.getElementById('notification-banner');
+    banner.textContent = message;
+    banner.className = `notification ${type}`;
+    banner.style.display = 'block';
+
+    // Hide the banner after a few seconds
+    setTimeout(() => {
+        banner.classList.add('hide');
+        setTimeout(() => {
+            banner.style.display = 'none';
+            banner.classList.remove('hide');
+        }, 500); // Wait for the fade-out transition to complete
+    }, 3000); // Display for 3 seconds
+}
+
+
 submitBtn.addEventListener('click', async () => {
     const formData = new FormData(document.getElementById('upload-form'));
 
@@ -201,10 +223,8 @@ submitBtn.addEventListener('click', async () => {
     if (response.ok) 
     {
         const result = await response.json();
-        
         // Get the Base64-encoded model
         const base64Model = result.model_path; 
-
         console.log('base64 data :' + base64Model);
 
         // Create a Blob from the Base64 string
