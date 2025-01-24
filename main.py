@@ -72,6 +72,7 @@ def upload_images():
         if "model_path" in model_output:
             voxel_plot_base64 = model_output["model_path"]
             return jsonify({"model_path": voxel_plot_base64}), 200
+            #return jsonify({"error": "Model generation failed"}), 500
         else:
             app.logger.error("Model output does not contain 'model_path'")
             return jsonify({"error": "Model generation failed"}), 500

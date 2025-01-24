@@ -1,4 +1,5 @@
 import { initThreeJS } from './threejs.js';
+import { showNotification } from './utils.js';
 
 // Select elements
 const uploadArea = document.getElementById('upload-area');
@@ -182,34 +183,8 @@ function updateUploadedFilesDisplay()
     }
 }
 
-
-// Function to show notification banner
-function showNotification(message , type) 
-{
-    const banner = document.getElementById('notification-banner');
-    banner.textContent = message;
-    banner.className = `notification ${type}`;
-    banner.style.display = 'block';
-
-    // Hide the banner after a few seconds
-    setTimeout(() => {
-        banner.classList.add('hide');
-        setTimeout(() => {
-            banner.style.display = 'none';
-            banner.classList.remove('hide');
-        }, 500); // Wait for the fade-out transition to complete
-    }, 3000); // Display for 3 seconds
-}
-
-
 submitBtn.addEventListener('click', async () => {
     const formData = new FormData(document.getElementById('upload-form'));
-
-    // Show the modal immediately
-    modal.style.display = 'block';
-    toggleLoadingSpinner(true);
-
-    console.log('spinning started');
 
     const response = await fetch('/upload', {
         method: 'POST',
@@ -217,11 +192,14 @@ submitBtn.addEventListener('click', async () => {
     });
 
     // console.log("response :" + response.json());
-    console.log('spinning stopped');
-    toggleLoadingSpinner(false);
-
     if (response.ok) 
     {
+        // Show the modal immediately
+        modal.style.display = 'block';
+        toggleLoadingSpinner(true);
+
+        console.log('spinning started');
+
         const result = await response.json();
         // Get the Base64-encoded model
         const base64Model = result.model_path; 
@@ -240,6 +218,9 @@ submitBtn.addEventListener('click', async () => {
 
         // Initialize Three.js scene and get camera
         const {camera, controls}  = initThreeJS(modelUrl);
+
+        console.log('spinning stopped');
+        toggleLoadingSpinner(false);
 
         // Zoom In functionality
         zoomInBtn.addEventListener('click', () => {
@@ -283,7 +264,8 @@ submitBtn.addEventListener('click', async () => {
     else 
     {
         const error = await response.json();
-        alert('Error: ' + error.error);
+        showNotification('Error : ' + error.error , 'error');
+        //alert('Error: ' + error.error);
     }
 });
 
@@ -316,6 +298,7 @@ fullscreenBtn.addEventListener('click', () => {
 
     if (!document.fullscreenElement) {
         modalContent.requestFullscreen().catch(err => {
+            showNotification(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`, 'error');
             console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
     } else {

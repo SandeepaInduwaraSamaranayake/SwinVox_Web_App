@@ -1788,3 +1788,336 @@
 [2025-01-24 18:51:38,331] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:51:38] "GET /static/js/index.js HTTP/1.1" 200 -
 [2025-01-24 18:51:38,370] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:51:38] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
 [2025-01-24 18:51:38,394] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:51:38] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:11,999] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 18:53:12,000] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "GET / HTTP/1.1" 200 -
+[2025-01-24 18:53:12,067] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,078] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,086] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,087] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,104] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,107] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,133] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,138] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,144] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 18:53:12,145] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,172] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 18:53:12,395] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:53:12] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,119] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 18:59:26,120] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "GET / HTTP/1.1" 200 -
+[2025-01-24 18:59:26,178] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,187] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,199] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,202] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,204] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,232] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,247] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 18:59:26,238] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,237] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,273] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:26,317] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:26] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 18:59:27,045] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 18:59:27] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:13:27,836] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:13:27,843] INFO in main: Received files: ['1736776557700.jpg']
+[2025-01-24 19:13:27,944] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:13:29,335] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:13:29] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:15:30,484] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,508] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,529] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,549] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,555] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,568] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,585] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:30,591] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:30] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:32,028] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:15:32,037] INFO in main: Received files: ['']
+[2025-01-24 19:15:32,922] ERROR in main: Error in upload_images: Error processing image: cannot identify image file <_io.BytesIO object at 0x0000024AF5BFB0B0>
+[2025-01-24 19:15:32,925] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:32] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:15:53,620] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:15:53,621] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:15:53,675] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,685] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,688] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,708] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,715] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,730] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,733] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,747] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,749] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:15:53,750] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:53,797] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:53] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:54,463] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:54] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:15:58,149] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:15:58,154] INFO in main: Received files: ['1736776557700.jpg']
+[2025-01-24 19:15:58,187] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:15:59,491] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:15:59] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:16:02,461] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:16:02,463] INFO in main: Received files: ['1736776557700.jpg']
+[2025-01-24 19:16:02,535] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:16:04,083] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:04] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:16:58,985] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:16:58,986] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:58] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:16:59,074] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,097] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,130] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,134] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,154] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,184] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,237] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,250] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,305] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:16:59,305] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,337] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:16:59,526] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:16:59] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:17:04,255] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:17:04] "[33mPOST /upload1 HTTP/1.1[0m" 404 -
+[2025-01-24 19:18:12,377] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:18:14,328] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:18:24,120] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:18:24,133] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:18:24,448] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:18:24,453] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:18:24,454] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:18:24,463] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:18:24,815] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,828] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,843] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,854] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,868] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,899] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,929] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,946] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,950] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:18:24,969] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:24,986] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:24] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:25,054] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:25] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:18:29,060] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:18:29,078] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:18:29,350] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:18:30,689] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:30] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:18:34,552] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:18:34,561] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:18:34,850] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:18:36,357] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:18:36] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:18:54,913] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:18:55,983] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:19:05,794] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:19:05,806] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:20:13,364] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:20:14,786] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:20:25,493] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:20:25,503] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:20:25,783] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:20:25,787] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:25] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:20:26,095] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,131] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,134] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,159] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,194] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,196] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,220] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,264] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,267] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:20:26,282] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,343] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:26,396] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:26] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:20:30,764] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:20:30,782] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:20:31,053] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:20:32,548] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:32] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:20:33,661] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:20:33,667] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:20:34,143] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:20:35,984] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:35] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:20:37,455] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:20:37,466] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:20:37,721] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:20:38,978] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:38] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:20:43,047] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:20:43,055] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:20:43,293] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:20:44,474] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:44] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:20:49,383] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:20:49,392] INFO in main: Received files: ['1736775573607 (2).jpg']
+[2025-01-24 19:20:49,661] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:20:51,643] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:20:51] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:21:03,009] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:21:03,908] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:21:14,151] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:21:14,166] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:24:03,447] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:24:03,452] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:24:03,648] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,684] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,737] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,751] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,770] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,775] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,786] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,817] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,827] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:24:03,831] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:03,849] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:03] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:04,649] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:04] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:09,966] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:09] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:09,973] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:09] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:10,010] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:10] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:10,066] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:10] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:10,103] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:10] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:10,118] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:10] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:10,128] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:10] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:10,135] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:10] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:24:22,644] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:24:22,647] INFO in main: Received files: ['1736776557686.jpg']
+[2025-01-24 19:24:22,680] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:24:24,027] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:24] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:24:27,752] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:24:27,754] INFO in main: Received files: ['1736776557686.jpg']
+[2025-01-24 19:24:27,777] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:24:29,038] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:24:29] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:24:55,331] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:24:56,401] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:25:06,891] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:25:06,902] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:25:07,281] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:25:07,330] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:25:07,713] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,734] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,752] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,778] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,799] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,805] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,835] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,848] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,862] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,885] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:07,903] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:07] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:08,051] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:08] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:25:12,133] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:25:12,135] INFO in main: Received files: ['1736776557714.jpg']
+[2025-01-24 19:25:12,181] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:25:13,538] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:13] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:25:19,013] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:25:19,015] INFO in main: Received files: ['1736776557714.jpg']
+[2025-01-24 19:25:19,050] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:25:20,362] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:20] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:25:34,476] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:25:34,480] INFO in main: Received files: ['1736776557714.jpg']
+[2025-01-24 19:25:34,515] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:25:35,864] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:25:35] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:26:11,462] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:26:12,449] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:26:21,899] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:26:21,912] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:26:38,711] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:26:40,068] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:26:49,797] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:26:49,819] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:33:14,122] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:33:14,124] INFO in main: Received files: ['1736776557714.jpg']
+[2025-01-24 19:33:14,168] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:33:15,653] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:33:15] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:33:23,815] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:33:23,818] INFO in main: Received files: ['1736776557714.jpg']
+[2025-01-24 19:33:23,852] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:33:25,236] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:33:25] "POST /upload HTTP/1.1" 200 -
+[2025-01-24 19:33:41,642] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:33:43,122] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:34:24,543] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-01-24 19:34:24,546] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-01-24 19:34:24,550] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:34:34,043] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:34:34,053] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:34:36,017] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:34:36,021] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:34:36,240] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,275] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,309] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,316] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,332] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,345] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,357] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,379] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:34:36,383] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,387] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:36,433] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:36] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:37,271] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:37] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:34:43,751] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:34:43,834] INFO in main: Received files: ['1736775573607 (1).jpg']
+[2025-01-24 19:34:44,103] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:34:46,347] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:34:46,434] INFO in main: Received files: ['1736775573607 (1).jpg']
+[2025-01-24 19:34:47,189] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:34:47,936] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:47] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:34:48,882] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:48] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:34:52,291] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:34:52,299] INFO in main: Received files: ['1736775573607 (1).jpg']
+[2025-01-24 19:34:52,568] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:34:53,781] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:34:53] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-01-24 19:35:00,309] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-01-24 19:35:01,748] INFO in _internal:  * Restarting with stat
+[2025-01-24 19:35:12,522] WARNING in _internal:  * Debugger is active!
+[2025-01-24 19:35:12,532] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-01-24 19:37:23,522] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:37:23,530] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:37:23,766] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,835] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,916] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,925] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,928] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,948] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,984] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,993] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:23,996] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:23] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-01-24 19:37:24,013] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:24] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:24,097] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:24] "GET /static/js/utils.js HTTP/1.1" 200 -
+[2025-01-24 19:37:24,108] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:24] "GET /static/js/threejs.js HTTP/1.1" 200 -
+[2025-01-24 19:37:24,250] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:24] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:34,853] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:37:34,854] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:34] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:37:34,959] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:34,999] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:34] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,001] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,026] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,036] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,064] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,068] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,079] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,095] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,102] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,131] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,133] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:37:35,278] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:37:35] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:01,942] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:38:01,945] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:01] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:38:02,016] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,035] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,061] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,078] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,095] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,098] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,114] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,117] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,166] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,170] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,203] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,207] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:02,359] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:02] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,247] DEBUG in main: -----------------------initializing app----------------------
+[2025-01-24 19:38:26,249] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "GET / HTTP/1.1" 200 -
+[2025-01-24 19:38:26,331] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,362] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,371] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,399] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,420] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,434] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,447] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,467] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,469] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,507] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,529] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:26,591] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "GET /static/js/utils.js HTTP/1.1" 200 -
+[2025-01-24 19:38:26,697] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:26] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-01-24 19:38:32,092] INFO in main: ------------------starting upload route----------------------
+[2025-01-24 19:38:32,095] INFO in main: Received files: ['1736776557700.jpg']
+[2025-01-24 19:38:32,132] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-01-24 19:38:33,896] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 19:38:33] "POST /upload HTTP/1.1" 200 -
