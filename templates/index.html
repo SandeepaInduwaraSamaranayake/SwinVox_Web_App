@@ -48,6 +48,7 @@ is hidden from the page until it is ready to be unveiled. -->
         <h1>
             <a href="/" style="color: inherit; text-decoration: none;">SwinVox 3D Reconstruction</a>
         </h1>
+        <!--Theme change icon-->
         <div class="toggle-container">
                 <i id="light-theme-icon" class="fas fa-sun" title="Light Theme" style="cursor: pointer;"></i>
                 <i id="dark-theme-icon" class="fas fa-moon" title="Dark Theme" style="cursor: pointer;display: none;"></i>
@@ -74,14 +75,17 @@ is hidden from the page until it is ready to be unveiled. -->
         </div>
     </main>
     <footer>
+        <!--Footer links-->
         <div class="footer-links">
             <a href="https://threejs.org" target="_blank">three.js r168</a> |
             <a href="https://github.com/SandeepaInduwaraSamaranayake/SwinVox_Web_App/issues" target="_blank">help & feedback</a> |
             <a href="https://github.com/SandeepaInduwaraSamaranayake/SwinVox_Web_App" target="_blank">GitHub</a>
         </div>
     </footer>
+    <!--Model preview window-->
     <div id="modelModal" class="modal">
         <div class="modal-content">
+            <!--Model preview toolbar-->
             <div class="modal-header">
                 <button id="backButton" class="nav-button"><i class="fas fa-arrow-left"></i></button>
                 <div class="nav-controls">
@@ -92,6 +96,7 @@ is hidden from the page until it is ready to be unveiled. -->
                 </div>
                 <span class="close" id="closeModal">&times;</span>
             </div>
+            <!--Model preview container-->
             <div id="3d-container" style="height: 95%;"></div>
         </div>
     </div>
