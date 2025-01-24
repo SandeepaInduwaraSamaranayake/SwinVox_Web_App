@@ -46,12 +46,15 @@ function toggleLoadingSpinner(show)
 
 // Trigger file input when clicking the "Choose Images" button
 chooseFileBtn.addEventListener('click', () => {
-    //fileInput.click();
+    // No need to open file uploading window since uploadArea
+    // click event is triggerring by clicking the "choose images"
+    // button.
+    //console.log("Upload Button file upload activated");
 });
 
 // Trigger file input when clicking the upload area
 uploadArea.addEventListener('click', () => {
-    console.log("Upload area file upload activated");   
+    //console.log("Upload area file upload activated");   
     fileInput.click();
 });
 
