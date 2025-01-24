@@ -1,5 +1,3 @@
-const loadingSpinner = document.getElementById('loading');
-
 // Function to show notification banner
 export function showNotification(message , type) 
 {
@@ -16,10 +14,4 @@ export function showNotification(message , type)
             banner.classList.remove('hide');
         }, 500); // Wait for the fade-out transition to complete
     }, 3000); // Display for 3 seconds
-}
-
-// Helper function to show/hide loading spinner
-export function toggleLoadingSpinner(show) 
-{
-    loadingSpinner.style.display = show ? 'block' : 'none';
 }

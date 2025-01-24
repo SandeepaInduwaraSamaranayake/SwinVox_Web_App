@@ -1,8 +1,8 @@
 import { initThreeJS } from './threejs.js';
 import { showNotification } from './utils.js';
-import { toggleLoadingSpinner } from './utils.js';
 
 // Select elements
+const overlay = document.getElementById('overlay');
 const uploadArea = document.getElementById('upload-area');
 const fileInput = document.getElementById('images');
 const chooseFileBtn = document.getElementById('chooseFileBtn');
@@ -178,20 +178,22 @@ function updateUploadedFilesDisplay()
 
 submitBtn.addEventListener('click', async () => {
     const formData = new FormData(document.getElementById('upload-form'));
+    // Show overlay after submitting
+    overlay.style.display = 'flex';
 
     const response = await fetch('/upload', {
         method: 'POST',
         body: formData
     });
 
+    // Remove overlay after responce is received
+    overlay.style.display = 'none';
+
     // console.log("response :" + response.json());
     if (response.ok) 
     {
         // Show the modal immediately
         modal.style.display = 'block';
-        toggleLoadingSpinner(true);
-
-        console.log('spinning started');
 
         const result = await response.json();
         // Get the Base64-encoded model
@@ -211,9 +213,6 @@ submitBtn.addEventListener('click', async () => {
 
         // Initialize Three.js scene and get camera
         const {camera, controls}  = initThreeJS(modelUrl);
-
-        console.log('spinning stopped');
-        toggleLoadingSpinner(false);
 
         // Zoom In functionality
         zoomInBtn.addEventListener('click', () => {
