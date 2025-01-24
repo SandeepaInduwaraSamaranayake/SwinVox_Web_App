@@ -1,5 +1,6 @@
 import { initThreeJS } from './threejs.js';
 import { showNotification } from './utils.js';
+import { toggleLoadingSpinner } from './utils.js';
 
 // Select elements
 const uploadArea = document.getElementById('upload-area');
@@ -8,7 +9,6 @@ const chooseFileBtn = document.getElementById('chooseFileBtn');
 const uploadedFilesDiv = document.getElementById('uploaded-files');
 const submitBtn = document.getElementById('submitBtn');
 const uploadedFilesArea = document.getElementById('uploaded-files-area');
-const loadingSpinner = document.getElementById('loading');
 const modal = document.getElementById('modelModal');
 const modelPreviewbackBtn = document.getElementById('backButton');
 const zoomInBtn = document.getElementById('zoomInButton');
@@ -37,13 +37,6 @@ domReady(() => {
     // Display body when DOM is loaded
     document.body.style.visibility = 'visible';
 });
-
-// Helper function to show/hide loading spinner
-function toggleLoadingSpinner(show) 
-{
-    loadingSpinner.style.display = show ? 'block' : 'none';
-}
-
 
 // Trigger file input when clicking the "Choose Images" button
 chooseFileBtn.addEventListener('click', () => {
