@@ -38,9 +38,6 @@ body.dark-mode main {
     border-color: #888; /* Darker border for dark mode */
 }
 
-
-
-
 /* Add this to your theme.css or model_container.css */
 .modal-content.light-mode {
     background-color: #ffffff; /* Light background for light mode */

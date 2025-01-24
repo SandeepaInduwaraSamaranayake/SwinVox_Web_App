@@ -7,7 +7,7 @@
     transition: background-color 0.3s;
 }
 
-.upload-area label {
+.upload-area div {
     margin: 10px 0;
     font-size: 16px;
     cursor: pointer;

@@ -33,8 +33,8 @@ let domReady = (cb) => {
 };
 
 domReady(() => {
-// Display body when DOM is loaded
-document.body.style.visibility = 'visible';
+    // Display body when DOM is loaded
+    document.body.style.visibility = 'visible';
 });
 
 // Helper function to show/hide loading spinner
@@ -46,11 +46,12 @@ function toggleLoadingSpinner(show)
 
 // Trigger file input when clicking the "Choose Images" button
 chooseFileBtn.addEventListener('click', () => {
-    fileInput.click();
+    //fileInput.click();
 });
 
 // Trigger file input when clicking the upload area
 uploadArea.addEventListener('click', () => {
+    console.log("Upload area file upload activated");   
     fileInput.click();
 });
 
@@ -78,20 +79,24 @@ uploadArea.addEventListener('drop', (e) => {
 // Handle file input change
 fileInput.addEventListener('change', (e) => {
     const files = e.target.files;
-    if (files.length > 0) {
+    if (files.length > 0) 
+    {
         // Handle the selected files
         handleFiles(files); 
     }
 });
 
 // Function to handle files
-function handleFiles(files) {
-    for (let i = 0; i < files.length; i++) {
+function handleFiles(files) 
+{
+    for (let i = 0; i < files.length; i++) 
+    {
         // Add file name to the array
         uploadedFiles.push(files[i].name); 
     }
     // Update the display
     updateUploadedFilesDisplay(); 
+    console.log(uploadedFiles.toString() + " -> no of files :" + uploadedFiles.length);
 }
 
 // Function to update the uploaded files display

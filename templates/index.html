@@ -45,16 +45,17 @@ is hidden from the page until it is ready to be unveiled. -->
     </header>
     <main>
         <!-- Drag and drop upload area -->
-        <div class="upload-area" id="upload-area">
-            <form id="upload-form" enctype="multipart/form-data" method="POST">
-                <label for="images" class="upload-label">
+        <form id="upload-form" enctype="multipart/form-data" method="POST">
+            <div class="upload-area" id="upload-area">
+                <div class="upload-instruction-label">
                     <p>Drag and drop images here</p>
                     <p>or</p>
-                </label>
-                <input type="file" id="images" name="images[]" multiple accept="image/*" required hidden>
+                </div>
                 <button id="chooseFileBtn" type="button"><i class="fas fa-upload"></i> Choose Images</button>
-            </form>
-        </div>
+            </div>
+            <input type="file" id="images" name="images[]" multiple accept="image/*" required hidden>
+        </form>
+        <!-- Uploaded files area-->
         <div class="uploaded-files-area" id="uploaded-files-area">
             <!-- Section to display uploaded files -->
             <div id="uploaded-files"></div> 
