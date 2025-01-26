@@ -150,12 +150,12 @@ function updateUploadedFilesDisplay()
 
         // Add event listener to remove the file
         cancelButton.addEventListener('click', () => {
-            // console.log("Before cancel :" + uploadedFiles);
+            console.log("Before cancel :" + uploadedFiles);
             // Remove the file from the array
             uploadedFiles.splice(index, 1); 
             // Update the display
             updateUploadedFilesDisplay(); 
-            // console.log("After cancel :" + uploadedFiles);
+            console.log("After cancel :" + uploadedFiles);
         });
 
         // Append the file name and cancel button to the file element
@@ -195,18 +195,27 @@ submitBtn.addEventListener('click', async () => {
         // Show the modal immediately
         modal.style.display = 'block';
 
-        const result = await response.json();
-        // Get the Base64-encoded model
-        const base64Model = result.model_path; 
-        console.log('base64 data :' + base64Model);
+        // const result = await response.json();
+        // // Get the Base64-encoded model
+        // const base64Model = result.model_path; 
+        // console.log('base64 data :' + base64Model);
 
-        // Create a Blob from the Base64 string
-        const byteCharacters = atob(base64Model);
-        const byteNumbers = new Uint8Array(byteCharacters.length);
-        for (let i = 0; i < byteCharacters.length; i++) {
-            byteNumbers[i] = byteCharacters.charCodeAt(i);
-        }
-        const blob = new Blob([byteNumbers], { type: 'model/gltf-binary' });
+        // // Create a Blob from the Base64 string
+        // const byteCharacters = atob(base64Model);
+        // const byteNumbers = new Uint8Array(byteCharacters.length);
+        // for (let i = 0; i < byteCharacters.length; i++) {
+        //     byteNumbers[i] = byteCharacters.charCodeAt(i);
+        // }
+        // const blob = new Blob([byteNumbers], { type: 'model/gltf-binary' });
+        // const modelUrl = URL.createObjectURL(blob);
+
+        // console.log('model url :' + modelUrl);
+
+        // Read the response as an ArrayBuffer
+        const arrayBuffer = await response.arrayBuffer();
+
+        // Create a Blob from the ArrayBuffer
+        const blob = new Blob([arrayBuffer], { type: 'model/gltf+json' });
         const modelUrl = URL.createObjectURL(blob);
 
         console.log('model url :' + modelUrl);
@@ -257,7 +266,6 @@ submitBtn.addEventListener('click', async () => {
     {
         const error = await response.json();
         showNotification('Error : ' + error.error , 'error');
-        //alert('Error: ' + error.error);
     }
 });
 

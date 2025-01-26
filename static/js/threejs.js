@@ -2,6 +2,7 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { showNotification } from './utils.js';
 
 export function initThreeJS(modelPath) 
 {
@@ -29,10 +30,12 @@ export function initThreeJS(modelPath)
 
     // Load the model (assuming it's in GLTF format)
     const loader = new GLTFLoader();
+    let loadedModel;
 
     loader.load(modelPath, function(gltf) {
         console.log('Model loaded successfully:', gltf);
-        scene.add(gltf.scene);
+        loadedModel = gltf.scene;
+        scene.add(loadedModel);
 
         // Adjust camera position based on the model's bounding box
         const box = new THREE.Box3().setFromObject(gltf.scene);
@@ -56,8 +59,46 @@ export function initThreeJS(modelPath)
         animate();
     }, undefined, function(error) {
         console.error('An error occurred while loading the model:', error);
-        alert('Failed to load the model. Please check the console for more details.');
+        showNotification('Error : ' + error , 'error');
     });
+
+
+    // Material change functionality
+    const materialSelect = document.getElementById('materialSelect');
+    materialSelect.addEventListener('change', (event) => {
+        const selectedMaterial = event.target.value;
+        if (loadedModel) {
+            loadedModel.traverse((child) => {
+                if (child.isMesh) {
+                    if (selectedMaterial === 'wireframe') {
+                        child.material = new THREE.LineBasicMaterial({ color: 0xffffff });
+                        const geometry = new THREE.EdgesGeometry(child.geometry);
+                        const wireframe = new THREE.LineSegments(geometry, child.material);
+                        child.add(wireframe);
+                    } else {
+                        // Remove any existing wireframe
+                        const wireframe = child.children.find(c => c.isLineSegments);
+                        if (wireframe) {
+                            child.remove(wireframe);
+                        }
+                        // Set the selected material
+                        switch (selectedMaterial) {
+                            case 'meshStandardMaterial':
+                                child.material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+                                break;
+                            case 'meshPhongMaterial':
+                                child.material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+                                break;
+                            case 'meshBasicMaterial':
+                                child.material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+                                break;
+                        }
+                    }
+                }
+            });
+        }
+    });
+
 
     // Animation loop
     function animate() {

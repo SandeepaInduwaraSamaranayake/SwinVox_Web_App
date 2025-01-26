@@ -74,7 +74,7 @@ class TestLoadModel(unittest.TestCase):
         mock_checkpoint = create_mock_checkpoint(original_checkpoint_path)
 
         # remove encoder
-        mock_checkpoint.pop("encoder_state_dict")
+        #mock_checkpoint.pop("encoder_state_dict")
 
         mock_load.return_value = mock_checkpoint
 

@@ -1,9 +1,8 @@
-from flask import Flask, jsonify, request, render_template
+from io import BytesIO
+from flask import Flask, jsonify, request, render_template, send_file
 from lib.utils import process_images, generate_3d_model
-import torch
 from logging.config import dictConfig
-import base64
-import io
+from model.config import cfg
 
 # app.logger.debug("A debug message")
 # app.logger.info("An info message")
@@ -58,24 +57,25 @@ def upload_images():
 
         # Process uploaded images
         images = [file.read() for file in files]
-        processed_images = process_images(images)
+        processed_images = process_images(images, cfg.CONST.IMG_H, cfg.CONST.IMG_W, cfg.DATASET.MEAN, cfg.DATASET.STD)
         app.logger.info("Processed images shape: %s", processed_images.shape)
 
         # Generate 3D model
         model_output = generate_3d_model(processed_images)
-        #model_output = generate_3d_model(torch.rand(1, 1, 3, 224, 224))
 
-        app.logger.info("Model output: %s", model_output)
+        # Ensure model_output is in the correct format
+        if not isinstance(model_output, bytes):
+            app.logger.error("Model output is not in bytes format.")
+            return jsonify({"error": "Model generation failed, output is not in bytes."}), 500
 
+        if len(model_output) == 0:
+            app.logger.error("Model output is empty.")
+            return jsonify({"error": "Model generation failed, output is empty."}), 500
 
-        # Check if the model output contains the base64 string
-        if "model_path" in model_output:
-            voxel_plot_base64 = model_output["model_path"]
-            return jsonify({"model_path": voxel_plot_base64}), 200
-            #return jsonify({"error": "Model generation failed"}), 500
-        else:
-            app.logger.error("Model output does not contain 'model_path'")
-            return jsonify({"error": "Model generation failed"}), 500
+        app.logger.info("Model output is valid, length: %d bytes", len(model_output))
+
+        # Send the GLB model as a response
+        return send_file(BytesIO(model_output), mimetype='model/gltf-binary', as_attachment=False, download_name='model.glb')
 
     except Exception as e:
         app.logger.error("Error in upload_images: %s", str(e))  # Log the error
