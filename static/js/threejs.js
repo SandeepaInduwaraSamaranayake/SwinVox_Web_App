@@ -15,13 +15,27 @@ export function initThreeJS(modelPath)
     container.innerHTML = '';
     container.appendChild(renderer.domElement);
 
-    // Add lighting
+    // Add ambient light
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Bright white light
-    directionalLight.position.set(5, 5, 5).normalize();
-    scene.add(directionalLight);
+    // Add multiple directional lights
+    const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1); // Bright white light
+    directionalLight1.position.set(5, 5, 5).normalize();
+    scene.add(directionalLight1);
+
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1); // Bright white light
+    directionalLight2.position.set(-5, 5, 5).normalize();
+    scene.add(directionalLight2);
+
+    const directionalLight3 = new THREE.DirectionalLight(0xffffff, 1); // Bright white light
+    directionalLight3.position.set(0, -5, 5).normalize();
+    scene.add(directionalLight3);
+
+    const directionalLight4 = new THREE.DirectionalLight(0xffffff, 1); // Bright white light
+    directionalLight4.position.set(0, 5, -5).normalize();
+    scene.add(directionalLight4);
+
 
     // Add OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -58,10 +72,9 @@ export function initThreeJS(modelPath)
 
         animate();
     }, undefined, function(error) {
-        console.error('An error occurred while loading the model:', error);
+        console.error('An error occurred while loading the model : ', error);
         showNotification('Error : ' + error , 'error');
     });
-
 
     // Material change functionality
     const materialSelect = document.getElementById('materialSelect');
@@ -69,25 +82,31 @@ export function initThreeJS(modelPath)
         const selectedMaterial = event.target.value;
         if (loadedModel) {
             loadedModel.traverse((child) => {
-                if (child.isMesh) {
-                    if (selectedMaterial === 'wireframe') {
+                if (child.isMesh)
+                {
+                    if (selectedMaterial === 'wireframe') 
+                    {
                         child.material = new THREE.LineBasicMaterial({ color: 0xffffff });
                         const geometry = new THREE.EdgesGeometry(child.geometry);
                         const wireframe = new THREE.LineSegments(geometry, child.material);
                         child.add(wireframe);
-                    } else {
+                    }
+                    else 
+                    {
                         // Remove any existing wireframe
                         const wireframe = child.children.find(c => c.isLineSegments);
-                        if (wireframe) {
+                        if (wireframe)
+                        {
                             child.remove(wireframe);
                         }
                         // Set the selected material
-                        switch (selectedMaterial) {
+                        switch (selectedMaterial)
+                        {
                             case 'meshStandardMaterial':
                                 child.material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
                                 break;
                             case 'meshPhongMaterial':
-                                child.material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+                                child.material = new THREE.MeshPhongMaterial({ color: 0x00ff00, shininess: 200 });
                                 break;
                             case 'meshBasicMaterial':
                                 child.material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -98,7 +117,6 @@ export function initThreeJS(modelPath)
             });
         }
     });
-
 
     // Animation loop
     function animate() {

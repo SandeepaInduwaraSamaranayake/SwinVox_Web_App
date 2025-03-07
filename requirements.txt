@@ -9,3 +9,5 @@ pygltflib
 torchvision
 torch
 matplotlib
+opencv-python
+trimesh

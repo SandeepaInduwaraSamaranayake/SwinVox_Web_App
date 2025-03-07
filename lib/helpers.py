@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+#
+# Developed by Haozhe Xie <cshzxie@gmail.com>
+
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+
+
+def get_volume_views(volume, save_dir):
+
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    volume = volume.squeeze().__ge__(0.5)
+    # Create a figure for 3D plotting
+    fig = plt.figure()
+    # Standard way to create a 3D subplot in new versions of Matplotlib
+    ax = fig.add_subplot(111, projection='3d')
+    # Set the aspect ratio to be equal
+    ax.set_box_aspect([1, 1, 1])
+    # Plot the voxels with black edges
+    ax.voxels(volume, edgecolor="k", linewidth=0.5)
+    ax.view_init(elev=30, azim=45)                   # Adjusted view angles
+    # Matplotlib's ax.voxels() behavior might auto-scale axes differently in 3.10.0 vs 3.9.0, leading to inconsistent views.
+    ax.set_xlim(0, volume.shape[0])                  # Manual axis limits
+    ax.set_ylim(0, volume.shape[1])
+    ax.set_zlim(0, volume.shape[2])
+
+    fig.canvas.draw()
+    img = np.frombuffer(fig.canvas.tostring_argb(), dtype=np.uint8)
+    img = img.reshape(fig.canvas.get_width_height()[::-1] + (4, ))
+
+    # Transpose the image to be in [C, H, W] format, which is expected by TensorBoard. This ensures that the returned image is in [C, H, W] format, where C is the number of channels (e.g., 3 for RGB), and H and W are the height and width, respectively. This is the format expected by TensorBoard's add_image method.
+    img = np.transpose(img, (2, 0, 1))  # Convert from (H, W, C) to (C, H, W)
+
+    # Save Plot
+    # Ensure the filename is unique by adding the sample index and epoch index
+    save_path = os.path.join(save_dir, "test.png")
+    plt.savefig(save_path, bbox_inches='tight')
+    # Close the figure to free up resources
+    plt.close(fig)
+
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters())

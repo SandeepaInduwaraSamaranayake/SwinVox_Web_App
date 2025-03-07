@@ -1,6 +1,6 @@
 from io import BytesIO
 from flask import Flask, jsonify, request, render_template, send_file
-from lib.utils import process_images, generate_3d_model
+from lib.utils import process_images, generate_3d_model, load_model
 from logging.config import dictConfig
 from model.config import cfg
 
@@ -39,6 +39,10 @@ dictConfig(
 
 app = Flask(__name__)
 
+# Load the model once at startup
+model = None
+model = load_model(cfg)
+
 @app.route('/')
 def root():
     app.logger.debug("-----------------------initializing app----------------------")
@@ -57,28 +61,28 @@ def upload_images():
 
         # Process uploaded images
         images = [file.read() for file in files]
-        processed_images = process_images(images, cfg.CONST.IMG_H, cfg.CONST.IMG_W, cfg.DATASET.MEAN, cfg.DATASET.STD)
+        processed_images = process_images(images, cfg)
         app.logger.info("Processed images shape: %s", processed_images.shape)
 
         # Generate 3D model
-        model_output = generate_3d_model(processed_images)
+        model_output = generate_3d_model(processed_images, model)
 
         # Ensure model_output is in the correct format
         if not isinstance(model_output, bytes):
             app.logger.error("Model output is not in bytes format.")
             return jsonify({"error": "Model generation failed, output is not in bytes."}), 500
 
-        if len(model_output) == 0:
-            app.logger.error("Model output is empty.")
-            return jsonify({"error": "Model generation failed, output is empty."}), 500
+        # if len(model_output) == 0:
+        #     app.logger.error("Model output is empty.")
+        #     return jsonify({"error": "Model generation failed, output is empty."}), 500
 
-        app.logger.info("Model output is valid, length: %d bytes", len(model_output))
+        # app.logger.info("Model output is valid, length: %d bytes", len(model_output))
 
         # Send the GLB model as a response
         return send_file(BytesIO(model_output), mimetype='model/gltf-binary', as_attachment=False, download_name='model.glb')
 
     except Exception as e:
-        app.logger.error("Error in upload_images: %s", str(e))  # Log the error
+        app.logger.error("Error in upload_images: %s", str(e))
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
