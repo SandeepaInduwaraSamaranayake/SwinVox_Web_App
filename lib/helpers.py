@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 #
-# Developed by Haozhe Xie <cshzxie@gmail.com>
+# Developed by Sandeepa Samaranayake <sandeepasamaranayake@outlook.com>
 
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-
-
+import torch
 
 def get_volume_views(volume, save_dir):
 
@@ -45,3 +44,15 @@ def get_volume_views(volume, save_dir):
 
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
+
+
+def save_checkpoint_for_cpu(load_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet.pth', save_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth'):
+    ckpt = torch.load(load_path, map_location=torch.device("cpu"), weights_only = False)
+    new_ckpt = {}
+    for k1 in ['encoder_state_dict', 'decoder_state_dict', 'refiner_state_dict', 'merger_state_dict']:
+        new_ckpt[k1] = {}
+        for k2 in ckpt[k1].keys():
+            new_ckpt[k1][k2.replace('module.', '')] = ckpt[k1][k2]
+
+    torch.save(new_ckpt, save_path)
+    print('Saved checkpoint for CPU')

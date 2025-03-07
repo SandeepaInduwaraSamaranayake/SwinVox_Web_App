@@ -17,28 +17,29 @@ def load_model(cfg):
 
     try:
         # Load the checkpoint
-        checkpoint = torch.load("model\Pix2Vox-A-ShapeNet.pth", map_location=torch.device("cpu"), weights_only = False)
+        checkpoint = torch.load("pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth", map_location=torch.device("cpu"), weights_only = False)
 
         # The model is trained in a distributed setting using DataParallel, so the model's state dictionary contains
-        # the model components with the "module." prefix. We need to remove this prefix to load the model on a CPU.
+        # the model components with the "module." prefix. We need to remove this prefix and save weight again to load the model on a CPU.
+        # Use  helpers.save_checkpoint_for_cpu for this.
         # Load state dictionaries for each component
         if "encoder_state_dict" in checkpoint:
-            model.encoder.load_state_dict( {k.replace("module.", ""): v for k, v in checkpoint["encoder_state_dict"].items()} )
+            model.encoder.load_state_dict(checkpoint["encoder_state_dict"])
         else:
             raise RuntimeError("Checkpoint does not contain 'encoder_state_dict'.")
 
         if "decoder_state_dict" in checkpoint:
-            model.decoder.load_state_dict( {k.replace("module.", ""): v for k, v in checkpoint["decoder_state_dict"].items()} )
+            model.decoder.load_state_dict(checkpoint["decoder_state_dict"])
         else:
             raise RuntimeError("Checkpoint does not contain 'decoder_state_dict'.")
         
         if "refiner_state_dict" in checkpoint:
-            model.refiner.load_state_dict( {k.replace("module.", ""): v for k, v in checkpoint["refiner_state_dict"].items()} )
+            model.refiner.load_state_dict(checkpoint["refiner_state_dict"])
         else:
             raise RuntimeError("Checkpoint does not contain 'refiner_state_dict'.")
 
         if "merger_state_dict" in checkpoint:
-            model.merger.load_state_dict( {k.replace("module.", ""): v for k, v in checkpoint["merger_state_dict"].items()} )
+            model.merger.load_state_dict(checkpoint["merger_state_dict"])
         else:
             raise RuntimeError("Checkpoint does not contain 'merger_state_dict'.")
 
@@ -104,7 +105,6 @@ def generate_3d_model(images_tensor, model):
     #  The model is trained to minimize the binary cross-entropy loss between the predicted voxel outputs and the 
     # ground truth volumes. This means that the model learns to output values that represent the likelihood (probability) 
     # of each voxel being occupied.
-
 
     # Model generates 3D voxel grid
     voxel_output = model(images_tensor)  

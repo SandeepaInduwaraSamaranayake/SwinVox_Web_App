@@ -1,0 +1,661 @@
+[2025-03-08 01:28:56,689] INFO in utils: Loading model...
+[2025-03-08 01:29:07,272] INFO in utils: Loading model...
+[2025-03-08 01:29:09,994] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-03-08 01:29:09,994] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-03-08 01:29:09,994] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:29:18,322] INFO in utils: Loading model...
+[2025-03-08 01:29:20,972] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:29:20,972] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:29:21,339] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:29:21,339] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "GET /?vscodeBrowserReqId=1741377554763 HTTP/1.1" 200 -
+[2025-03-08 01:29:21,568] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,630] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,630] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,711] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,722] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,722] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,746] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,757] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,777] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,777] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,837] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:21,839] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:21] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:29:26,914] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:29:26,916] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:29:26,917] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:29:26,918] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:29:26,958] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:29:26,958] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:29:26,958] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:29:26,980] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:29:27,000] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:29:27,014] INFO in utils: length: 1
+[2025-03-08 01:29:27,031] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:29:27,032] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:29:27.032599 Parameters in Encoder: 7772480.
+[2025-03-08 01:29:27,048] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:29:27.048011 Parameters in Decoder: 71583064.
+[2025-03-08 01:29:27,099] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:29:27.099424 Parameters in Merger: 8571.
+[2025-03-08 01:29:27,112] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:29:27.112014 Parameters in Refiner: 34880352.
+[2025-03-08 01:29:28,673] INFO in utils: Binary Voxel Data : tensor([[[[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         ...,
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 1.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 1., 1.,  ..., 0., 0., 0.],
+          [0., 1., 1.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]]]])
+[2025-03-08 01:29:46,141] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:29:46] "POST /upload HTTP/1.1" 200 -
+[2025-03-08 01:37:47,512] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\helpers.py', reloading
+[2025-03-08 01:37:49,184] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:37:57,124] INFO in utils: Loading model...
+[2025-03-08 01:37:59,722] INFO in utils: Loading model...
+[2025-03-08 01:38:04,846] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:38:04,860] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:38:08,852] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\helpers.py', reloading
+[2025-03-08 01:38:11,512] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:39:29,346] INFO in utils: Loading model...
+[2025-03-08 01:39:48,725] INFO in utils: Loading model...
+[2025-03-08 01:40:59,479] INFO in utils: Loading model...
+[2025-03-08 01:41:16,592] INFO in utils: Loading model...
+[2025-03-08 01:41:58,668] INFO in utils: Loading model...
+[2025-03-08 01:42:20,413] INFO in utils: Loading model...
+[2025-03-08 01:43:34,109] INFO in utils: Loading model...
+[2025-03-08 01:43:57,692] INFO in utils: Loading model...
+[2025-03-08 01:44:17,250] INFO in utils: Loading model...
+[2025-03-08 01:44:54,795] INFO in utils: Loading model...
+[2025-03-08 01:45:28,721] INFO in utils: Loading model...
+[2025-03-08 01:45:33,801] INFO in utils: Loading model...
+[2025-03-08 01:45:40,288] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-03-08 01:45:40,290] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-03-08 01:45:40,295] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:45:48,078] INFO in utils: Loading model...
+[2025-03-08 01:45:54,923] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:45:54,936] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:45:55,311] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:45:55,316] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "GET /?vscodeBrowserReqId=1741378550642 HTTP/1.1" 200 -
+[2025-03-08 01:45:55,707] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,739] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,739] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,754] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,785] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,850] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,897] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,907] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,918] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,941] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,976] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:45:55,976] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:45:55] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:46:00,913] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:46:00,918] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:46:00,919] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:46:00,922] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:46:00,962] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:46:00,963] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:46:00,964] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:46:00,965] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:46:01,004] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:46:01,029] INFO in utils: length: 1
+[2025-03-08 01:46:01,030] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:46:01,030] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:46:01,032] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:46:01] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:46:24,554] INFO in utils: Loading model...
+[2025-03-08 01:46:50,086] INFO in utils: Loading model...
+[2025-03-08 01:48:28,248] INFO in utils: Loading model...
+[2025-03-08 01:48:30,647] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-03-08 01:48:30,659] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-03-08 01:48:30,678] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:48:37,987] INFO in utils: Loading model...
+[2025-03-08 01:48:40,343] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:48:40,363] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:48:40,709] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:48:40,709] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:40] "GET /?vscodeBrowserReqId=1741378714449 HTTP/1.1" 200 -
+[2025-03-08 01:48:40,952] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:40] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:40,961] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:40] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,011] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,013] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,013] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,050] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,065] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,090] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,129] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,158] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,206] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:41,206] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:41] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:48:44,513] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:48:44,515] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:48:44,516] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:48:44,517] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:48:44,517] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:48:44,520] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:48:44,530] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:48:44,532] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:48:44,564] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:48:44,567] INFO in utils: length: 1
+[2025-03-08 01:48:44,574] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:48:44,579] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:48:44,580] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:44] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:48:51,907] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:48:51,907] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:48:51,907] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:48:51,907] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:48:51,907] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:48:51,907] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:48:51,907] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:48:51,944] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:48:51,952] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:48:51,984] INFO in utils: length: 1
+[2025-03-08 01:48:51,985] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:48:52,039] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:48:52,043] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:48:52] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:50:39,992] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:50:39,992] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:50:40,016] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:50:40,016] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:50:40,031] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:50:40,032] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:50:40,033] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:50:40,034] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:50:40,061] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:50:40,071] INFO in utils: length: 1
+[2025-03-08 01:50:40,082] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:50:40,082] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:50:40,115] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:50:40] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:51:23,706] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-03-08 01:51:25,019] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:51:31,570] INFO in utils: Loading model...
+[2025-03-08 01:51:32,301] INFO in utils: Loading model...
+[2025-03-08 01:51:35,533] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:51:35,536] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:51:35,865] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:51:35,865] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:51:35,865] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:35] "GET /?vscodeBrowserReqId=1741378885754 HTTP/1.1" 200 -
+[2025-03-08 01:51:35,865] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:35] "GET /?vscodeBrowserReqId=1741378889545 HTTP/1.1" 200 -
+[2025-03-08 01:51:35,865] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:51:35,958] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:35] "GET /?vscodeBrowserReqId=1741378890049 HTTP/1.1" 200 -
+[2025-03-08 01:51:36,216] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,231] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,231] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,283] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,298] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,325] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,325] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,337] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,344] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,355] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,361] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:36,371] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:36] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:51:41,031] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:51:41,034] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:51:41,037] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:51:41,047] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:51:41,047] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:51:41,047] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:51:41,047] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:51:41,047] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:51:41,072] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:51:41,073] INFO in utils: length: 1
+[2025-03-08 01:51:41,073] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:51:41,073] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:51:41,073] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:51:41] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:51:53,172] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\main.py', reloading
+[2025-03-08 01:51:54,604] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:52:01,189] INFO in utils: Loading model...
+[2025-03-08 01:52:02,453] INFO in utils: Loading model...
+[2025-03-08 01:52:06,177] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:52:06,202] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:54:46,229] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 01:54:47,777] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:54:56,123] INFO in utils: Loading model...
+[2025-03-08 01:54:58,078] INFO in utils: Loading model...
+[2025-03-08 01:55:01,478] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:55:01,624] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:55:04,994] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:55:04,999] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:04] "GET /?vscodeBrowserReqId=1741379104985 HTTP/1.1" 200 -
+[2025-03-08 01:55:05,366] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,423] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,437] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,441] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,474] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,564] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,571] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,574] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,582] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,599] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,630] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:05,632] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:05] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:08,892] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:55:08,895] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:55:08,896] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:55:08,897] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:55:08,898] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:55:08,899] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:55:08,900] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:55:08,906] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:55:08,932] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:55:08,934] INFO in utils: length: 1
+[2025-03-08 01:55:08,940] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:55:08,946] ERROR in main: Error in upload_images: name 'logg' is not defined
+[2025-03-08 01:55:08,947] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:08] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:55:16,304] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 01:55:17,594] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:55:23,916] INFO in utils: Loading model...
+[2025-03-08 01:55:24,665] INFO in utils: Loading model...
+[2025-03-08 01:55:27,609] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:55:27,622] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:55:28,059] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:55:28,140] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "GET /?vscodeBrowserReqId=1741379116521 HTTP/1.1" 200 -
+[2025-03-08 01:55:28,141] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:55:28,158] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "GET /?vscodeBrowserReqId=1741379123233 HTTP/1.1" 200 -
+[2025-03-08 01:55:28,418] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,433] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,460] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,471] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,471] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,510] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,514] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,532] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,547] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,558] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,575] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:28,593] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:28] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:55:31,896] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:55:31,899] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:55:31,900] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:55:31,901] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:55:31,901] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:55:31,911] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:55:31,912] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:55:31,913] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:55:31,942] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:55:31,950] INFO in utils: length: 1
+[2025-03-08 01:55:31,951] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:55:31,957] INFO in utils: Generating 3D model...
+[2025-03-08 01:55:31,961] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:55:31,965] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:55:31] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:55:42,696] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 01:55:43,618] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:55:50,753] INFO in utils: Loading model...
+[2025-03-08 01:55:53,870] INFO in utils: Loading model...
+[2025-03-08 01:55:59,757] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:55:59,775] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:56:05,739] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 01:56:07,363] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:56:10,786] INFO in utils: Loading model...
+[2025-03-08 01:56:15,309] INFO in utils: Loading model...
+[2025-03-08 01:56:19,244] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:56:19,260] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:56:19,574] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:56:19,574] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "GET /?vscodeBrowserReqId=1741379169561 HTTP/1.1" 200 -
+[2025-03-08 01:56:19,799] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:19,846] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:19,888] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:19,921] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:19,934] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:19,974] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:19] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:20,013] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:20] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:20,025] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:20] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:20,107] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:20] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:20,146] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:20] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:20,152] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:20] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:20,163] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:20] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:56:41,695] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:56:41,695] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:56:41,695] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:56:41,695] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:56:41,695] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:56:41,705] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:56:41,713] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:56:41,715] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:56:41,740] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:56:41,746] INFO in utils: length: 1
+[2025-03-08 01:56:41,747] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:56:41,749] INFO in utils: Generating 3D model...
+[2025-03-08 01:56:41,761] INFO in utils: Images Tensor : tensor([[[[[479., 433., 359.,  ..., 483., 483., 483.],
+           [429., 401., 357.,  ..., 483., 483., 483.],
+           [347., 349., 351.,  ..., 483., 483., 483.],
+           ...,
+           [479., 467., 445.,  ..., 489., 489., 489.],
+           [485., 481., 473.,  ..., 489., 489., 489.],
+           [489., 489., 489.,  ..., 489., 489., 489.]],
+
+          [[479., 433., 359.,  ..., 483., 483., 483.],
+           [429., 401., 357.,  ..., 483., 483., 483.],
+           [347., 349., 351.,  ..., 483., 483., 483.],
+           ...,
+           [479., 467., 445.,  ..., 489., 489., 489.],
+           [485., 481., 473.,  ..., 489., 489., 489.],
+           [489., 489., 489.,  ..., 489., 489., 489.]],
+
+          [[479., 433., 359.,  ..., 483., 483., 483.],
+           [429., 401., 357.,  ..., 483., 483., 483.],
+           [347., 349., 351.,  ..., 483., 483., 483.],
+           ...,
+           [479., 467., 445.,  ..., 489., 489., 489.],
+           [485., 481., 473.,  ..., 489., 489., 489.],
+           [489., 489., 489.,  ..., 489., 489., 489.]]]]])
+[2025-03-08 01:56:41,781] INFO in utils: Model : None
+[2025-03-08 01:56:41,782] ERROR in main: Error in upload_images: 'NoneType' object is not callable
+[2025-03-08 01:56:41,785] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:56:41] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+[2025-03-08 01:58:47,229] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 01:58:48,252] INFO in _internal:  * Restarting with stat
+[2025-03-08 01:58:56,555] INFO in utils: Loading model...
+[2025-03-08 01:58:57,076] INFO in utils: Loading model...
+[2025-03-08 01:59:00,682] WARNING in _internal:  * Debugger is active!
+[2025-03-08 01:59:00,686] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 01:59:02,993] DEBUG in main: -----------------------initializing app----------------------
+[2025-03-08 01:59:02,999] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:02] "GET /?vscodeBrowserReqId=1741379342985 HTTP/1.1" 200 -
+[2025-03-08 01:59:03,294] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,343] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,376] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,396] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,422] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,422] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,459] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,465] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,470] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,508] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,518] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:03,524] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:03] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-03-08 01:59:06,622] INFO in main: ------------------starting upload route----------------------
+[2025-03-08 01:59:06,622] INFO in main: Received files: ['voxels-000002.png']
+[2025-03-08 01:59:06,622] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-03-08 01:59:06,657] INFO in utils: IMG_SIZE: (224, 224)
+[2025-03-08 01:59:06,657] INFO in utils: CROP_SIZE: (128, 128)
+[2025-03-08 01:59:06,661] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-03-08 01:59:06,662] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-03-08 01:59:06,662] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-03-08 01:59:06,682] INFO in utils: Image shape: (407, 394, 3)
+[2025-03-08 01:59:06,693] INFO in utils: length: 1
+[2025-03-08 01:59:06,694] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-03-08 01:59:06,695] INFO in utils: Generating 3D model...
+[2025-03-08 01:59:06,704] INFO in utils: Images Tensor : tensor([[[[[479., 433., 359.,  ..., 483., 483., 483.],
+           [429., 401., 357.,  ..., 483., 483., 483.],
+           [347., 349., 351.,  ..., 483., 483., 483.],
+           ...,
+           [479., 467., 445.,  ..., 489., 489., 489.],
+           [485., 481., 473.,  ..., 489., 489., 489.],
+           [489., 489., 489.,  ..., 489., 489., 489.]],
+
+          [[479., 433., 359.,  ..., 483., 483., 483.],
+           [429., 401., 357.,  ..., 483., 483., 483.],
+           [347., 349., 351.,  ..., 483., 483., 483.],
+           ...,
+           [479., 467., 445.,  ..., 489., 489., 489.],
+           [485., 481., 473.,  ..., 489., 489., 489.],
+           [489., 489., 489.,  ..., 489., 489., 489.]],
+
+          [[479., 433., 359.,  ..., 483., 483., 483.],
+           [429., 401., 357.,  ..., 483., 483., 483.],
+           [347., 349., 351.,  ..., 483., 483., 483.],
+           ...,
+           [479., 467., 445.,  ..., 489., 489., 489.],
+           [485., 481., 473.,  ..., 489., 489., 489.],
+           [489., 489., 489.,  ..., 489., 489., 489.]]]]])
+[2025-03-08 01:59:06,773] INFO in utils: Model : SwinVoxModel(
+  (encoder): Encoder(
+    (vgg): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): ReLU(inplace=True)
+      (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (9): ReLU(inplace=True)
+      (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (12): ReLU(inplace=True)
+      (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (16): ReLU(inplace=True)
+      (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (19): ReLU(inplace=True)
+      (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (22): ReLU(inplace=True)
+      (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (24): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (26): ReLU(inplace=True)
+    )
+    (layer1): Sequential(
+      (0): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ELU(alpha=1.0)
+    )
+    (layer2): Sequential(
+      (0): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ELU(alpha=1.0)
+      (3): MaxPool2d(kernel_size=3, stride=3, padding=0, dilation=1, ceil_mode=False)
+    )
+    (layer3): Sequential(
+      (0): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ELU(alpha=1.0)
+    )
+  )
+  (decoder): Decoder(
+    (layer1): Sequential(
+      (0): ConvTranspose3d(2048, 512, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (layer2): Sequential(
+      (0): ConvTranspose3d(512, 128, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (layer3): Sequential(
+      (0): ConvTranspose3d(128, 32, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (layer4): Sequential(
+      (0): ConvTranspose3d(32, 8, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (layer5): Sequential(
+      (0): ConvTranspose3d(8, 1, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+      (1): Sigmoid()
+    )
+  )
+  (merger): Merger(
+    (layer1): Sequential(
+      (0): Conv3d(9, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (layer2): Sequential(
+      (0): Conv3d(16, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (1): BatchNorm3d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (layer3): Sequential(
+      (0): Conv3d(8, 4, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (1): BatchNorm3d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (layer4): Sequential(
+      (0): Conv3d(4, 2, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (1): BatchNorm3d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (layer5): Sequential(
+      (0): Conv3d(2, 1, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+      (1): BatchNorm3d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+  )
+  (refiner): Refiner(
+    (layer1): Sequential(
+      (0): Conv3d(1, 32, kernel_size=(4, 4, 4), stride=(1, 1, 1), padding=(2, 2, 2))
+      (1): BatchNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+      (3): MaxPool3d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    )
+    (layer2): Sequential(
+      (0): Conv3d(32, 64, kernel_size=(4, 4, 4), stride=(1, 1, 1), padding=(2, 2, 2))
+      (1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+      (3): MaxPool3d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    )
+    (layer3): Sequential(
+      (0): Conv3d(64, 128, kernel_size=(4, 4, 4), stride=(1, 1, 1), padding=(2, 2, 2))
+      (1): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+      (3): MaxPool3d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    )
+    (layer4): Sequential(
+      (0): Linear(in_features=8192, out_features=2048, bias=True)
+      (1): ReLU()
+    )
+    (layer5): Sequential(
+      (0): Linear(in_features=2048, out_features=8192, bias=True)
+      (1): ReLU()
+    )
+    (layer6): Sequential(
+      (0): ConvTranspose3d(128, 64, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (layer7): Sequential(
+      (0): ConvTranspose3d(64, 32, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (layer8): Sequential(
+      (0): ConvTranspose3d(32, 1, kernel_size=(4, 4, 4), stride=(2, 2, 2), padding=(1, 1, 1), bias=False)
+      (1): Sigmoid()
+    )
+  )
+)
+[2025-03-08 01:59:06,959] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:59:06.959885 Parameters in Encoder: 7772480.
+[2025-03-08 01:59:07,005] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:59:07.005296 Parameters in Decoder: 71583064.
+[2025-03-08 01:59:07,007] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:59:07.007297 Parameters in Merger: 8571.
+[2025-03-08 01:59:07,008] DEBUG in model_architecture: [DEBUG] 2025-03-08 01:59:07.008296 Parameters in Refiner: 34880352.
+[2025-03-08 01:59:08,093] INFO in utils: Binary Voxel Data : tensor([[[[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         ...,
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 0., 1.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]],
+
+         [[0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.],
+          ...,
+          [0., 1., 1.,  ..., 0., 0., 0.],
+          [0., 1., 1.,  ..., 0., 0., 0.],
+          [0., 0., 0.,  ..., 0., 0., 0.]]]])
+[2025-03-08 01:59:25,371] INFO in _internal: 127.0.0.1 - - [08/Mar/2025 01:59:25] "POST /upload HTTP/1.1" 200 -
+[2025-03-08 02:00:08,420] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 02:00:12,095] INFO in _internal:  * Restarting with stat
+[2025-03-08 02:00:22,486] INFO in utils: Loading model...
+[2025-03-08 02:00:23,531] INFO in utils: Loading model...
+[2025-03-08 02:00:27,571] WARNING in _internal:  * Debugger is active!
+[2025-03-08 02:00:27,581] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 02:00:35,929] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 02:00:39,808] INFO in _internal:  * Restarting with stat
+[2025-03-08 02:00:51,582] INFO in utils: Loading model...
+[2025-03-08 02:00:56,625] INFO in utils: Loading model...
+[2025-03-08 02:01:03,589] WARNING in _internal:  * Debugger is active!
+[2025-03-08 02:01:04,106] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 02:01:14,756] INFO in _internal:  * Detected change in 'E:\\FYP_IMPLEMENTATION\\SwinVox_Web_App\\lib\\utils.py', reloading
+[2025-03-08 02:01:16,005] INFO in utils: Loading model...
+[2025-03-08 02:01:16,245] INFO in _internal:  * Restarting with stat
+[2025-03-08 02:01:28,784] INFO in utils: Loading model...
+[2025-03-08 02:01:32,443] WARNING in _internal:  * Debugger is active!
+[2025-03-08 02:01:32,462] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-03-08 02:01:35,430] INFO in utils: Loading model...
+[2025-03-08 02:02:19,372] INFO in utils: Loading model...
+[2025-03-08 02:02:35,781] INFO in utils: Loading model...
+[2025-03-08 02:03:27,523] INFO in utils: Loading model...
+[2025-03-08 02:04:04,989] INFO in utils: Loading model...
+[2025-03-08 02:04:19,898] INFO in utils: Loading model...
+[2025-03-08 02:04:34,489] INFO in utils: Loading model...
+[2025-03-08 02:04:54,372] INFO in utils: Loading model...
+[2025-03-08 02:05:13,671] INFO in utils: Loading model...
