@@ -4,8 +4,15 @@ import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/js
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 import { showNotification } from './utils.js';
 
+let currentScene = null;
+
 export function initThreeJS(modelPath) 
 {
+    // Clean up previous scene
+    if (currentScene) {
+        currentScene.dispose();
+    }
+
     const container = document.getElementById('3d-container');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -132,6 +139,14 @@ export function initThreeJS(modelPath)
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
+
+    currentScene = { scene, camera, renderer, controls };
+    
+    // Add dispose method
+    currentScene.dispose = () => {
+        renderer.dispose();
+        // Clean up other resources
+    };
 
     // Return the camera and controls if needed
     return { camera, controls };

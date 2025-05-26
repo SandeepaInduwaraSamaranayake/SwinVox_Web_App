@@ -2,8 +2,8 @@ import torch
 from PIL import Image
 import numpy as np
 from io import BytesIO
+from lib.helpers import visualize_transformed_image
 from model.model_architecture import SwinVoxModel
-from model.config import cfg
 import logging
 import trimesh
 from lib.data_transforms import Compose, CenterCrop, RandomBackground, Normalize, ToTensor
@@ -16,12 +16,9 @@ def load_model(cfg):
     model = SwinVoxModel(cfg)
 
     try:
-        # Load the checkpoint
+        # Load the checkpoint. If Dataparallel used for training the weight, use helpers.save_checkpoint_for_cpu to save a .pth weight for CPU. 
         checkpoint = torch.load("pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth", map_location=torch.device("cpu"), weights_only = False)
 
-        # The model is trained in a distributed setting using DataParallel, so the model's state dictionary contains
-        # the model components with the "module." prefix. We need to remove this prefix and save weight again to load the model on a CPU.
-        # Use  helpers.save_checkpoint_for_cpu for this.
         # Load state dictionaries for each component
         if "encoder_state_dict" in checkpoint:
             model.encoder.load_state_dict(checkpoint["encoder_state_dict"])
@@ -63,7 +60,7 @@ def process_images(images, cfg):
     IMG_SIZE = cfg.CONST.IMG_H, cfg.CONST.IMG_W
     CROP_SIZE = cfg.CONST.CROP_IMG_H, cfg.CONST.CROP_IMG_W
 
-        # Log configuration values
+    # Log configuration values
     logger.info(f"IMG_SIZE: {IMG_SIZE}")
     logger.info(f"CROP_SIZE: {CROP_SIZE}")
     logger.info(f"RANDOM_BG_COLOR_RANGE: {cfg.TEST.RANDOM_BG_COLOR_RANGE}")
@@ -71,8 +68,8 @@ def process_images(images, cfg):
     logger.info(f"STD: {cfg.DATASET.STD}")
 
     transformation = Compose([
-        CenterCrop(IMG_SIZE, CROP_SIZE),
-        RandomBackground(cfg.TEST.RANDOM_BG_COLOR_RANGE),
+        # CenterCrop(IMG_SIZE, CROP_SIZE),
+        # RandomBackground(cfg.TEST.RANDOM_BG_COLOR_RANGE),
         Normalize(mean=cfg.DATASET.MEAN, std=cfg.DATASET.STD),
         ToTensor(),
     ])
@@ -88,7 +85,17 @@ def process_images(images, cfg):
 
     try:
         transformed_images  = transformation(np_images)  
+
+        logger.info(f"Transformed images shape: {transformed_images.shape}")
+        logger.info(f"Tensor dtype: {transformed_images.dtype}")
+        logger.info(f"Tensor min value: {transformed_images.min().item()}")
+        logger.info(f"Tensor max value: {transformed_images.max().item()}")
         logger.info(f"length: {len(np_images)}")
+
+        # Visualize the first transformed image
+        visualize_transformed_image(transformed_images[0], cfg)
+
+
         return transformed_images.unsqueeze(0)
     except Exception as e:
         raise ValueError(f"Error processing images:{str(e)}")
@@ -115,7 +122,7 @@ def generate_3d_model(images_tensor, model):
     # Apply threshold of 0.5 to get binary values
     binary_voxel_output = (voxel_output > 0.5).float() 
 
-    logger.info(f"Binary Voxel Data : {binary_voxel_output}")
+    #logger.info(f"Binary Voxel Data : {binary_voxel_output}")
 
     # Convert the binary voxel output to a NumPy array
     voxel_array = binary_voxel_output[0].cpu().numpy()  # Get the first voxel output and convert to NumPy

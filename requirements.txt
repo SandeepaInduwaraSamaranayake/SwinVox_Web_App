@@ -11,3 +11,4 @@ torch
 matplotlib
 opencv-python
 trimesh
+flask-sqlalchemy

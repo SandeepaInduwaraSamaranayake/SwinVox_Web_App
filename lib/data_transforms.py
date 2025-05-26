@@ -43,19 +43,27 @@ class ToTensor(object):
         assert (isinstance(rendering_images, np.ndarray))
         array = np.transpose(rendering_images, (0, 3, 1, 2))
         # handle numpy array
-        tensor = torch.from_numpy(array)
-
+        tensor = torch.from_numpy(array).float()
         # put it from HWC to CHW format
-        return tensor.float()
+        return tensor
 
 
 class Normalize(object):
     def __init__(self, mean, std):
-        self.mean = mean
-        self.std = std
+        self.mean = np.array(mean, dtype=np.float32)  # Convert mean to numpy array
+        self.std = np.array(std, dtype=np.float32)    # Convert std to numpy array
 
     def __call__(self, rendering_images):
-        assert (isinstance(rendering_images, np.ndarray))
+        assert isinstance(rendering_images, (np.ndarray, list))
+
+        # Convert list of images to a single numpy array
+        if isinstance(rendering_images, list):
+            rendering_images = np.stack(rendering_images)
+
+        # Scale the image to [0, 1]
+        rendering_images = rendering_images.astype(np.float32) / 255.0
+
+        # Apply normalization: (image - mean) / std
         rendering_images -= self.mean
         rendering_images /= self.std
 
@@ -427,7 +435,7 @@ class RandomBackground(object):
         img_height, img_width, img_channels = rendering_images[0].shape
         # If the image has the alpha channel, add the background
         if not img_channels == 4:
-            return rendering_images
+            return np.stack(rendering_images)
 
         # Generate random background
         r, g, b = np.array([

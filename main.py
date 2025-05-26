@@ -1,8 +1,10 @@
 from io import BytesIO
-from flask import Flask, jsonify, request, render_template, send_file
+from flask import Flask, jsonify, request, render_template, send_file, Response
 from lib.utils import process_images, generate_3d_model, load_model
 from logging.config import dictConfig
 from model.config import cfg
+from lib.models import db, Model3D
+from flask import jsonify, request
 
 # app.logger.debug("A debug message")
 # app.logger.info("An info message")
@@ -39,14 +41,26 @@ dictConfig(
 
 app = Flask(__name__)
 
+# Database configuration
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///models.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
+
 # Load the model once at startup
 model = None
 model = load_model(cfg)
 
 @app.route('/')
 def root():
-    app.logger.debug("-----------------------initializing app----------------------")
-    return render_template("index.html")
+    try:
+        app.logger.debug("-----------------------initializing app----------------------")
+        return render_template("index.html")
+    except Exception as e:
+        app.logger.error("Error in app initialization: %s", str(e))
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/upload', methods=['POST'])
 def upload_images():
@@ -85,5 +99,64 @@ def upload_images():
         app.logger.error("Error in upload_images: %s", str(e))
         return jsonify({"error": str(e)}), 500
 
+# get all models 
+@app.route('/api/models', methods=['GET'])
+def get_models():
+    try:
+        models = Model3D.query.all()
+        return jsonify([{
+            'id': model.id,
+            'filename': model.filename,
+            'created_at': model.created_at.isoformat()
+        } for model in models])
+    except Exception as e:
+        app.logger.error("Error fetching models: %s", str(e))
+        return jsonify({"error": str(e)}), 500
+
+# get a specific model by id
+@app.route('/api/models/<int:model_id>', methods=['DELETE'])
+def delete_model(model_id):
+    try:
+        model = Model3D.query.get_or_404(model_id)
+        db.session.delete(model)
+        db.session.commit()
+        return jsonify({'message': 'Model deleted'})
+    except Exception as e:
+        app.logger.error("Error deleting model: %s", str(e))
+        return jsonify({"error": str(e)}), 500
+
+# Save a model to the database
+@app.route('/save-model', methods=['POST'])
+def save_model():
+    try:
+        file = request.files['model']
+        new_model = Model3D(
+            filename=file.filename,
+            data=file.read()
+        )
+        db.session.add(new_model)
+        db.session.commit()
+        return jsonify({'message': 'Model saved', 'id': new_model.id})
+    except Exception as e:
+        app.logger.error("Error saving models: %s", str(e))
+        return jsonify({"error": str(e)}), 500
+
+# Fetch individual model data.
+@app.route('/api/models/<int:model_id>', methods=['GET'])
+def get_model(model_id):
+    try:
+        model = Model3D.query.get_or_404(model_id)
+        return Response(
+            model.data,
+            mimetype='model/gltf-binary',
+            headers={
+                'Content-Disposition': f'attachment; filename={model.filename}'
+            }
+        )
+    except Exception as e:
+        app.logger.error("Error fetching model: %s", str(e))
+        return jsonify({"error": str(e)}), 500
+
+        
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)

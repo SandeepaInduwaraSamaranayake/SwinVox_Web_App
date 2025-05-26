@@ -46,6 +46,9 @@ def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
 
 
+# The model is trained in a distributed setting using DataParallel, so the model's state dictionary contains
+# the model components with the "module." prefix. We need to remove this prefix and save weight again to load the model on a CPU.
+# Use  helpers.save_checkpoint_for_cpu for this.
 def save_checkpoint_for_cpu(load_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet.pth', save_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth'):
     ckpt = torch.load(load_path, map_location=torch.device("cpu"), weights_only = False)
     new_ckpt = {}
@@ -56,3 +59,14 @@ def save_checkpoint_for_cpu(load_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet.
 
     torch.save(new_ckpt, save_path)
     print('Saved checkpoint for CPU')
+
+
+
+def visualize_transformed_image(tensor, cfg):
+    # Convert tensor to NumPy array
+    image = tensor.squeeze(0).permute(1, 2, 0).numpy()  # Convert to HWC format
+    image = (image * cfg.DATASET.STD) + cfg.DATASET.MEAN  # Reverse normalization
+    image = np.clip(image, 0, 1)  # Clip values to [0, 1] range
+    plt.imshow(image)
+    plt.axis('off')
+    plt.show()

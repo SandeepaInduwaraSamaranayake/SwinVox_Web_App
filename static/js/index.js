@@ -38,6 +38,11 @@ domReady(() => {
     document.body.style.visibility = 'visible';
 });
 
+// Load saved models when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadSavedModels();
+});
+
 // Trigger file input when clicking the "Choose Images" button
 chooseFileBtn.addEventListener('click', () => {
     // No need to open file uploading window since uploadArea
@@ -261,6 +266,16 @@ submitBtn.addEventListener('click', async () => {
                 panBtn.classList.remove('active'); 
             }
         });
+
+        // Save to database
+        const formData = new FormData();
+        formData.append('model', blob, 'model.glb');
+        await fetch('/save-model', {
+            method: 'POST',
+            body: formData
+        });
+        
+        loadSavedModels();
     } 
     else 
     {
@@ -310,3 +325,47 @@ fullscreenBtn.addEventListener('click', () => {
 document.addEventListener('fullscreenchange', () => {
     fullscreenBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
 });
+
+// function to load saved models from the database and display them
+async function loadSavedModels() 
+{
+    const response = await fetch('/api/models');
+    const models = await response.json();
+    const modelList = document.getElementById('model-list');
+    
+    modelList.innerHTML = models.map(model => `
+        <div class="model-card" data-model-id="${model.id}">
+            <div class="model-actions">
+                <button class="delete-model" onclick="deleteModel(${model.id})">×</button>
+            </div>
+            <div class="model-thumbnail"></div>
+            <h3>${model.filename}</h3>
+            <small>${new Date(model.created_at).toLocaleDateString()}</small>
+        </div>
+    `).join('');
+}
+
+// function to delete a model
+async function deleteModel(modelId) {
+    if (confirm('Are you sure you want to delete this model?')) {
+        await fetch(`/api/models/${modelId}`, { method: 'DELETE' });
+        loadSavedModels();
+    }
+}
+
+// Add event listener for model cards
+document.getElementById('model-list').addEventListener('click', async (e) => {
+    const modelCard = e.target.closest('.model-card');
+    if (modelCard) 
+    {
+        const modelId = modelCard.dataset.modelId;
+        const response = await fetch(`/api/models/${modelId}`);
+        const modelData = await response.blob();
+        console.log("modelData :" + modelData);
+        const modelUrl = URL.createObjectURL(modelData);
+        modal.style.display = 'block';
+        initThreeJS(modelUrl);
+        
+    }
+});
+

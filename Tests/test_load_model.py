@@ -46,7 +46,7 @@ class TestLoadModel(unittest.TestCase):
     @patch('torch.load')
     def test_load_model_success(self, mock_load):
         # Use the create_mock_checkpoint function to generate a mock checkpoint
-        original_checkpoint_path = "model/Pix2Vox-F-ShapeNet.pth"
+        original_checkpoint_path = "pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth"
 
         mock_checkpoint = create_mock_checkpoint(original_checkpoint_path)
         mock_load.return_value = mock_checkpoint
@@ -69,7 +69,7 @@ class TestLoadModel(unittest.TestCase):
     def test_load_model_missing_encoder(self, mock_load):
         # Mock the checkpoint to simulate a missing encoder state dict
         # Use the create_mock_checkpoint function to generate a mock checkpoint
-        original_checkpoint_path = "model/Pix2Vox-F-ShapeNet.pth"
+        original_checkpoint_path = "pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth"
 
         mock_checkpoint = create_mock_checkpoint(original_checkpoint_path)
 
