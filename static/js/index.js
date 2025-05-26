@@ -11,6 +11,7 @@ const submitBtn = document.getElementById('submitBtn');
 const uploadedFilesArea = document.getElementById('uploaded-files-area');
 const modal = document.getElementById('modelModal');
 const modelPreviewbackBtn = document.getElementById('backButton');
+
 const zoomInBtn = document.getElementById('zoomInButton');
 const zoomOutBtn = document.getElementById('zoomOutButton');
 const panBtn = document.getElementById('panButton');
@@ -26,8 +27,8 @@ let uploadedFiles = [];
  * So we simply change the visibility property of my <body> tag to visible.
  * */
 
-// Helper function
-let domReady = (cb) => {
+// Helper function for DOM ready state
+const domReady = (cb) => {
     document.readyState === 'interactive' || document.readyState === 'complete'
     ? cb()
     : document.addEventListener('DOMContentLoaded', cb);
@@ -38,7 +39,18 @@ domReady(() => {
     document.body.style.visibility = 'visible';
 });
 
-// Load saved models when page loads
+const cleanupPreviousScene = () => {
+    if (currentScene) {
+        currentScene.dispose();
+        currentScene = null;
+    }
+    if (currentModelUrl) {
+        URL.revokeObjectURL(currentModelUrl);
+        currentModelUrl = null;
+    }
+};
+
+// Load saved models initially
 document.addEventListener('DOMContentLoaded', () => {
     loadSavedModels();
 });
@@ -96,6 +108,7 @@ function handleFiles(files)
         // Add file name to the array
         uploadedFiles.push(files[i].name); 
     }
+
     // Update the display
     updateUploadedFilesDisplay(); 
     //console.log(uploadedFiles.toString() + " -> no of files :" + uploadedFiles.length);
@@ -173,22 +186,16 @@ function updateUploadedFilesDisplay()
     // Append the container to the uploaded files div
     uploadedFilesDiv.appendChild(fileContainer); 
     // Show or hide the uploaded files area based on images uploaded or not
-    if (uploadedFiles.length > 0) {
-        uploadedFilesArea.style.display = 'block'; 
-    }
-    else{
-        uploadedFilesArea.style.display = 'none'; 
-    }
+    uploadedFilesArea.style.display = uploadedFiles.length ? 'block' : 'none';
 }
 
 submitBtn.addEventListener('click', async () => {
-    const formData = new FormData(document.getElementById('upload-form'));
     // Show overlay after submitting
     overlay.style.display = 'flex';
 
     const response = await fetch('/upload', {
         method: 'POST',
-        body: formData
+        body: new FormData(document.getElementById('upload-form'))
     });
 
     // Remove overlay after responce is received
@@ -200,27 +207,13 @@ submitBtn.addEventListener('click', async () => {
         // Show the modal immediately
         modal.style.display = 'block';
 
-        // const result = await response.json();
-        // // Get the Base64-encoded model
-        // const base64Model = result.model_path; 
-        // console.log('base64 data :' + base64Model);
-
-        // // Create a Blob from the Base64 string
-        // const byteCharacters = atob(base64Model);
-        // const byteNumbers = new Uint8Array(byteCharacters.length);
-        // for (let i = 0; i < byteCharacters.length; i++) {
-        //     byteNumbers[i] = byteCharacters.charCodeAt(i);
-        // }
-        // const blob = new Blob([byteNumbers], { type: 'model/gltf-binary' });
-        // const modelUrl = URL.createObjectURL(blob);
-
-        // console.log('model url :' + modelUrl);
-
         // Read the response as an ArrayBuffer
         const arrayBuffer = await response.arrayBuffer();
 
         // Create a Blob from the ArrayBuffer
         const blob = new Blob([arrayBuffer], { type: 'model/gltf+json' });
+        console.log("in submit btn ------------------->")
+        cleanupPreviousScene();
         const modelUrl = URL.createObjectURL(blob);
 
         console.log('model url :' + modelUrl);
@@ -288,6 +281,8 @@ submitBtn.addEventListener('click', async () => {
 document.getElementById('closeModal').addEventListener('click', () => {
     // Hide the modal
     modal.style.display = 'none'; 
+    console.log("in close model btn ------------------->")
+    cleanupPreviousScene();
 });
 
 // Close the modal when clicking outside the modal
@@ -296,6 +291,8 @@ window.onclick = function(event)
     if (event.target === modal) 
     {
         modal.style.display = 'none';
+        console.log("in window onclick ------------------->")
+        cleanupPreviousScene();
     }
 };
 
@@ -305,6 +302,8 @@ modelPreviewbackBtn.addEventListener('click', () => {
     modal.style.display = 'none'; 
     // Show the upload area
     uploadedFilesArea.style.display = 'block'; 
+    console.log("in back btn ------------------->")
+    cleanupPreviousScene();
 });
 
 // Fullscreen button functionality
@@ -356,16 +355,17 @@ async function deleteModel(modelId) {
 // Add event listener for model cards
 document.getElementById('model-list').addEventListener('click', async (e) => {
     const modelCard = e.target.closest('.model-card');
-    if (modelCard) 
+    if (!modelCard) return;
+    try
     {
-        const modelId = modelCard.dataset.modelId;
-        const response = await fetch(`/api/models/${modelId}`);
+        const response = await fetch(`/api/models/${modelCard.dataset.modelId}`);
         const modelData = await response.blob();
-        console.log("modelData :" + modelData);
         const modelUrl = URL.createObjectURL(modelData);
         modal.style.display = 'block';
         initThreeJS(modelUrl);
-        
+    }
+    catch(error)
+    {
+        showNotification(`Error loading model: ${error.message}`, 'error');
     }
 });
-

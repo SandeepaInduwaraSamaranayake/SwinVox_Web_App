@@ -4,19 +4,93 @@ import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/js
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 import { showNotification } from './utils.js';
 
+let renderer;
 let currentScene = null;
+
+const createRenderer = () => {
+    if (!renderer) {
+        renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            //powerPreference: "high-performance",
+            //logarithmicDepthBuffer: true,
+            alpha: true
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+    }
+    return renderer;
+};
+
+const disposeScene = () => {
+    if (!currentScene) return;
+
+    // Dispose all 3D objects
+    currentScene.scene.traverse(object => {
+        if (!object.isMesh) return;
+
+        // Dispose geometry
+        if (object.geometry) {
+            object.geometry.dispose();
+        }
+
+        // Dispose materials and textures
+        const cleanMaterial = (material) => {
+            material.dispose();
+            // Dispose textures
+            for (const key of Object.keys(material)) {
+                const value = material[key];
+                if (value && typeof value === 'object' && 'isTexture' in value) {
+                    value.dispose();
+                }
+            }
+        };
+
+        if (object.material.isMaterial) {
+            cleanMaterial(object.material);
+        } else {
+            // Array of materials
+            for (const material of object.material) {
+                cleanMaterial(material);
+            }
+        }
+    });
+
+    // Dispose renderer
+    currentScene.renderer.dispose();
+    //currentScene.renderer.forceContextLoss();
+    
+    // Remove DOM element
+    const container = document.getElementById('3d-container');
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    // Dispose controls
+    currentScene.controls.dispose();
+    
+    // Clear scene
+    currentScene.scene.clear();
+    
+    // Remove resize listener
+    window.removeEventListener('resize', currentScene.resizeHandler);
+    
+    currentScene = null;
+};
+
 
 export function initThreeJS(modelPath) 
 {
     // Clean up previous scene
-    if (currentScene) {
-        currentScene.dispose();
+    if (currentScene) 
+    {
+        disposeScene(currentScene);
+        currentScene = null;
     }
 
     const container = document.getElementById('3d-container');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = createRenderer();
     //console.log("client width" + container.clientWidth + "client height" + container.clientHeight);
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.innerHTML = '';
@@ -59,11 +133,11 @@ export function initThreeJS(modelPath)
         scene.add(loadedModel);
 
         // Adjust camera position based on the model's bounding box
-        const box = new THREE.Box3().setFromObject(gltf.scene);
+        const box = new THREE.Box3().setFromObject(loadedModel);
         const center = new THREE.Vector3();
         box.getCenter(center);
-        const size = new THREE.Vector3();
-        box.getSize(size);
+        const size = box.getSize(new THREE.Vector3());
+        //box.getSize(size);
 
         const maxDim = Math.max(size.x, size.y, size.z);
         const fov = camera.fov * (Math.PI / 180); // Convert fov to radians
@@ -78,9 +152,9 @@ export function initThreeJS(modelPath)
         controls.update();
 
         animate();
-    }, undefined, function(error) {
+    }, undefined, (error) => {
         console.error('An error occurred while loading the model : ', error);
-        showNotification('Error : ' + error , 'error');
+        showNotification('Error loading model: ' + error , 'error');
     });
 
     // Material change functionality
@@ -126,30 +200,33 @@ export function initThreeJS(modelPath)
     });
 
     // Animation loop
-    function animate() {
+    const animate =() => {
         requestAnimationFrame(animate);
         controls.update(); // Required for damping
         renderer.render(scene, camera);
-    }
+    };
 
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        // Update camera aspect ratio and renderer size
+    // Resize handler
+    const handleResize = () => {
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
-    });
+    };
 
-    currentScene = { scene, camera, renderer, controls };
+    window.addEventListener('resize', handleResize);
+
+    currentScene = { 
+        scene, 
+        camera, 
+        renderer, 
+        controls
+    };
     
     // Add dispose method
     currentScene.dispose = () => {
         renderer.dispose();
-        // Clean up other resources
+        scene.dispose();
+        camera.dispose();
+        controls.dispose();
     };
-
-    // Return the camera and controls if needed
-    return { camera, controls };
 }
-
-
