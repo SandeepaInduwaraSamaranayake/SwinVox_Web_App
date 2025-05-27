@@ -1,3 +1,4 @@
+import base64
 from io import BytesIO
 from flask import Flask, jsonify, request, render_template, send_file, Response
 from lib.utils import process_images, generate_3d_model, load_model
@@ -130,9 +131,10 @@ def delete_model(model_id):
 def save_model():
     try:
         file = request.files['model']
+
         new_model = Model3D(
             filename=file.filename,
-            data=file.read()
+            data=file.read(),
         )
         db.session.add(new_model)
         db.session.commit()

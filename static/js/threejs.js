@@ -15,8 +15,8 @@ const createRenderer = () => {
             //logarithmicDepthBuffer: true,
             alpha: true
         });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        //renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        //renderer.outputColorSpace = THREE.SRGBColorSpace;
     }
     return renderer;
 };
@@ -61,7 +61,8 @@ const disposeScene = () => {
     
     // Remove DOM element
     const container = document.getElementById('3d-container');
-    while (container.firstChild) {
+    while (container.firstChild) 
+    {
         container.removeChild(container.firstChild);
     }
 
@@ -222,11 +223,14 @@ export function initThreeJS(modelPath)
         controls
     };
     
-    // Add dispose method
+    //Add dispose method
     currentScene.dispose = () => {
         renderer.dispose();
         scene.dispose();
         camera.dispose();
         controls.dispose();
     };
+
+    // Return the camera and controls if needed
+    return { camera, controls };
 }

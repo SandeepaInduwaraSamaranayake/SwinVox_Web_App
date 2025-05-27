@@ -1,4 +1,4 @@
-import { initThreeJS } from './threejs.js';
+import { initThreeJS} from './threejs.js';
 import { showNotification } from './utils.js';
 
 // Select elements
@@ -19,6 +19,8 @@ const fullscreenBtn = document.getElementById('fullscreenButton');
 
 // Array to keep track of uploaded files
 let uploadedFiles = [];
+let currentScene = null;
+let currentModelUrl = null;
 
 /** 
  * We then need to revert that visibility CSS property once the DOM has been loaded and is ready. 
@@ -40,11 +42,13 @@ domReady(() => {
 });
 
 const cleanupPreviousScene = () => {
-    if (currentScene) {
+    if (currentScene) 
+    {
         currentScene.dispose();
         currentScene = null;
     }
-    if (currentModelUrl) {
+    if (currentModelUrl) 
+    {
         URL.revokeObjectURL(currentModelUrl);
         currentModelUrl = null;
     }
@@ -189,91 +193,93 @@ function updateUploadedFilesDisplay()
     uploadedFilesArea.style.display = uploadedFiles.length ? 'block' : 'none';
 }
 
+
+// Control management
+const setupControls = (camera, controls) => {
+    // Zoom functionality
+    zoomInBtn.addEventListener('click', () => {
+        // Increase zoom
+        camera.zoom += 0.1;
+        // Update camera projection
+        camera.updateProjectionMatrix();
+    });
+
+    zoomOutBtn.addEventListener('click', () => {
+        // Decrease zoom
+        camera.zoom -= 0.1;
+        // Update camera projection
+        camera.updateProjectionMatrix();
+    });
+
+    // Pan functionality (toggle)
+    // Disable panning by default
+    controls.enablePan = false;
+    panBtn.addEventListener('click', () => {
+        // Enable or disable panning
+        controls.enablePan = !controls.enablePan;
+        // Change the icon based on the panning state
+        panBtn.innerHTML = controls.enablePan 
+            ? '<i class="fas fa-arrows-alt"></i>' 
+            : '<i class="fas fa-ban"></i>';
+        panBtn.classList.toggle('active', controls.enablePan);
+    });
+};
+
+// Model loading handler
+const loadModel = async (modelSource) => {
+    if (currentScene) 
+    {
+        currentScene.dispose();
+        currentScene = null;
+    }
+
+    // Show the modal immediately
+    modal.style.display = 'block';
+    // Initialize Three.js scene and get camera
+    const { camera, controls } = initThreeJS(modelSource);
+    // Set up controls for the camera
+    setupControls(camera, controls);
+};
+
 submitBtn.addEventListener('click', async () => {
     // Show overlay after submitting
     overlay.style.display = 'flex';
-
-    const response = await fetch('/upload', {
-        method: 'POST',
-        body: new FormData(document.getElementById('upload-form'))
-    });
-
-    // Remove overlay after responce is received
-    overlay.style.display = 'none';
-
-    // console.log("response :" + response.json());
-    if (response.ok) 
+    try 
     {
-        // Show the modal immediately
-        modal.style.display = 'block';
-
+        const response = await fetch('/upload', {
+            method: 'POST',
+            body: new FormData(document.getElementById('upload-form'))
+        });
+        
+        if (!response.ok) throw new Error(await response.text());
+        
         // Read the response as an ArrayBuffer
         const arrayBuffer = await response.arrayBuffer();
-
         // Create a Blob from the ArrayBuffer
         const blob = new Blob([arrayBuffer], { type: 'model/gltf+json' });
-        console.log("in submit btn ------------------->")
-        cleanupPreviousScene();
-        const modelUrl = URL.createObjectURL(blob);
-
-        console.log('model url :' + modelUrl);
-
-        // Initialize Three.js scene and get camera
-        const {camera, controls}  = initThreeJS(modelUrl);
-
-        // Zoom In functionality
-        zoomInBtn.addEventListener('click', () => {
-            // Increase zoom
-            camera.zoom += 0.1; 
-            // Update camera projection
-            camera.updateProjectionMatrix(); 
-        });
         
-        // Zoom Out functionality
-        zoomOutBtn.addEventListener('click', () => {
-            // Decrease zoom
-            camera.zoom -= 0.1; 
-            // Update camera projection
-            camera.updateProjectionMatrix(); 
-        });
-
-        // Pan functionality (toggle)
-        // Disable panning by default
-        controls.enablePan = false; 
-        panBtn.addEventListener('click', () => {
-            // Enable or disable panning
-            controls.enablePan = !controls.enablePan; 
-            // Change the icon based on the panning state
-            if (controls.enablePan) 
-            {
-                // Icon for enabled panning
-                panBtn.innerHTML = '<i class="fas fa-arrows-alt"></i>'; 
-                // Optional: Add a class for styling
-                panBtn.classList.add('active'); 
-            } 
-            else 
-            {
-                // Icon for disabled panning
-                panBtn.innerHTML = '<i class="fas fa-ban"></i>'; 
-                // Optional: Remove the active class
-                panBtn.classList.remove('active'); 
-            }
-        });
-
-        // Save to database
-        const formData = new FormData();
-        formData.append('model', blob, 'model.glb');
+        // Save and load model
         await fetch('/save-model', {
             method: 'POST',
-            body: formData
+            body: (() => {
+                const fd = new FormData();
+                fd.append('model', blob, 'model.glb');
+                return fd;
+            })()
         });
-        
+        currentModelUrl = URL.createObjectURL(blob)
+        loadModel(currentModelUrl);
         loadSavedModels();
     } 
-    else 
+    catch (error) 
     {
-        const error = await response.json();
-        showNotification('Error : ' + error.error , 'error');
+        console.error('Error uploading model:', error);
+        showNotification(`Error: ${error.message}`, 'error');
+    } 
+    finally 
+    {
+        // Remove overlay after response is displayed.
+        overlay.style.display = 'none';
     }
 });
 
@@ -281,7 +287,6 @@ submitBtn.addEventListener('click', async () => {
 document.getElementById('closeModal').addEventListener('click', () => {
     // Hide the modal
     modal.style.display = 'none'; 
-    console.log("in close model btn ------------------->")
     cleanupPreviousScene();
 });
 
@@ -291,7 +296,6 @@ window.onclick = function(event)
     if (event.target === modal) 
     {
         modal.style.display = 'none';
-        console.log("in window onclick ------------------->")
         cleanupPreviousScene();
     }
 };
@@ -302,7 +306,6 @@ modelPreviewbackBtn.addEventListener('click', () => {
     modal.style.display = 'none'; 
     // Show the upload area
     uploadedFilesArea.style.display = 'block'; 
-    console.log("in back btn ------------------->")
     cleanupPreviousScene();
 });
 
@@ -310,12 +313,15 @@ modelPreviewbackBtn.addEventListener('click', () => {
 fullscreenBtn.addEventListener('click', () => {
     const modalContent = document.querySelector('.modal-content');
 
-    if (!document.fullscreenElement) {
+    if (!document.fullscreenElement) 
+    {
         modalContent.requestFullscreen().catch(err => {
             showNotification(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`, 'error');
             console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
-    } else {
+    } 
+    else 
+    {
         document.exitFullscreen();
     }
 });
@@ -326,22 +332,29 @@ document.addEventListener('fullscreenchange', () => {
 });
 
 // function to load saved models from the database and display them
-async function loadSavedModels() 
-{
-    const response = await fetch('/api/models');
-    const models = await response.json();
-    const modelList = document.getElementById('model-list');
-    
-    modelList.innerHTML = models.map(model => `
-        <div class="model-card" data-model-id="${model.id}">
-            <div class="model-actions">
-                <button class="delete-model" onclick="deleteModel(${model.id})">×</button>
+const loadSavedModels = async () => {
+    try
+    {
+        const response = await fetch('/api/models');
+        const models = await response.json();
+        const modelList = document.getElementById('model-list');
+        
+        modelList.innerHTML = models.map(model => `
+            <div class="model-card" data-model-id="${model.id}">
+                <div class="model-actions">
+                    <button class="delete-model" onclick="deleteModel(${model.id})">×</button>
+                </div>
+                <div class="model-thumbnail"></div>
+                <h3>${model.filename}</h3>
+                <small>${new Date(model.created_at).toLocaleDateString()}</small>
             </div>
-            <div class="model-thumbnail"></div>
-            <h3>${model.filename}</h3>
-            <small>${new Date(model.created_at).toLocaleDateString()}</small>
-        </div>
-    `).join('');
+        `).join('');
+    }
+    catch (error) 
+    {
+        console.error('Error loading models:', error);
+        showNotification(`Error loading models: ${error.message}` , 'error');
+    }
 }
 
 // function to delete a model
@@ -360,12 +373,12 @@ document.getElementById('model-list').addEventListener('click', async (e) => {
     {
         const response = await fetch(`/api/models/${modelCard.dataset.modelId}`);
         const modelData = await response.blob();
-        const modelUrl = URL.createObjectURL(modelData);
-        modal.style.display = 'block';
-        initThreeJS(modelUrl);
+        const currentModelUrl = URL.createObjectURL(modelData);
+        loadModel(currentModelUrl);
     }
     catch(error)
     {
+        console.error('Error loading model:', error);
         showNotification(`Error loading model: ${error.message}`, 'error');
     }
 });
