@@ -160,27 +160,32 @@ export function initThreeJS(modelPath)
         loadedModel = gltf.scene;
         scene.add(loadedModel);
 
-        // Adjust camera position based on the model's bounding box
+        // Create a bounding box that contains the entire loaded model
         const box = new THREE.Box3().setFromObject(loadedModel);
+        // Create vectors to store the center point and size of the bounding box
         const center = new THREE.Vector3();
+        const size = new THREE.Vector3();
+        // Calculate the geometric center of the model
         box.getCenter(center);
-        const size = box.getSize(new THREE.Vector3());
+        // Calculate the dimensions (width, height, depth) of the model
+        box.getSize(size);
 
+        // Find the largest dimension of the model (width, height, or depth)
         const maxDim = Math.max(size.x, size.y, size.z);
-        const fov = camera.fov * (Math.PI / 180); // Convert fov to radians
+        // Convert camera's vertical field of view from degrees to radians
+        const fov = camera.fov * (Math.PI / 180);
+        // Calculate the optimal camera distance to fit the model in view
+        const distance = maxDim / (2 * Math.tan(fov / 2)) * 1.75; // 1.5x padding
 
-        // Improved camera distance calculation with padding
-        const aspect = container.clientWidth / container.clientHeight;
-        const fovFactor = Math.tan(fov / 2);
-        const distanceFactor = 0.75; // Add 50% padding
-        const cameraZ = Math.max(
-            maxDim / (2 * fovFactor), 
-            maxDim * aspect / (2 * fovFactor)
-        ) * distanceFactor;
-
-        // Adjust camera position
+        // Position the camera at the model's center point
         camera.position.copy(center);
-        camera.position.z += cameraZ;
+        camera.position.z += distance;
+        camera.lookAt(center);
+
+        // Dynamically adjust near/far clipping planes based on model size
+        camera.near = distance / 100;
+        camera.far = distance * 100;
+        camera.updateProjectionMatrix();
 
         // Set controls target to the center of the model
         controls.target.copy(center);
