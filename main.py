@@ -100,7 +100,23 @@ def upload_images():
         app.logger.error("Error in upload_images: %s", str(e))
         return jsonify({"error": str(e)}), 500
 
-# get all models 
+# # get all models 
+# @app.route('/api/models', methods=['GET'])
+# def get_models():
+#     try:
+#         models = Model3D.query.all()
+#         return jsonify([{
+#             'id': model.id,
+#             'filename': model.filename,
+#             'created_at': model.created_at.isoformat()
+#         } for model in models])
+#     except Exception as e:
+#         app.logger.error("Error fetching models: %s", str(e))
+#         return jsonify({"error": str(e)}), 500
+
+
+
+
 @app.route('/api/models', methods=['GET'])
 def get_models():
     try:
@@ -108,11 +124,16 @@ def get_models():
         return jsonify([{
             'id': model.id,
             'filename': model.filename,
+            'thumbnail': base64.b64encode(model.thumbnail).decode('utf-8') if model.thumbnail else None,
             'created_at': model.created_at.isoformat()
         } for model in models])
     except Exception as e:
         app.logger.error("Error fetching models: %s", str(e))
         return jsonify({"error": str(e)}), 500
+
+
+
+
 
 # get a specific model by id
 @app.route('/api/models/<int:model_id>', methods=['DELETE'])
@@ -127,21 +148,43 @@ def delete_model(model_id):
         return jsonify({"error": str(e)}), 500
 
 # Save a model to the database
+# @app.route('/save-model', methods=['POST'])
+# def save_model():
+#     try:
+#         file = request.files['model']
+
+#         new_model = Model3D(
+#             filename=file.filename,
+#             data=file.read(),
+#         )
+#         db.session.add(new_model)
+#         db.session.commit()
+#         return jsonify({'message': 'Model saved', 'id': new_model.id})
+#     except Exception as e:
+#         app.logger.error("Error saving models: %s", str(e))
+#         return jsonify({"error": str(e)}), 500
+
+
+
 @app.route('/save-model', methods=['POST'])
 def save_model():
     try:
         file = request.files['model']
+        thumbnail = request.files['thumbnail']
 
         new_model = Model3D(
             filename=file.filename,
             data=file.read(),
+            thumbnail=thumbnail.read() if thumbnail else None
         )
-        db.session.add(new_model)
+        db.session.add(new_model);
         db.session.commit()
         return jsonify({'message': 'Model saved', 'id': new_model.id})
     except Exception as e:
-        app.logger.error("Error saving models: %s", str(e))
+        app.logger.error("Error saving model: %s", str(e))
         return jsonify({"error": str(e)}), 500
+
+
 
 # Fetch individual model data.
 @app.route('/api/models/<int:model_id>', methods=['GET'])

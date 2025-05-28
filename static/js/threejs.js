@@ -21,15 +21,16 @@ const createRenderer = () => {
     return renderer;
 };
 
-const disposeScene = () => {
-    if (!currentScene) return;
-
+// Create a reusable disposal function
+function disposeSceneResources(scene, renderer = null) 
+{
     // Dispose all 3D objects
-    currentScene.scene.traverse(object => {
+    scene.traverse(object => {
         if (!object.isMesh) return;
 
         // Dispose geometry
-        if (object.geometry) {
+        if (object.geometry) 
+        {
             object.geometry.dispose();
         }
 
@@ -37,27 +38,50 @@ const disposeScene = () => {
         const cleanMaterial = (material) => {
             material.dispose();
             // Dispose textures
-            for (const key of Object.keys(material)) {
+            for (const key of Object.keys(material)) 
+            {
                 const value = material[key];
-                if (value && typeof value === 'object' && 'isTexture' in value) {
+                if (value && typeof value === 'object' && 'isTexture' in value)
+                {
                     value.dispose();
                 }
             }
         };
 
-        if (object.material.isMaterial) {
+        // Dispose material
+        if (object.material.isMaterial)
+        {
             cleanMaterial(object.material);
-        } else {
+        } 
+        else 
+        {
             // Array of materials
-            for (const material of object.material) {
+            for (const material of object.material) 
+            {
                 cleanMaterial(material);
             }
         }
     });
 
-    // Dispose renderer
-    currentScene.renderer.dispose();
-    //currentScene.renderer.forceContextLoss();
+    // Dispose renderer if provided
+    if (renderer) 
+    {
+        renderer.dispose();
+        //renderer.forceContextLoss();
+    }
+
+    // Clear the scene
+    if(scene)
+    {
+        scene.clear();
+    }
+}
+
+// Update existing disposeScene to use the shared function
+const disposeScene = () => {
+    if (!currentScene) return;
+
+    disposeSceneResources(currentScene.scene, currentScene.renderer);
     
     // Remove DOM element
     const container = document.getElementById('3d-container');
@@ -67,17 +91,19 @@ const disposeScene = () => {
     }
 
     // Dispose controls
-    currentScene.controls.dispose();
-    
-    // Clear scene
-    currentScene.scene.clear();
+    if (currentScene.controls) 
+    {
+        currentScene.controls.dispose();
+    }
     
     // Remove resize listener
-    window.removeEventListener('resize', currentScene.resizeHandler);
+    if (currentScene.resizeHandler) 
+    {
+        window.removeEventListener('resize', currentScene.resizeHandler);
+    }
     
     currentScene = null;
 };
-
 
 export function initThreeJS(modelPath) 
 {
@@ -128,7 +154,8 @@ export function initThreeJS(modelPath)
     const loader = new GLTFLoader();
     let loadedModel;
 
-    loader.load(modelPath, function(gltf) {
+    loader.load(modelPath, function(gltf) 
+    {
         console.log('Model loaded successfully:', gltf);
         loadedModel = gltf.scene;
         scene.add(loadedModel);
@@ -138,11 +165,18 @@ export function initThreeJS(modelPath)
         const center = new THREE.Vector3();
         box.getCenter(center);
         const size = box.getSize(new THREE.Vector3());
-        //box.getSize(size);
 
         const maxDim = Math.max(size.x, size.y, size.z);
         const fov = camera.fov * (Math.PI / 180); // Convert fov to radians
-        let cameraZ = Math.abs((maxDim / 2) / Math.tan(fov / 2));
+
+        // Improved camera distance calculation with padding
+        const aspect = container.clientWidth / container.clientHeight;
+        const fovFactor = Math.tan(fov / 2);
+        const distanceFactor = 0.75; // Add 50% padding
+        const cameraZ = Math.max(
+            maxDim / (2 * fovFactor), 
+            maxDim * aspect / (2 * fovFactor)
+        ) * distanceFactor;
 
         // Adjust camera position
         camera.position.copy(center);
@@ -162,7 +196,8 @@ export function initThreeJS(modelPath)
     const materialSelect = document.getElementById('materialSelect');
     materialSelect.addEventListener('change', (event) => {
         const selectedMaterial = event.target.value;
-        if (loadedModel) {
+        if (loadedModel) 
+        {
             loadedModel.traverse((child) => {
                 if (child.isMesh)
                 {
@@ -216,7 +251,7 @@ export function initThreeJS(modelPath)
 
     window.addEventListener('resize', handleResize);
 
-    currentScene = { 
+    currentScene = {
         scene, 
         camera, 
         renderer, 
@@ -233,4 +268,69 @@ export function initThreeJS(modelPath)
 
     // Return the camera and controls if needed
     return { camera, controls };
+}
+
+// Function to generate a thumbnail from a 3D model
+export async function generateThumbnail(modelUrl)
+{
+    return new Promise((resolve, reject) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 400;
+        canvas.height = 300;
+        
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: true,
+            alpha: true,
+            preserveDrawingBuffer: true // Required for toDataURL
+        });
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 0.1, 1000);
+
+        // Setup lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 5, 5).normalize();
+        scene.add(directionalLight);
+
+        const loader = new GLTFLoader();
+        loader.load(modelUrl, (gltf) => {
+            const model = gltf.scene;
+            scene.add(model);
+
+            // Center and scale model
+            const box = new THREE.Box3().setFromObject(model);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const fit = 5; // Fit to 5 units
+            const scale = fit / maxDim;
+
+            model.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
+            model.scale.set(scale, scale, scale);
+
+            // Position camera
+            camera.position.set(0, 0, fit * 2);
+            camera.lookAt(0, 0, 0);
+
+            // Set background
+            renderer.setClearColor(0xFFFFFF, 1); // 0x353535
+            renderer.render(scene, camera);
+
+            // Convert to data URL
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+
+            resolve(dataUrl);
+
+            // Cleanup using shared function
+            disposeSceneResources(scene, renderer);
+        }, undefined, (error) => {
+            // Cleanup on error
+            disposeSceneResources(scene, renderer);
+            reject(error);
+        });
+    });
 }

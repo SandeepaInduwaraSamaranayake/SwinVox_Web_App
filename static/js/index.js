@@ -1,4 +1,4 @@
-import { initThreeJS} from './threejs.js';
+import { initThreeJS, generateThumbnail } from './threejs.js';
 import { showNotification } from './utils.js';
 
 // Select elements
@@ -21,6 +21,8 @@ const fullscreenBtn = document.getElementById('fullscreenButton');
 let uploadedFiles = [];
 let currentScene = null;
 let currentModelUrl = null;
+let thumbnailDataUrl = null;
+
 
 /** 
  * We then need to revert that visibility CSS property once the DOM has been loaded and is ready. 
@@ -35,6 +37,18 @@ const domReady = (cb) => {
     ? cb()
     : document.addEventListener('DOMContentLoaded', cb);
 };
+
+// helper function to convert Data URL to Blob
+function dataURLtoBlob(dataUrl) 
+{
+    const arr = dataUrl.split(',');
+    const mime = arr[0].match(/:(.*?);/)[1];
+    const bstr = atob(arr[1]);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+    while (n--) u8arr[n] = bstr.charCodeAt(n);
+    return new Blob([u8arr], { type: mime });
+}
 
 domReady(() => {
     // Display body when DOM is loaded
@@ -51,6 +65,12 @@ const cleanupPreviousScene = () => {
     {
         URL.revokeObjectURL(currentModelUrl);
         currentModelUrl = null;
+    }
+
+    if (thumbnailDataUrl) 
+    {
+        URL.revokeObjectURL(thumbnailDataUrl);
+        thumbnailDataUrl = null;
     }
 };
 
@@ -258,23 +278,34 @@ submitBtn.addEventListener('click', async () => {
         // Create a Blob from the ArrayBuffer
         const blob = new Blob([arrayBuffer], { type: 'model/gltf+json' });
         
+        currentModelUrl = URL.createObjectURL(blob)
+        
+        // Generate thumbnail
+        thumbnailDataUrl = await generateThumbnail(currentModelUrl);
+        // Convert Data URL to Blob
+        const thumbnailBlob = dataURLtoBlob(thumbnailDataUrl);
+
         // Save and load model
         await fetch('/save-model', {
             method: 'POST',
             body: (() => {
                 const fd = new FormData();
                 fd.append('model', blob, 'model.glb');
+                fd.append('thumbnail', thumbnailBlob, 'thumbnail.jpg');
                 return fd;
             })()
         });
-        currentModelUrl = URL.createObjectURL(blob)
+
         loadModel(currentModelUrl);
         loadSavedModels();
     } 
-    catch (error) 
+    catch (error)
     {
         console.error('Error uploading model:', error);
         showNotification(`Error: ${error.message}`, 'error');
+        // Clean up URL if error occurs
+        if (currentModelUrl) URL.revokeObjectURL(currentModelUrl);
+        currentModelUrl = null;
     } 
     finally 
     {
@@ -339,12 +370,17 @@ const loadSavedModels = async () => {
         const models = await response.json();
         const modelList = document.getElementById('model-list');
         
+
         modelList.innerHTML = models.map(model => `
             <div class="model-card" data-model-id="${model.id}">
                 <div class="model-actions">
                     <button class="delete-model" onclick="deleteModel(${model.id})">×</button>
                 </div>
-                <div class="model-thumbnail"></div>
+
+                <div class="model-thumbnail" 
+                style="background-image: ${model.thumbnail ? `url('data:image/jpeg;base64,${model.thumbnail}')` : 'none'}">
+                </div>
+
                 <h3>${model.filename}</h3>
                 <small>${new Date(model.created_at).toLocaleDateString()}</small>
             </div>
@@ -358,8 +394,10 @@ const loadSavedModels = async () => {
 }
 
 // function to delete a model
-async function deleteModel(modelId) {
-    if (confirm('Are you sure you want to delete this model?')) {
+async function deleteModel(modelId) 
+{
+    if (confirm('Are you sure you want to delete this model?')) 
+    {
         await fetch(`/api/models/${modelId}`, { method: 'DELETE' });
         loadSavedModels();
     }
