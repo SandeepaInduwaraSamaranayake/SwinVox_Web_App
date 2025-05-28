@@ -1,0 +1,38 @@
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #2c2c2c; /* Dark background for the header */
+    color: white;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.nav-button:hover {
+    color: #2a9d8f; /* Change color on hover */
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Center the controls */
+}
+
+.close {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-button.active {
+    color: #2a9d8f; /* Change color when active */
+    font-weight: bold; /* Make it bold */
+}

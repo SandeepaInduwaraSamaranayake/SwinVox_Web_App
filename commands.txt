@@ -10,18 +10,27 @@ python main.py
 
 ######################### setup environment after resetting the workspace #########################
 
-source .venv/bin/activate  && python main.py 
+source .venv/bin/activate  && python main.py (for linux)
+.venv\Scripts\Activate.ps1 && python main.py (for windows)
 
 
 ######################### set encoder.py  pretrained to False #####################################
 
-        # Set pretrained=False to avoid loading standard VGG weights and load our custom weight
-        vgg16_bn = torchvision.models.vgg16_bn(pretrained=False)
+# Set pretrained=False to avoid loading standard VGG weights and load our custom weight
+vgg16_bn = torchvision.models.vgg16_bn(pretrained=False)
 
 
 
 
+######################### Git commands for project ###########################
+
+current branch - git branch --show-current
 
 
+######################## To create requirements.txt ##########################
 
+pip freeze > requirements.txt
 
+######################## Install packages in requirements.txt ###############
+
+pip install -r requirements.txt

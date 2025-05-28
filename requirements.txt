@@ -5,3 +5,10 @@ autopep8
 # App
 flask
 easydict
+pygltflib
+torchvision
+torch
+matplotlib
+opencv-python
+trimesh
+flask-sqlalchemy

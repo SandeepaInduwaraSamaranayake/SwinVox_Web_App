@@ -16,7 +16,7 @@ class Encoder(torch.nn.Module):
 
         # Layer Definition
         # Set pretrained=False to avoid loading standard VGG weights and load our custom weight
-        vgg16_bn = torchvision.models.vgg16_bn(weights=None)
+        vgg16_bn = torchvision.models.vgg16_bn(weights='VGG16_BN_Weights.DEFAULT')
         self.vgg = torch.nn.Sequential(*list(vgg16_bn.features.children()))[:27]
         self.layer1 = torch.nn.Sequential(
             torch.nn.Conv2d(512, 512, kernel_size=3),
@@ -28,7 +28,7 @@ class Encoder(torch.nn.Module):
             torch.nn.BatchNorm2d(512),
             torch.nn.ELU(),
             torch.nn.MaxPool2d(kernel_size=3)
-        )
+        ) 
         self.layer3 = torch.nn.Sequential(
             torch.nn.Conv2d(512, 256, kernel_size=1),
             torch.nn.BatchNorm2d(256),
