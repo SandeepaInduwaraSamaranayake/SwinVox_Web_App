@@ -281,7 +281,7 @@ export async function generateThumbnail(modelUrl)
     return new Promise((resolve, reject) => {
         const canvas = document.createElement('canvas');
         canvas.width = 400;
-        canvas.height = 300;
+        canvas.height = 400;
         
         const renderer = new THREE.WebGLRenderer({
             canvas,
@@ -294,11 +294,11 @@ export async function generateThumbnail(modelUrl)
         const camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 0.1, 1000);
 
         // Setup lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);  // 0.5
         scene.add(ambientLight);
         
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(5, 5, 5).normalize();
+        directionalLight.position.set(3, 3, 3).normalize();  // 5,5,5
         scene.add(directionalLight);
 
         const loader = new GLTFLoader();
@@ -326,7 +326,7 @@ export async function generateThumbnail(modelUrl)
             renderer.render(scene, camera);
 
             // Convert to data URL
-            const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
 
             resolve(dataUrl);
 

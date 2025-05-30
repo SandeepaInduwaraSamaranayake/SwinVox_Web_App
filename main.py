@@ -104,7 +104,8 @@ def upload_images():
 @app.route('/api/models', methods=['GET'])
 def get_models():
     try:
-        models = Model3D.query.all()
+        # Sort models by created_at in descending order (newest first)
+        models = Model3D.query.order_by(Model3D.created_at.desc()).all() # Model3D.query.all()
         return jsonify([{
             'id': model.id,
             'filename': model.filename,
@@ -161,6 +162,24 @@ def get_model(model_id):
         )
     except Exception as e:
         app.logger.error("Error fetching model: %s", str(e))
+        return jsonify({"error": str(e)}), 500
+
+# Rename model
+@app.route('/api/models/<int:model_id>', methods=['PUT'])
+def update_model(model_id):
+    try:
+        model = Model3D.query.get_or_404(model_id)
+        data = request.get_json()
+        
+        if 'filename' in data:
+            model.filename = data['filename']
+            db.session.commit()
+            return jsonify({'message': 'Model renamed successfully'})
+        
+        return jsonify({'error': 'Invalid request'}), 400
+        
+    except Exception as e:
+        app.logger.error(f"Error updating model: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
         

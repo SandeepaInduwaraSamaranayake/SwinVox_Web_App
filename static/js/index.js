@@ -32,7 +32,7 @@ let thumbnailDataUrl = null;
  * */
 
 // Helper function for DOM ready state
-const domReady = (cb) => {
+const domReady = (cb) => { 
     document.readyState === 'interactive' || document.readyState === 'complete'
     ? cb()
     : document.addEventListener('DOMContentLoaded', cb);
@@ -78,6 +78,78 @@ const cleanupPreviousScene = () => {
 // Load saved models initially
 document.addEventListener('DOMContentLoaded', () => {
     loadSavedModels();
+
+    // Event delegation for model actions
+    document.getElementById('model-list').addEventListener('click', async (e) => {
+        const modelCard = e.target.closest('.model-card');
+        if (!modelCard) return;
+        
+        const modelId = modelCard.dataset.modelId;
+        
+        // Delete action
+        if (e.target.classList.contains('delete-model')) 
+        {
+            if (confirm('Are you sure you want to delete this model?')) {
+                try 
+                {
+                    await fetch(`/api/models/${modelId}`, { method: 'DELETE' });
+                    loadSavedModels();
+                } 
+                catch (error) 
+                {
+                    console.error('Error deleting model:', error);
+                    showNotification(`Error deleting model: ${error.message}`, 'error');
+                }
+            }
+        }
+        
+        // Rename action
+        if (e.target.classList.contains('rename-model')) 
+        {
+            const titleElement = modelCard.querySelector('.model-title');
+            const currentName = titleElement.textContent;
+            const newName = prompt('Enter new model name:', currentName);
+            
+            if (newName && newName !== currentName) 
+            {
+                try 
+                {
+                    const response = await fetch(`/api/models/${modelId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ filename: newName })
+                    });
+                    
+                    if (response.ok) 
+                    {
+                        titleElement.textContent = newName;
+                        showNotification('Model renamed successfully!', 'success');
+                    } 
+                    else 
+                    {
+                        throw new Error('Failed to rename model');
+                    }
+                }
+                catch (error) 
+                {
+                    console.error('Error renaming model:', error);
+                    showNotification(`Error renaming model: ${error.message}`, 'error');
+                }
+            }
+        }
+    });
+
+
+    document.getElementById('model-list').addEventListener('click', (e) => {
+    const modelCard = e.target.closest('.model-card');
+    if (modelCard && !e.target.closest('.model-actions')) {
+        document.querySelectorAll('.model-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
+
 });
 
 // Trigger file input when clicking the "Choose Images" button
@@ -294,7 +366,9 @@ const setupControls = (camera, controls) => {
                 x: e.touches[0].clientX,
                 y: e.touches[0].clientY
             };
-        } else if (e.touches.length === 2) {
+        } 
+        else if (e.touches.length === 2) 
+        {
             // Pinch zoom
             const currentDistance = Math.hypot(
                 e.touches[0].clientX - e.touches[1].clientX,
@@ -482,21 +556,43 @@ const loadSavedModels = async () => {
         const models = await response.json();
         const modelList = document.getElementById('model-list');
         
-
         modelList.innerHTML = models.map(model => `
             <div class="model-card" data-model-id="${model.id}">
                 <div class="model-actions">
-                    <button class="delete-model" onclick="deleteModel(${model.id})">×</button>
+                    <button class="model-menu-btn">⋯</button>
+                    <div class="model-menu">
+                        <button class="menu-item rename-model">Rename</button>
+                        <button class="menu-item delete-model">Delete</button>
+                    </div>
                 </div>
 
                 <div class="model-thumbnail" 
-                style="background-image: ${model.thumbnail ? `url('data:image/jpeg;base64,${model.thumbnail}')` : 'none'}">
+                style="background-image: ${model.thumbnail ? `url('data:image/jpeg;base64,${model.thumbnail}')` : 'none'}; background-size: cover; background-position: center;">
                 </div>
 
-                <h3>${model.filename}</h3>
+                <h3 class = "model-title">${model.filename}</h3>
                 <small>${new Date(model.created_at).toLocaleDateString()}</small>
             </div>
         `).join('');
+
+        // Add event listeners for menu buttons
+        document.querySelectorAll('.model-menu-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const menu = btn.nextElementSibling;
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Close menus when clicking elsewhere
+        document.addEventListener('click', (e) => {
+            if (!e.target.matches('.model-menu-btn')) 
+                {
+                document.querySelectorAll('.model-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        });
     }
     catch (error) 
     {
@@ -505,20 +601,16 @@ const loadSavedModels = async () => {
     }
 }
 
-// function to delete a model
-async function deleteModel(modelId) 
-{
-    if (confirm('Are you sure you want to delete this model?')) 
-    {
-        await fetch(`/api/models/${modelId}`, { method: 'DELETE' });
-        loadSavedModels();
-    }
-}
-
 // Add event listener for model cards
 document.getElementById('model-list').addEventListener('click', async (e) => {
     const modelCard = e.target.closest('.model-card');
     if (!modelCard) return;
+
+    // Don't load model if clicking on menu items
+    if (e.target.closest('.model-menu') || e.target.classList.contains('model-menu-btn')) {
+        return;
+    }
+    
     try
     {
         const response = await fetch(`/api/models/${modelCard.dataset.modelId}`);
