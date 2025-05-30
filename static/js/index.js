@@ -61,6 +61,7 @@ const cleanupPreviousScene = () => {
         currentScene.dispose();
         currentScene = null;
     }
+    
     if (currentModelUrl) 
     {
         URL.revokeObjectURL(currentModelUrl);
@@ -243,6 +244,117 @@ const setupControls = (camera, controls) => {
             : '<i class="fas fa-ban"></i>';
         panBtn.classList.toggle('active', controls.enablePan);
     });
+
+    // =================================== Touch screen support ========================================
+    let touchStartDistance = 0;
+    let initialTouchPosition = null;
+    const touchZoomSensitivity = 0.01;
+    const touchPanSensitivity = 1.5;
+    
+    // Touch event handlers
+    const container = document.getElementById('3d-container');
+    
+    container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) 
+        {
+            // Single touch - potential pan start
+            initialTouchPosition = {
+                x: e.touches[0].clientX,
+                y: e.touches[0].clientY
+            };
+        } 
+        else if (e.touches.length === 2) 
+        {
+            // Two touches - pinch to zoom
+            touchStartDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+        }
+        e.preventDefault();
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1 && initialTouchPosition && controls.enablePan) 
+        {
+            // Single finger panning
+            const deltaX = (e.touches[0].clientX - initialTouchPosition.x) * touchPanSensitivity;
+            const deltaY = (e.touches[0].clientY - initialTouchPosition.y) * touchPanSensitivity;
+            
+            // Adjust pan speed based on zoom level
+            const panSpeed = camera.zoom * 0.1;
+            
+            // Update camera position
+            camera.position.x -= deltaX * panSpeed;
+            camera.position.y += deltaY * panSpeed;
+            camera.updateProjectionMatrix();
+            
+            // Update initial position for next move
+            initialTouchPosition = {
+                x: e.touches[0].clientX,
+                y: e.touches[0].clientY
+            };
+        } else if (e.touches.length === 2) {
+            // Pinch zoom
+            const currentDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            
+            const zoomDelta = (touchStartDistance - currentDistance) * touchZoomSensitivity;
+            camera.zoom += zoomDelta;
+            
+            // Constrain zoom values
+            camera.zoom = Math.max(0.1, Math.min(5, camera.zoom));
+            camera.updateProjectionMatrix();
+            
+            touchStartDistance = currentDistance;
+        }
+        e.preventDefault();
+    });
+
+    container.addEventListener('touchend', () => {
+        initialTouchPosition = null;
+    });
+
+    // Double-tap for fullscreen
+    let lastTap = 0;
+    container.addEventListener('touchend', (e) => {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        
+        if (tapLength < 300 && tapLength > 0) {
+            fullscreenBtn.click();
+        }
+        lastTap = currentTime;
+    });
+
+    // =================================== Touch screen support ========================================
+
+    // keyboard controls for zoom and fullscreen
+    document.addEventListener('keydown', (e) => {
+    if (modal.style.display !== 'block') return;
+    
+    switch(e.key) 
+    {
+        case '+': 
+            camera.zoom += 0.1;
+            camera.updateProjectionMatrix();
+            break;
+        case '-':
+            camera.zoom -= 0.1;
+            camera.updateProjectionMatrix();
+            break;
+        case 'f':
+        case 'F':
+            fullscreenBtn.click();
+            break;
+        case 'p':
+        case 'P':
+            panBtn.click();
+            break;
+    }
+});
 };
 
 // Model loading handler
