@@ -3,7 +3,14 @@ const lightThemeIcon = document.getElementById('light-theme-icon');
 const darkThemeIcon = document.getElementById('dark-theme-icon');
 
 // Check if user previously selected a theme
-const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+let savedTheme = localStorage.getItem('theme') || 'dark-mode';
+
+// Validate saved theme
+if (savedTheme !== 'light-mode' && savedTheme !== 'dark-mode') 
+{
+    savedTheme = 'dark-mode'; // Default to dark mode
+    localStorage.setItem('theme', savedTheme); // Save valid theme
+}
 
 document.body.classList.add(savedTheme);
 darkThemeIcon.style.display = savedTheme === 'light-mode' ? 'inline' : 'none';
