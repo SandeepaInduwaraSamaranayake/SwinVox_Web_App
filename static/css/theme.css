@@ -48,6 +48,23 @@ body.dark-mode main {
     color: #ffffff; /* Text color for dark mode */
 }
 
+/* Light theme navigation bar */
+body.light-mode .nav-button {
+    color: #2c2c2c; 
+}
+
+body.dark-mode .nav-button {
+    color: #ffffff; 
+}
+
+/* Light theme close button */
+body.light-mode .close {
+    color: #2c2c2c; 
+}
+
+body.dark-mode .close {
+    color: #ffffff; 
+}
 
 /* Light theme modal content */
 body.light-mode .modal-content {

@@ -78,6 +78,22 @@
     transform: scale(1.05);
 }
 
+.model-title-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.model-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin: 2%;
+    padding: 0;
+    font-size: 1rem;
+}
+
 .delete-model {
     background: #dc0016;
     border: none;

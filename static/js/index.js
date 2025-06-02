@@ -521,8 +521,7 @@ window.onclick = function(event)
 modelPreviewbackBtn.addEventListener('click', () => {
     // Hide the modal
     modal.style.display = 'none'; 
-    // Show the upload area
-    uploadedFilesArea.style.display = 'block'; 
+    // Cleanup the scene
     cleanupPreviousScene();
 });
 
@@ -570,7 +569,9 @@ const loadSavedModels = async () => {
                 style="background-image: ${model.thumbnail ? `url('data:image/jpeg;base64,${model.thumbnail}')` : 'none'}; background-size: cover; background-position: center;">
                 </div>
 
-                <h3 class = "model-title">${model.filename}</h3>
+                <div class="model-title-container">
+                    <h3 class="model-title" title="${model.filename}">${model.filename}</h3>
+                </div>
                 <small>${new Date(model.created_at).toLocaleDateString()}</small>
             </div>
         `).join('');

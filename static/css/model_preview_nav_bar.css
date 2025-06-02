@@ -13,10 +13,6 @@
     margin: 0 5px;
 }
 
-.nav-button:hover {
-    color: #2a9d8f; /* Change color on hover */
-}
-
 .nav-controls {
     display: flex;
     align-items: center;
@@ -25,11 +21,18 @@
 }
 
 .close {
+    float: right;
     font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
     cursor: pointer;
 }
 
 .nav-button.active {
-    color: #2a9d8f; /* Change color when active */
     font-weight: bold; /* Make it bold */
 }
