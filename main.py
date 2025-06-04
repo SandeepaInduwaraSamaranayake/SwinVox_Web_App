@@ -87,12 +87,6 @@ def upload_images():
             app.logger.error("Model output is not in bytes format.")
             return jsonify({"error": "Model generation failed, output is not in bytes."}), 500
 
-        # if len(model_output) == 0:
-        #     app.logger.error("Model output is empty.")
-        #     return jsonify({"error": "Model generation failed, output is empty."}), 500
-
-        # app.logger.info("Model output is valid, length: %d bytes", len(model_output))
-
         # Send the GLB model as a response
         return send_file(BytesIO(model_output), mimetype='model/gltf-binary', as_attachment=False, download_name='model.glb')
 

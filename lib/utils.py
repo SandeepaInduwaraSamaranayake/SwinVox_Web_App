@@ -6,7 +6,7 @@ from lib.helpers import visualize_transformed_image
 from model.model_architecture import SwinVoxModel
 import logging
 import trimesh
-from lib.data_transforms import Compose, CenterCrop, RandomBackground, Normalize, ToTensor
+from lib.data_transforms import Compose, Normalize, ToTensor, ResizeAndPad
 
 logger = logging.getLogger("root")
 
@@ -68,8 +68,7 @@ def process_images(images, cfg):
     logger.info(f"STD: {cfg.DATASET.STD}")
 
     transformation = Compose([
-        # CenterCrop(IMG_SIZE, CROP_SIZE),
-        # RandomBackground(cfg.TEST.RANDOM_BG_COLOR_RANGE),
+        ResizeAndPad(IMG_SIZE, bg_color_range=cfg.TEST.RANDOM_BG_COLOR_RANGE),
         Normalize(mean=cfg.DATASET.MEAN, std=cfg.DATASET.STD),
         ToTensor(),
     ])
@@ -140,25 +139,7 @@ def generate_3d_model(images_tensor, model):
     # Convert GLB data to a byte stream for sending to the frontend
     return glb_data
     
-# def voxel_to_mesh(voxel_grid, voxel_size=1.0):
-#     # Create a list to store the meshes (each voxel will be a cube)
-#     cubes = []
     
-#     # Loop over the voxel grid to extract non-empty voxels (True values)
-#     for z in range(voxel_grid.shape[0]):
-#         for y in range(voxel_grid.shape[1]):
-#             for x in range(voxel_grid.shape[2]):
-#                 if voxel_grid[z, y, x]:  # If the voxel is "filled"
-#                     # Create a cube mesh for each voxel
-#                     cube = trimesh.primitives.Box(extents=[voxel_size, voxel_size, voxel_size])
-#                     cube.apply_translation([x * voxel_size, y * voxel_size, z * voxel_size])
-#                     cubes.append(cube)
-    
-#     # Combine all cubes into a single mesh
-#     combined_mesh = trimesh.util.concatenate(cubes)
-#     return combined_mesh
-
-
 def voxel_to_mesh(voxel_grid, voxel_size=1.0):
     # Get the indices of the non-empty voxels (True values in the voxel grid)
     filled_voxels = np.array(np.nonzero(voxel_grid))

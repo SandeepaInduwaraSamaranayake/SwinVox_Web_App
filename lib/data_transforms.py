@@ -458,3 +458,52 @@ class RandomBackground(object):
             processed_images = np.append(processed_images, [img], axis=0)
 
         return processed_images
+
+
+# Modified by Sandeepa Samaranayake
+# Maintain original aspect ratio while conforming to the model's required input dimensions
+class ResizeAndPad(object):
+    def __init__(self, target_size, bg_color_range=None):
+        """
+            Resizes an image while preserving aspect ratio and pads it to the output_size.
+        """
+        self.target_h, self.target_w = target_size
+        self.bg_color_range = bg_color_range  # [[low, high] for each RGB channel]
+
+    def __call__(self, rendering_images):
+        if len(rendering_images) == 0:
+            return rendering_images
+
+        processed_images = []
+        for img in rendering_images:
+            h, w, c = img.shape
+            # Calculate scaling factor to fit within target dimensions
+            # while maintaining aspect ratio
+            scale = min(self.target_h / h, self.target_w / w)
+            new_h, new_w = int(h * scale), int(w * scale)
+            
+            # Resize image while preserving aspect ratio
+            resized_img = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
+            
+            # Create padded image
+            padded_img = self._create_background(self.target_h, self.target_w, c)
+            
+            # Calculate padding offsets (centered)
+            top = (self.target_h - new_h) // 2
+            left = (self.target_w - new_w) // 2
+            padded_img[top:top+new_h, left:left+new_w] = resized_img
+            processed_images.append(padded_img)
+            
+        return np.array(processed_images)
+
+    def _create_background(self, height, width, channels):
+        """Create background with random or default color"""
+        if self.bg_color_range:
+            bg_color = [
+                random.randint(self.bg_color_range[i][0], self.bg_color_range[i][1])
+                for i in range(3)
+            ]
+        else:
+            bg_color = [0, 0, 0]  # Default to black
+            
+        return np.full((height, width, channels), bg_color, dtype=np.uint8)
