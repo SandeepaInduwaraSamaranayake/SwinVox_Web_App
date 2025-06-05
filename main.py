@@ -70,6 +70,7 @@ def upload_images():
         # Get uploaded files
         files = request.files.getlist("images[]")
         app.logger.info("Received files: %s", [file.filename for file in files])
+        app.logger.info("Received file count : %d", len(files))
         if not files:
             app.logger.info("------------------no files received----------------------")    
             return jsonify({"error": "No images uploaded"}), 400

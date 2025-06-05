@@ -8,6 +8,7 @@ const fileInput = document.getElementById('images');
 const chooseFileBtn = document.getElementById('chooseFileBtn');
 const uploadedFilesDiv = document.getElementById('uploaded-files');
 const submitBtn = document.getElementById('submitBtn');
+const clearBtn = document.getElementById('clearBtn');
 const uploadedFilesArea = document.getElementById('uploaded-files-area');
 const modal = document.getElementById('modelModal');
 const modelPreviewbackBtn = document.getElementById('backButton');
@@ -295,16 +296,14 @@ fileInput.addEventListener('change', (e) => {
 // Function to handle files
 function handleFiles(files) 
 {
+    //uploadedFiles = []; // Clear previous files to ensure only newly selected/kept files are managed
     for (let i = 0; i < files.length; i++) 
     {
-        // Add file name to the array
-        uploadedFiles.push(files[i].name); 
+        // Pushes the File object
+        uploadedFiles.push(files[i]); 
     }
-
     // Update the display
-    updateUploadedFilesDisplay(); 
-    //console.log(uploadedFiles.toString() + " -> no of files :" + uploadedFiles.length);
-
+    updateUploadedFilesDisplay();
     // Show notification after files are selected
     showNotification("Success : " + files.length + ' File(s) selected successfully!', 'success');
 }
@@ -323,7 +322,7 @@ function updateUploadedFilesDisplay()
     // Space between file elements
     fileContainer.style.gap = '10px'; 
 
-    uploadedFiles.forEach((fileName, index) => {
+    uploadedFiles.forEach((file, index) => {
         // Create a div for each file
         const fileElement = document.createElement('div'); 
         // Use flexbox for file name and button
@@ -334,14 +333,14 @@ function updateUploadedFilesDisplay()
         // Specify the maximum length of the displayed file name
         const maxLength = 10; 
         // Truncate the file name to a specified length
-        const truncatedName = fileName.length > maxLength ? fileName.substring(0, maxLength) + '...' : fileName;
+        const truncatedName = file.name.length > maxLength ? file.name.substring(0, maxLength) + '...' : file.name;
 
         // Create a span for the file name
         const fileText = document.createElement('span'); 
         // Set the file name text
         fileText.textContent = truncatedName; 
         // Set the full file name as the title for hover effect
-        fileText.title = fileName; 
+        fileText.title = file.name; 
 
         // Create a cancel button
         const cancelButton = document.createElement('button'); 
@@ -360,12 +359,14 @@ function updateUploadedFilesDisplay()
 
         // Add event listener to remove the file
         cancelButton.addEventListener('click', () => {
-            console.log("Before cancel :" + uploadedFiles);
+            // console.log("Before cancel :" + uploadedFiles);
+            // console.log("File count: " + uploadedFiles.length);
             // Remove the file from the array
             uploadedFiles.splice(index, 1); 
             // Update the display
             updateUploadedFilesDisplay(); 
-            console.log("After cancel :" + uploadedFiles);
+            // console.log("After cancel :" + uploadedFiles);
+            // console.log("File count: " + uploadedFiles.length);
         });
 
         // Append the file name and cancel button to the file element
@@ -380,7 +381,6 @@ function updateUploadedFilesDisplay()
     // Show or hide the uploaded files area based on images uploaded or not
     uploadedFilesArea.style.display = uploadedFiles.length ? 'block' : 'none';
 }
-
 
 // Control management
 const setupControls = (camera, controls) => {
@@ -551,67 +551,99 @@ submitBtn.addEventListener('click', async () => {
     overlay.style.display = 'flex';
     try 
     {
+        // Create FormData manually from the `uploadedFiles` array
+        const formData = new FormData();
+        uploadedFiles.forEach(file => {
+            // Append each File object
+            formData.append('images[]', file, file.name); 
+        });
+
+        // Check if any files are actually being uploaded
+        if (uploadedFiles.length === 0) {
+            showNotification('No images selected for upload.', 'error');
+            return; // Exit if no files
+        }
+
         let response = await fetch('/upload', {
             method: 'POST',
-            body: new FormData(document.getElementById('upload-form'))
+            body: formData // Use the manually constructed FormData
         });
-        
+
         if (!response.ok) throw new Error(await response.text());
-        
+
         // Read the response as an ArrayBuffer
         const arrayBuffer = await response.arrayBuffer();
         // Create a Blob from the ArrayBuffer
         const blob = new Blob([arrayBuffer], { type: 'model/gltf+json' });
-        
-        currentModelUrl = URL.createObjectURL(blob)
-        
+        // URL for Three.js viewer
+        currentModelUrl = URL.createObjectURL(blob); 
+
         // Generate thumbnail
         thumbnailDataUrl = await generateThumbnail(currentModelUrl);
         // Convert Data URL to Blob
         const thumbnailBlob = dataURLtoBlob(thumbnailDataUrl);
 
-        // Save and load model
-        await fetch('/save-model', {
+        // Get the original filename from the first file input, without extension for naming purposes
+        const originalInputFilename = uploadedFiles.length > 0
+            ? uploadedFiles[0].name.split('.').slice(0, -1).join('.')
+            : 'model';
+        const proposedFilenameForSave = originalInputFilename + '.glb';
+
+        // Save model to backend and get its saved ID and filename
+        const saveResponse = await fetch('/save-model', {
             method: 'POST',
             body: (() => {
                 const fd = new FormData();
-                fd.append('model', blob, 'model.glb');
+                fd.append('model', blob, proposedFilenameForSave);
                 fd.append('thumbnail', thumbnailBlob, 'thumbnail.jpg');
                 return fd;
             })()
-        })
-        .then(response => {
-            if (!response.ok) 
-            {
-                showNotification(`Error: ${response.statusText}`, 'error');
-                throw new Error("Failed to save model");
-            }
-            showNotification('Model saved successfully!', 'success');
-            return response.json();
-        })
-        .then(data => {
-        // Access returned values from Flask
-        // console.log("Model saved with ID:", data.id);
-        // console.log("Filename:", data.filename);
-        currentModelId = data.id;
-        console.log("submit Model ID:", currentModelId);
         });
 
-        loadModel(currentModelUrl);
-        loadSavedModels();
-    } 
-    catch (error)
+        if (!saveResponse.ok) 
+        {
+            showNotification(`Error saving the model: ${saveResponse.statusText}`, 'error');
+            throw new Error(`Failed to save model: ${saveResponse.statusText}`);
+        }
+        // Parse the JSON response
+        const savedModelInfo = await saveResponse.json(); 
+        // Store the ID for the model currently in viewer
+        currentModelId = savedModelInfo.id;
+        // console.log("Submit Model ID:", currentModelId);
+
+        // Loads the model into the modal
+        loadModel(currentModelUrl); 
+        // Refreshes the gallery
+        loadSavedModels(); 
+        showNotification('Model uploaded and saved successfully!', 'success');
+    }
+    catch (error) 
     {
         console.error('Error uploading model:', error);
         showNotification(`Error: ${error.message}`, 'error');
-        // Clean up URL if error occurs
+        // Clean up URLs and reset ID if error occurs
         if (currentModelUrl) URL.revokeObjectURL(currentModelUrl);
         currentModelUrl = null;
-    } 
+        currentModelId = null;
+    }
     finally 
     {
-        // Remove overlay after response is displayed.
+         // Remove overlay after response is displayed.
         overlay.style.display = 'none';
+        //uploadedFiles = []; // Clear uploaded files list after successful upload or error
+        //updateUploadedFilesDisplay(); // Update display to clear the list
+    }
+});
+
+clearBtn.addEventListener('click', () => {
+    if(uploadedFiles.length)
+    {
+        // Clear the uploaded files array
+        uploadedFiles = []; 
+        // Update the display
+        updateUploadedFilesDisplay(); 
+        // Show notification
+        showNotification('Uploaded files cleared.', 'success');
     }
 });
 

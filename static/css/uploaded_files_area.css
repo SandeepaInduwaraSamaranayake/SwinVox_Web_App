@@ -22,7 +22,22 @@
     transition: background-color 0.3s;
 }
 
+#clearBtn {
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-left: 10px;
+    background-color: #9d2a54;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 #submitBtn:hover {
     background-color: #264653;
 }
 
+#clearBtn:hover {
+    background-color: #264653;
+}
