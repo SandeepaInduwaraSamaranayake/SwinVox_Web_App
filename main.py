@@ -111,7 +111,7 @@ def get_models():
         return jsonify({"error": str(e)}), 500
 
 
-# get a specific model by id
+# delete a specific model by id
 @app.route('/api/models/<int:model_id>', methods=['DELETE'])
 def delete_model(model_id):
     try:
@@ -137,7 +137,8 @@ def save_model():
         )
         db.session.add(new_model);
         db.session.commit()
-        return jsonify({'message': 'Model saved', 'id': new_model.id})
+        # Return the filename along with the ID
+        return jsonify({'message': 'Model saved', 'id': new_model.id, 'filename': new_model.filename})
     except Exception as e:
         app.logger.error("Error saving model: %s", str(e))
         return jsonify({"error": str(e)}), 500
@@ -176,6 +177,20 @@ def update_model(model_id):
         app.logger.error(f"Error updating model: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+# get model info by ID
+@app.route('/api/models/<int:model_id>/info', methods=['GET'])
+def get_model_info(model_id):
+    try:
+        model = Model3D.query.get_or_404(model_id)
+        return jsonify({
+            'id': model.id,
+            'filename': model.filename,
+            'created_at': model.created_at.isoformat()
+        })
+    except Exception as e:
+        app.logger.error(f"Error fetching model info for ID {model_id}: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+    
         
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)

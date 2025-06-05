@@ -16,12 +16,14 @@ const zoomInBtn = document.getElementById('zoomInButton');
 const zoomOutBtn = document.getElementById('zoomOutButton');
 const panBtn = document.getElementById('panButton');
 const fullscreenBtn = document.getElementById('fullscreenButton');
+const downloadModelBtn = document.getElementById('downloadModelButton');
 
 // Array to keep track of uploaded files
 let uploadedFiles = [];
 let currentScene = null;
 let currentModelUrl = null;
 let thumbnailDataUrl = null;
+let currentModelId = null;
 
 
 /** 
@@ -48,6 +50,82 @@ function dataURLtoBlob(dataUrl)
     const u8arr = new Uint8Array(n);
     while (n--) u8arr[n] = bstr.charCodeAt(n);
     return new Blob([u8arr], { type: mime });
+}
+
+/**  
+ * Fetch model details
+ * Model ID: modelInfo.id
+ * Filename: modelInfo.filename
+ * Created At: new Date(modelInfo.created_at).toLocaleString()
+**/
+async function fetchModelDetails(modelId) 
+{
+    try 
+    {
+        const response = await fetch(`/api/models/${modelId}/info`);
+        if (!response.ok) 
+        {
+            throw new Error(`Failed to fetch model info: ${response.status} ${response.statusText}`);
+        }
+        const modelInfo = await response.json();
+        return modelInfo;
+    } 
+    catch (error) 
+    {
+        console.error('Error fetching model details:', error);
+        showNotification(`Error fetching model details: ${error.message}`, 'error');
+        return null;
+    }
+}
+
+// Centralized function to download a model
+async function downloadModel(modelId, modelCard=null)
+{
+    try
+    {
+        // model ID verification
+        if (!modelId) throw new Error('Missing model ID');
+
+        const response = await fetch(`/api/models/${modelId}`);
+        // Check for HTTP errors
+        if (!response.ok) 
+        {
+            throw new Error(`Download failed: ${response.status} ${response.statusText}`);
+        }
+        const modelBlob = await response.blob();
+
+        let modelFilename = null
+        if(modelCard !=null)
+        {
+            modelFilename = modelCard.querySelector('.model-title').textContent; // Use the displayed filename
+        }
+        else
+        {
+            const modelInfo = await fetchModelDetails(modelId);
+            modelFilename = modelInfo ? modelInfo.filename : 'model.glb';
+        }
+
+        // Ensure the filename ends with '.glb'
+        if (!modelFilename.toLowerCase().endsWith('.glb')) 
+        {
+            modelFilename += '.glb';
+        }
+
+        const url = URL.createObjectURL(modelBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = modelFilename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showNotification('Model download completed', 'success');
+    }
+    catch (error) 
+    {
+        console.error('Error during model download:', error);
+        showNotification(`Error downloading model: ${error.message}`, 'error');
+    }
 }
 
 domReady(() => {
@@ -106,6 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Rename action
         if (e.target.classList.contains('rename-model')) 
         {
+            if (!modelId) throw new Error('Missing model ID');
+            // Prompt for new name
             const titleElement = modelCard.querySelector('.model-title');
             const currentName = titleElement.textContent;
             const newName = prompt('Enter new model name:', currentName);
@@ -137,12 +217,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+
+        // Download action
+        if (e.target.classList.contains('download-model')) 
+        {
+            try 
+            {
+                downloadModel(modelId, modelCard);
+            } 
+            catch (error) 
+            {
+                console.error('Error downloading model:', error);
+                showNotification(`Error downloading model: ${error.message}`, 'error');
+            }
+        }
     });
 
 
     document.getElementById('model-list').addEventListener('click', (e) => {
     const modelCard = e.target.closest('.model-card');
-    if (modelCard && !e.target.closest('.model-actions')) {
+    if (modelCard && !e.target.closest('.model-actions')) 
+    {
         document.querySelectorAll('.model-menu').forEach(menu => {
             menu.style.display = 'none';
         });
@@ -427,6 +522,10 @@ const setupControls = (camera, controls) => {
         case 'P':
             panBtn.click();
             break;
+        case 'd':
+        case 'D':
+            downloadModelBtn.click();
+            break;
     }
 });
 };
@@ -452,7 +551,7 @@ submitBtn.addEventListener('click', async () => {
     overlay.style.display = 'flex';
     try 
     {
-        const response = await fetch('/upload', {
+        let response = await fetch('/upload', {
             method: 'POST',
             body: new FormData(document.getElementById('upload-form'))
         });
@@ -480,6 +579,22 @@ submitBtn.addEventListener('click', async () => {
                 fd.append('thumbnail', thumbnailBlob, 'thumbnail.jpg');
                 return fd;
             })()
+        })
+        .then(response => {
+            if (!response.ok) 
+            {
+                showNotification(`Error: ${response.statusText}`, 'error');
+                throw new Error("Failed to save model");
+            }
+            showNotification('Model saved successfully!', 'success');
+            return response.json();
+        })
+        .then(data => {
+        // Access returned values from Flask
+        // console.log("Model saved with ID:", data.id);
+        // console.log("Filename:", data.filename);
+        currentModelId = data.id;
+        console.log("submit Model ID:", currentModelId);
         });
 
         loadModel(currentModelUrl);
@@ -499,6 +614,21 @@ submitBtn.addEventListener('click', async () => {
         overlay.style.display = 'none';
     }
 });
+
+// Download model button functionality
+downloadModelBtn.addEventListener('click', () => {
+    if (currentModelId) 
+    {
+        downloadModel(currentModelId, null);
+    } 
+    else 
+    {
+        console.log("URL :" + currentModelUrl);
+        //console.log("Filename :" + currentModelFilename);
+        showNotification('No model to download.', 'error');
+    }
+});
+
 
 // Close button functionality for the modal
 document.getElementById('closeModal').addEventListener('click', () => {
@@ -542,7 +672,7 @@ fullscreenBtn.addEventListener('click', () => {
     }
 });
 
-// Optional: Handle fullscreen change events
+// Handle fullscreen change events
 document.addEventListener('fullscreenchange', () => {
     fullscreenBtn.innerHTML = document.fullscreenElement ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
 });
@@ -561,6 +691,7 @@ const loadSavedModels = async () => {
                     <button class="model-menu-btn">⋯</button>
                     <div class="model-menu">
                         <button class="menu-item rename-model">Rename</button>
+                        <button class="menu-item download-model">Download</button>
                         <button class="menu-item delete-model">Delete</button>
                     </div>
                 </div>
@@ -588,7 +719,7 @@ const loadSavedModels = async () => {
         // Close menus when clicking elsewhere
         document.addEventListener('click', (e) => {
             if (!e.target.matches('.model-menu-btn')) 
-                {
+            {
                 document.querySelectorAll('.model-menu').forEach(menu => {
                     menu.style.display = 'none';
                 });
@@ -614,6 +745,7 @@ document.getElementById('model-list').addEventListener('click', async (e) => {
     
     try
     {
+        currentModelId = modelCard.dataset.modelId;
         const response = await fetch(`/api/models/${modelCard.dataset.modelId}`);
         const modelData = await response.blob();
         const currentModelUrl = URL.createObjectURL(modelData);
