@@ -274,7 +274,7 @@ menuToggleBtn.addEventListener('click', () => {
     if (slideMenu.classList.contains('open')) 
     {
         closeMenu();
-    } 
+    }
     else 
     {
         openMenu();
