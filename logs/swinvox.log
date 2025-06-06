@@ -1,0 +1,1197 @@
+[2025-06-05 21:46:49,243] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:46:49,334] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:46:49,489] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,489] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,509] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,519] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,525] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,541] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,554] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,559] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,575] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,582] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,615] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,630] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,631] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:49,807] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:49] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:46:50,389] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:46:50] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 21:47:02,311] INFO in main: ------------------starting upload route----------------------
+[2025-06-05 21:47:02,311] INFO in main: Received files: ['pyramid_angle_004.png', 'pyramid_angle_005.png', 'pyramid_angle_015.png', 'pyramid_angle_016.png', 'pyramid_angle_024.png', 'pyramid_angle_025.png', 'pyramid_angle_026.png']
+[2025-06-05 21:47:02,326] INFO in main: Received file coun
+[2025-06-05 21:47:02,332] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-06-05 21:47:02,333] INFO in utils: IMG_SIZE: (224, 224)
+[2025-06-05 21:47:02,333] INFO in utils: CROP_SIZE: (128, 128)
+[2025-06-05 21:47:02,334] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-06-05 21:47:02,334] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-06-05 21:47:02,335] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-06-05 21:47:02,337] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,344] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,344] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,350] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,352] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,361] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,363] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-05 21:47:02,376] INFO in utils: Transformed images shape: torch.Size([7, 3, 224, 224])
+[2025-06-05 21:47:02,376] INFO in utils: Tensor dtype: torch.float32
+[2025-06-05 21:47:02,376] INFO in utils: Tensor min value: -0.772549033164978
+[2025-06-05 21:47:02,376] INFO in utils: Tensor max value: 0.7019608020782471
+[2025-06-05 21:47:02,376] INFO in utils: length: 7
+[2025-06-05 21:47:09,009] INFO in main: Processed images shape: torch.Size([1, 7, 3, 224, 224])
+[2025-06-05 21:47:09,011] DEBUG in model_architecture: [DEBUG] 2025-06-05 21:47:09.011411 Parameters in Encoder: 7772480.
+[2025-06-05 21:47:09,028] DEBUG in model_architecture: [DEBUG] 2025-06-05 21:47:09.028854 Parameters in Decoder: 71583064.
+[2025-06-05 21:47:09,031] DEBUG in model_architecture: [DEBUG] 2025-06-05 21:47:09.030853 Parameters in Merger: 8571.
+[2025-06-05 21:47:09,035] DEBUG in model_architecture: [DEBUG] 2025-06-05 21:47:09.035854 Parameters in Refiner: 34880352.
+[2025-06-05 21:47:18,288] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:47:18] "POST /upload HTTP/1.1" 200 -
+[2025-06-05 21:47:18,422] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:47:18] "POST /save-model HTTP/1.1" 200 -
+[2025-06-05 21:47:19,299] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:47:19] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 21:50:02,896] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:50:08,697] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:08] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:50:09,427] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:09] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:09,536] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:09] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:09,669] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:09] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:09,777] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:09] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:10,015] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:10] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:10,197] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:10] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:10,512] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:10] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:10,794] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:10] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:11,058] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:11] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:11,097] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:11] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-06-05 21:50:11,120] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:11] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:11,433] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:11] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:11,436] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:11] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:12,745] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:12] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:50:13,957] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:50:13] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 21:51:32,285] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:51:32,303] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:51:32,412] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,457] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,473] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,486] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,495] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,509] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,523] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,523] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,542] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,546] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,549] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,622] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,624] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:32,802] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:32] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:51:33,563] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:51:33] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 21:56:26,429] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:56:26,429] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:56:26,696] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,834] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,888] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,888] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,903] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,925] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,933] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,953] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,953] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:26,974] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-06-05 21:56:26,991] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:26] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:27,036] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:27] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:27,069] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:27] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:27,673] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:27] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,317] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:56:33,317] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:56:33,396] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,433] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,433] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,443] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,469] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,471] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,476] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,483] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,502] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,518] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,575] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,638] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,675] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:33,796] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:33] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,729] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:56:38,729] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:56:38,804] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,824] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,838] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,855] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,858] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,870] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,885] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,888] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,892] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,924] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,925] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,958] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:38,968] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:38] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:56:39,080] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:56:39] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:41,515] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:57:41,591] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:57:41,773] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-05 21:57:41,831] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:41,835] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:41,843] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:41,917] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:41,946] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:41] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,000] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,017] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,027] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,045] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,047] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,052] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,114] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,115] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:42,257] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:42] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,008] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:57:49,008] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:57:49,088] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,116] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,119] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,122] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,147] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,147] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,159] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,177] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,177] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,177] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,198] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,216] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,237] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,238] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:49,343] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:49] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:53,841] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 21:57:53,841] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:53] "GET / HTTP/1.1" 200 -
+[2025-06-05 21:57:53,935] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:53] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,024] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,074] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,124] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,142] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,166] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,167] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,168] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,169] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,202] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,203] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,259] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,269] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,317] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 21:57:54,424] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:57:54] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:01,925] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:01] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:01,938] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:01] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:01,975] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 21:58:02,001] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,014] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,033] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,049] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,064] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,078] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,106] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 21:58:02,125] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 21:58:02] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:33,730] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:00:33,746] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:33] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:00:34,255] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:00:34,398] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,407] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,407] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,413] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,439] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,441] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,463] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,467] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,482] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,498] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,505] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,555] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,568] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:34,589] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:34] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:35,011] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:35] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:00:35,694] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:00:35] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:01:19,119] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:01:19,175] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:01:19,380] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:01:19,554] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,568] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,582] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,586] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,604] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,604] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,608] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,608] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,659] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,665] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,689] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,705] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,733] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,761] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:19,991] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:19] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:20,657] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:20] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:01:21,976] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:01:21,976] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:21] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:01:22,146] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:01:22,321] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,327] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,360] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,362] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,367] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,393] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,398] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,401] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,446] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,448] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,451] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,514] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,562] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,573] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:22,807] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:22] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:01:23,440] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:01:23] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:02:44,385] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:02:44,425] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:02:44,672] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:02:44,829] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,842] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,853] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,906] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,915] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,942] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,944] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:44,946] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:44] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,027] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,028] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,029] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,081] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,105] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,126] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:45,944] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:45] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:02:46,584] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:02:46] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:04:11,511] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:04:11,546] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:04:11,855] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:04:11,902] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:11,906] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:11,921] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:11,964] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:11,975] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:11,980] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:11] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,005] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,008] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,023] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,026] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,090] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,091] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,132] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,132] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:12,511] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:12] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:13,127] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:13] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:04:23,910] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:04:23,910] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:23] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:04:24,268] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:04:24,429] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,447] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,464] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,464] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,464] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,507] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,514] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,532] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,546] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,566] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,583] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,600] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,620] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:24,627] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:24] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:25,022] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:25] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:04:25,488] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:04:25] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:05:52,187] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:05:52,187] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:05:52,377] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:05:52,522] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,557] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,577] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,600] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,613] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,639] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,659] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,668] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,689] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,695] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-05 22:05:52,705] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,750] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,805] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:52,814] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:52] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:53,037] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:53] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:05:53,720] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:05:53] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:06:17,004] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:06:17,028] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:06:17,352] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:06:17,375] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,379] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,396] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,415] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,419] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,445] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,453] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,469] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,486] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,493] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-05 22:06:17,496] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,514] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,682] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:17,691] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:17] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:18,302] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:18] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:19,318] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:19] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:06:47,352] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:06:47,385] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:06:47,702] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:06:47,751] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,751] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,776] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,825] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,828] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,861] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,861] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,863] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,903] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-05 22:06:47,905] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,930] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:47,969] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:47] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:48,018] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:48] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:48,021] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:48] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:48,382] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:48] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:06:49,049] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:06:49] "GET /api/models HTTP/1.1" 200 -
+[2025-06-05 22:07:08,184] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-05 22:07:08,186] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "GET / HTTP/1.1" 200 -
+[2025-06-05 22:07:08,274] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,547] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,597] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,622] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,622] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,622] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,636] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,657] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,668] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,678] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-05 22:07:08,692] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,706] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,727] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,732] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,831] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-05 22:07:08,891] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-05 22:07:09,581] INFO in _internal: 127.0.0.1 - - [05/Jun/2025 22:07:09] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 03:05:15,841] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 03:05:15,847] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:15] "GET / HTTP/1.1" 200 -
+[2025-06-06 03:05:16,163] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,164] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,164] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,164] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,285] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,428] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,483] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,498] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,501] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,508] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 03:05:16,535] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,550] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,588] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,590] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:16,710] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:16] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:17,031] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:17] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 03:05:28,800] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 03:05:28,815] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:28] "GET / HTTP/1.1" 200 -
+[2025-06-06 03:05:28,967] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,105] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,161] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,199] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,241] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,275] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,303] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,340] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,375] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,406] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,439] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:29,487] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:29] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:31,715] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 03:05:31,715] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:31] "GET / HTTP/1.1" 200 -
+[2025-06-06 03:05:31,715] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:31] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:31,756] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:31] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 03:05:31,982] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:31] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:31,982] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:31] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,008] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,021] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,046] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,057] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,082] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,091] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,104] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,126] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,134] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,156] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,219] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,263] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:05:32,874] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:32] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 03:05:34,148] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:05:34] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 03:06:00,567] INFO in main: ------------------starting upload route----------------------
+[2025-06-06 03:06:00,667] INFO in main: Received files: ['pyramid_angle_019.png']
+[2025-06-06 03:06:00,684] INFO in main: Received file coun
+[2025-06-06 03:06:00,706] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-06-06 03:06:00,712] INFO in utils: IMG_SIZE: (224, 224)
+[2025-06-06 03:06:00,723] INFO in utils: CROP_SIZE: (128, 128)
+[2025-06-06 03:06:00,734] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-06-06 03:06:00,737] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-06-06 03:06:00,738] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-06-06 03:06:00,746] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 03:06:00,758] INFO in utils: Transformed images shape: torch.Size([1, 3, 224, 224])
+[2025-06-06 03:06:00,758] INFO in utils: Tensor dtype: torch.float32
+[2025-06-06 03:06:00,762] INFO in utils: Tensor min value: -0.7254902124404907
+[2025-06-06 03:06:00,763] INFO in utils: Tensor max value: 0.5921568870544434
+[2025-06-06 03:06:00,777] INFO in utils: length: 1
+[2025-06-06 03:06:02,598] INFO in main: Processed images shape: torch.Size([1, 1, 3, 224, 224])
+[2025-06-06 03:06:02,601] DEBUG in model_architecture: [DEBUG] 2025-06-06 03:06:02.601456 Parameters in Encoder: 7772480.
+[2025-06-06 03:06:02,625] DEBUG in model_architecture: [DEBUG] 2025-06-06 03:06:02.625286 Parameters in Decoder: 71583064.
+[2025-06-06 03:06:02,632] DEBUG in model_architecture: [DEBUG] 2025-06-06 03:06:02.632119 Parameters in Merger: 8571.
+[2025-06-06 03:06:02,638] DEBUG in model_architecture: [DEBUG] 2025-06-06 03:06:02.638119 Parameters in Refiner: 34880352.
+[2025-06-06 03:06:09,166] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:09] "POST /upload HTTP/1.1" 200 -
+[2025-06-06 03:06:09,414] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:09] "POST /save-model HTTP/1.1" 200 -
+[2025-06-06 03:06:10,948] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:10] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 03:06:23,332] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 03:06:23,391] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:23] "GET / HTTP/1.1" 200 -
+[2025-06-06 03:06:23,798] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:23] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:23,941] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:23] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,029] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,124] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,208] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,272] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,325] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,437] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,535] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,652] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,667] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,700] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,716] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,720] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:24,932] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:24] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 03:06:25,109] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:25] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 03:06:25,576] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 03:06:25] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:39:53,854] INFO in utils: Loading model...
+[2025-06-06 12:40:03,427] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+[2025-06-06 12:40:03,428] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-06-06 12:40:03,436] INFO in _internal:  * Restarting with stat
+[2025-06-06 12:40:13,575] INFO in utils: Loading model...
+[2025-06-06 12:40:16,590] WARNING in _internal:  * Debugger is active!
+[2025-06-06 12:40:16,615] INFO in _internal:  * Debugger PIN: 369-456-996
+[2025-06-06 12:40:17,008] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:40:17,008] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:40:17,058] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:40:17,068] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:40:17,548] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,575] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,611] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,722] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,766] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,777] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,798] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,816] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,821] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,836] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:40:17,869] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,879] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,950] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:17,952] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:17] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:19,074] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:19] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:40:23,847] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:40:23] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:41:18,778] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:41:18,781] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:18] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:41:18,873] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:18] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:18,897] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:18] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:18,926] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:18] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:18,962] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:18] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:18,979] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:18] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,012] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,044] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,099] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,159] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,199] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,266] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,274] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,310] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:19,322] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:19] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:41:20,137] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:41:20] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:42:53,242] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:42:53,251] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:42:53,363] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,420] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:42:53,422] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,424] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,456] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,459] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,459] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,479] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,495] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,510] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:42:53,523] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,545] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,555] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,572] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:53,679] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:53] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:42:54,466] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:42:54] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:45:06,720] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:45:06,720] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:45:06,922] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:06,935] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:06,961] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:45:06,989] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:06,998] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:06,999] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:06] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,005] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,042] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,042] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,078] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:45:07,079] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,111] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,174] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,184] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:07,520] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:07] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:08,249] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:08] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:45:14,620] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:45:14,670] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:45:14,765] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,893] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,896] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,896] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,899] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,929] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,932] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,935] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,955] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:14,988] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:14] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:45:15,012] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:15] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:15,037] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:15] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:15,066] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:15] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:15,076] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:15] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:15,187] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:15] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:15,902] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:15] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:45:24,951] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:45:24,951] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:24] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:45:25,046] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,191] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,194] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,204] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,218] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,243] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,244] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,245] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,246] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,251] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:45:25,279] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,293] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,325] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:25,340] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:25] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:26,147] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:26] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:45:26,716] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:45:26] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:49:10,149] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:49:10,175] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:49:10,434] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,467] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,484] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:49:10,511] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,520] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,534] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,547] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,585] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,597] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,613] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,615] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:49:10,641] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,675] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,679] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:10,982] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:10] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:49:11,726] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:49:11] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:50:01,831] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:01] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:01,926] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:01] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:01,980] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:01] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:01,997] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 12:50:02,032] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:02,075] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:02,102] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:02,180] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:02,180] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:02,248] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:50:02,321] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:50:02] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,224] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:51:48,240] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:51:48,376] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 12:51:48,590] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,621] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,623] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:51:48,675] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,750] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,751] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,752] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,807] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,811] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,857] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 12:51:48,857] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,898] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,950] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:48,993] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:48] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:50,023] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:50] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:51:50,656] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:51:50] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:52:26,991] INFO in main: ------------------starting upload route----------------------
+[2025-06-06 12:52:27,005] INFO in main: Received files: ['pyramid_angle_005.png', 'pyramid_angle_006.png', 'pyramid_angle_007.png', 'pyramid_angle_015.png', 'pyramid_angle_016.png', 'pyramid_angle_017.png', 'pyramid_angle_025.png', 'pyramid_angle_026.png', 'pyramid_angle_027.png']
+[2025-06-06 12:52:27,005] INFO in main: Received file count : 9
+[2025-06-06 12:52:27,030] INFO in utils: --------------------------- starting process images ---------------------------
+[2025-06-06 12:52:27,030] INFO in utils: IMG_SIZE: (224, 224)
+[2025-06-06 12:52:27,030] INFO in utils: CROP_SIZE: (128, 128)
+[2025-06-06 12:52:27,044] INFO in utils: RANDOM_BG_COLOR_RANGE: [[240, 240], [240, 240], [240, 240]]
+[2025-06-06 12:52:27,049] INFO in utils: MEAN: [0.5, 0.5, 0.5]
+[2025-06-06 12:52:27,174] INFO in utils: STD: [0.5, 0.5, 0.5]
+[2025-06-06 12:52:27,670] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,670] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,670] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,691] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,691] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,705] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,705] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,705] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,725] INFO in utils: Image shape: (224, 224, 3)
+[2025-06-06 12:52:27,772] INFO in utils: Transformed images shape: torch.Size([9, 3, 224, 224])
+[2025-06-06 12:52:27,772] INFO in utils: Tensor dtype: torch.float32
+[2025-06-06 12:52:27,859] INFO in utils: Tensor min value: -0.7490196228027344
+[2025-06-06 12:52:27,891] INFO in utils: Tensor max value: 0.8901960849761963
+[2025-06-06 12:52:27,893] INFO in utils: length: 9
+[2025-06-06 12:52:30,125] INFO in main: Processed images shape: torch.Size([1, 9, 3, 224, 224])
+[2025-06-06 12:52:30,160] DEBUG in model_architecture: [DEBUG] 2025-06-06 12:52:30.160113 Parameters in Encoder: 7772480.
+[2025-06-06 12:52:30,165] DEBUG in model_architecture: [DEBUG] 2025-06-06 12:52:30.165113 Parameters in Decoder: 71583064.
+[2025-06-06 12:52:30,167] DEBUG in model_architecture: [DEBUG] 2025-06-06 12:52:30.167113 Parameters in Merger: 8571.
+[2025-06-06 12:52:30,173] DEBUG in model_architecture: [DEBUG] 2025-06-06 12:52:30.173487 Parameters in Refiner: 34880352.
+[2025-06-06 12:52:47,945] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:52:47] "POST /upload HTTP/1.1" 200 -
+[2025-06-06 12:52:48,205] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:52:48] "POST /save-model HTTP/1.1" 200 -
+[2025-06-06 12:52:49,229] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:52:49] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:55:08,504] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:55:08,505] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:55:08,618] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,806] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,840] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:55:08,840] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,854] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,883] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,888] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,890] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,918] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,919] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,926] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,951] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,988] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:08,995] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:08] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:09,066] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:09] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 12:55:09,458] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:09] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:55:10,004] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:55:10] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:56:09,935] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:56:09,935] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:09] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:56:10,048] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,215] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,219] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:56:10,238] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,252] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,264] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,272] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,272] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,272] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,297] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,302] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,377] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,392] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,393] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:10,667] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:10] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:56:11,104] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 12:56:11,328] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:56:11] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:58:41,276] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:58:41,276] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:58:41,557] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-06-06 12:58:41,557] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,557] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 12:58:41,577] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,593] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,618] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,636] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,645] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,654] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,671] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,687] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,737] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,764] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,783] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:41,867] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:41] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 12:58:42,959] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:42] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:58:43,908] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:58:43] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:59:02,924] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 12:59:02,942] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:02] "GET / HTTP/1.1" 200 -
+[2025-06-06 12:59:03,242] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-06-06 12:59:03,242] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,258] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,275] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,295] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,297] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,317] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,317] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,319] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,337] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,371] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,386] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,421] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,430] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,707] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 12:59:03,847] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:03] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 12:59:04,820] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:04] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 12:59:16,721] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 12:59:16] "GET /api/models/89 HTTP/1.1" 200 -
+[2025-06-06 13:00:52,787] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 13:00:52,789] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:52] "GET / HTTP/1.1" 200 -
+[2025-06-06 13:00:52,931] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:52] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,047] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,072] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 13:00:53,075] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,081] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,109] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,122] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,140] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,197] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,265] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,265] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,285] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,388] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,389] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:53,490] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 13:00:53,823] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:53] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 13:00:54,481] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:00:54] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 13:04:05,384] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 13:04:05,384] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "GET / HTTP/1.1" 200 -
+[2025-06-06 13:04:05,616] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-06-06 13:04:05,699] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,757] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,766] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,792] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,794] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,819] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,822] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,859] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,864] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 13:04:05,879] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,927] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,954] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:05,977] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:05] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:06,051] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:06] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 13:04:06,845] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:06] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 13:04:07,567] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:04:07] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 13:08:22,914] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:08:22] "PUT /api/models/95 HTTP/1.1" 200 -
+[2025-06-06 13:08:26,247] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:08:26] "GET /api/models/92 HTTP/1.1" 200 -
+[2025-06-06 13:08:30,590] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:08:30] "DELETE /api/models/92 HTTP/1.1" 200 -
+[2025-06-06 13:08:31,425] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:08:31] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 13:26:13,947] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 13:26:13,951] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:13] "GET / HTTP/1.1" 200 -
+[2025-06-06 13:26:14,166] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,192] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,192] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,208] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,221] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,242] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,242] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,243] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,245] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,284] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,286] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,373] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,408] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,447] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:14,544] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:14] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 13:26:15,436] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:15] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 13:26:16,435] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:16] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 13:26:59,997] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 13:26:59,997] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:26:59] "GET / HTTP/1.1" 200 -
+[2025-06-06 13:27:00,698] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-06-06 13:27:00,717] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,726] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,768] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,772] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,799] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,805] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,806] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,839] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,841] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,841] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,889] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,918] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:00,924] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:00] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:01,192] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:01] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 13:27:01,269] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 13:27:01,895] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:27:01] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 13:56:38,811] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 13:56:38,829] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:38] "GET / HTTP/1.1" 200 -
+[2025-06-06 13:56:39,222] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "GET /static/css/index.css HTTP/1.1" 200 -
+[2025-06-06 13:56:39,267] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,273] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,292] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,295] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,333] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,336] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,355] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,373] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,431] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 13:56:39,471] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,531] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,556] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,558] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:39,717] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:39] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 13:56:40,462] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:40] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 13:56:41,051] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 13:56:41] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:01:20,441] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:01:20,485] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:01:20,773] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:20,802] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:20,807] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 14:01:20,824] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:20,882] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:20,915] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:20,948] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:20] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,012] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,058] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,058] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:01:21,096] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,146] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,194] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,196] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:21,292] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 14:01:21,601] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:21] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:01:22,222] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:01:22] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:03:44,782] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:03:44,782] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:44] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:03:44,973] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:44] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,088] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,119] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 14:03:45,141] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,143] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,171] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,173] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,198] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,210] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,235] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,239] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,315] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,344] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,349] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:45,446] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 14:03:46,230] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:46] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:03:46,886] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:03:46] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:07:33,896] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:07:33,913] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:33] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:07:34,139] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,268] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,277] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 14:07:34,291] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,308] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,321] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,323] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,323] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,350] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,354] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,372] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,386] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,438] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,441] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:34,762] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:34] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:07:35,147] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 14:07:35,401] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:07:35] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:09:48,250] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:09:48,250] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:09:48,470] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,525] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,529] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 14:09:48,562] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,582] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,596] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,597] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,606] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,627] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,637] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,647] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,665] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,711] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,725] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:48,810] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:48] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 14:09:49,603] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:49] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:50,234] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:50] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:09:58,801] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:09:58,817] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:58] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:09:58,965] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:58] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,168] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,168] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,168] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,194] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,205] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,222] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,241] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,243] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,244] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,289] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,291] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,332] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,359] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,498] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:09:59,562] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:09:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+[2025-06-06 14:10:00,250] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:10:00] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:10:03,960] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:10:03] "GET /api/models/65 HTTP/1.1" 200 -
+[2025-06-06 14:10:12,234] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:10:12] "GET /api/models/62 HTTP/1.1" 200 -
+[2025-06-06 14:10:21,933] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:10:21] "GET /api/models/60 HTTP/1.1" 200 -
+[2025-06-06 14:10:29,982] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:10:29] "GET /api/models/84 HTTP/1.1" 200 -
+[2025-06-06 14:18:26,793] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:18:26,806] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:26] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:18:27,000] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,095] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,111] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 14:18:27,131] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,131] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,161] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,187] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,235] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,247] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,271] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,275] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,319] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,336] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:27,337] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:27] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:28,080] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:28] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:18:28,804] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:18:28] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:22:28,448] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:22:28,448] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:22:28,563] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,594] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,613] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,693] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,737] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,745] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,788] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,830] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,877] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,940] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,941] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,979] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:28,979] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:28] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:29,159] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:29] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:22:29,306] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:29] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:29,966] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:29] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:22:52,746] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:22:52,747] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:22:52,833] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,953] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,960] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,964] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,984] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,984] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,984] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:52,994] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:52] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,006] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,019] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,044] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,044] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,071] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,071] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,200] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:22:53,997] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:53] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:22:58,286] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:22:58] "GET /api/models/90 HTTP/1.1" 200 -
+[2025-06-06 14:23:43,800] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:23:43,801] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:43] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:23:44,020] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,046] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,047] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,068] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,069] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,087] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,097] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,114] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,116] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,130] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:23:44,133] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,150] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,176] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,178] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:44,928] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:44] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:23:45,590] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:23:45] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:24:00,639] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:24:00,642] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:00] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:24:00,951] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:00] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,025] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,025] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,076] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,083] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,084] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,108] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,109] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,112] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,123] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:24:01,229] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,334] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,533] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,599] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:01,839] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:01] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:24:02,539] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:24:02] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:26:07,665] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:26:07,704] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:07] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:26:08,223] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,401] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,403] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "GET /static/css/theme.css HTTP/1.1" 200 -
+[2025-06-06 14:26:08,414] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,445] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,465] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,474] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,487] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,489] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,542] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:26:08,547] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,547] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,611] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,652] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:08,911] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:08] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:09,667] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:09] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:26:51,352] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:26:51,371] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:26:51,467] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,553] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,569] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,590] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,618] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,623] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,668] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,674] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,688] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,724] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,734] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:26:51,767] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,850] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:51,880] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:51] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:52,096] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:52] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:26:52,729] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:26:52] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:27:01,608] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:27:01,632] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:27:01,906] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:01,947] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:01,950] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:01,952] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:01,956] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:01,973] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:01] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,019] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,034] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,042] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,057] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:27:02,057] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,057] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,115] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,116] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:02,302] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:02] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:03,039] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:03] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:27:16,825] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:27:16,825] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:16] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:27:16,948] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:16] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,048] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,055] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,065] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,080] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,082] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,093] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,093] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,112] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,117] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:27:17,133] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,136] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,162] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,163] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,271] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:27:17,990] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:27:17] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:28:50,939] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:28:51,024] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:28:51,519] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:51,691] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:51,745] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:51,775] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:51,818] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:51,841] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:51,882] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:51] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:52,042] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:52,227] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:52,307] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:28:52,309] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:52,389] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:52,436] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:52,468] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:52] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:53,135] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:53] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:28:54,436] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:28:54] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:29:27,212] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:29:27,212] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:29:27,333] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,779] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,807] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,855] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,871] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,871] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,904] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,931] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,998] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,998] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:27,998] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:27] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:29:28,021] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:28] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:28,132] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:28] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:28,134] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:28] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:28,296] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:28] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:29:29,091] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:29:29] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:30:01,837] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:30:01,845] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:01] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:30:02,300] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,410] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,416] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,449] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,474] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,504] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,518] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,531] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,531] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,553] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,569] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,586] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,666] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:02,668] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:02] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:30:03,659] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:30:03] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:34:54,835] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:34:54,881] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:54] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:34:55,241] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,306] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,421] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,465] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,508] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,529] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,530] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,556] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,595] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,597] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "GET /static/css/slide_menu.css HTTP/1.1" 200 -
+[2025-06-06 14:34:55,661] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "GET /static/js/index.js HTTP/1.1" 200 -
+[2025-06-06 14:34:55,662] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,763] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:55,765] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:55] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:56,678] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:56] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:34:57,401] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:34:57] "GET /api/models HTTP/1.1" 200 -
+[2025-06-06 14:35:24,155] DEBUG in main: -----------------------initializing app----------------------
+[2025-06-06 14:35:24,157] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "GET / HTTP/1.1" 200 -
+[2025-06-06 14:35:24,262] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,306] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/upload_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,356] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/theme.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,356] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/footer.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,377] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/uploaded_files_area.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,382] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/model_preview_nav_bar.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,391] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/model_container.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,403] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/notification.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,413] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/slide_menu.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,425] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/css/model_gallery.css HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,425] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,425] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,473] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/js/utils.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,475] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/js/threejs.js HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:24,615] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:24] "[36mGET /static/icons/icon.png HTTP/1.1[0m" 304 -
+[2025-06-06 14:35:25,834] INFO in _internal: 127.0.0.1 - - [06/Jun/2025 14:35:25] "GET /api/models HTTP/1.1" 200 -

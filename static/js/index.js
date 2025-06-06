@@ -19,6 +19,11 @@ const panBtn = document.getElementById('panButton');
 const fullscreenBtn = document.getElementById('fullscreenButton');
 const downloadModelBtn = document.getElementById('downloadModelButton');
 
+const menuToggleBtn = document.getElementById('menuToggleBtn');
+const slideMenu = document.getElementById('slideMenu');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const menuOverlay = document.getElementById('menuOverlay');
+
 // Array to keep track of uploaded files
 let uploadedFiles = [];
 let currentScene = null;
@@ -154,6 +159,24 @@ const cleanupPreviousScene = () => {
     }
 };
 
+// NEW: Function to open the side menu
+const openMenu = () => {
+    slideMenu.classList.add('open');
+    menuOverlay.style.display = 'block'; // Show overlay
+    // Trigger transition for opacity after display block
+    setTimeout(() => menuOverlay.style.opacity = 1, 10);
+    document.body.style.overflow = 'hidden'; // Prevent scrolling background
+};
+
+// NEW: Function to close the side menu
+const closeMenu = () => {
+    slideMenu.classList.remove('open');
+    menuOverlay.style.opacity = 0; // Fade out overlay
+    // Hide overlay after transition
+    setTimeout(() => menuOverlay.style.display = 'none', 300);
+    document.body.style.overflow = ''; // Allow scrolling background
+};
+
 // Load saved models initially
 document.addEventListener('DOMContentLoaded', () => {
     loadSavedModels();
@@ -243,10 +266,23 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.style.display = 'none';
         });
     }
+    });
 });
 
-
+// Event listeners for the side menu
+menuToggleBtn.addEventListener('click', () => {
+    if (slideMenu.classList.contains('open')) 
+    {
+        closeMenu();
+    } 
+    else 
+    {
+        openMenu();
+    }
 });
+closeMenuBtn.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu); // Close when clicking outside menu
+
 
 // Trigger file input when clicking the "Choose Images" button
 chooseFileBtn.addEventListener('click', () => {

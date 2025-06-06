@@ -5,15 +5,12 @@ body {
     text-align: center;
     padding: 0px; 
     margin: 0px;
-    background-color: #191919;
-    color: white;
     visibility: hidden;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    background: #353535;
     padding: 0 2em;
     height: 4rem;
     align-items: center;
@@ -22,10 +19,14 @@ header {
 }
 
 header h1 {
-    color: #f5f5f5;
     font-size: 1.4rem;
     font-weight: 300;
     margin: 0;
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Vertically align items in the middle */
+    gap: 20px; /* Add some space between the button and the text */
+    padding-left: 0px; /* Add padding to the left for the button to not hug the edge */
+    position: relative; /* Needed if you want to absolutely position elements relative to h1 later */
 }
 
 main {
@@ -33,6 +34,5 @@ main {
     margin: 40px auto;
     padding: 20px;
     border-radius: 10px;
-    background-color: #2c2c2c;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
