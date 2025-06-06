@@ -15,7 +15,8 @@ const materialCache =
     meshStandardMaterial: new THREE.MeshStandardMaterial({ color: 0x808080, side: THREE.DoubleSide }), // A neutral grey
     meshPhongMaterial: new THREE.MeshPhongMaterial({ color: 0x808080, shininess: 200, side: THREE.DoubleSide }), // A neutral grey, requires light
     meshBasicMaterial: new THREE.MeshBasicMaterial({ color: 0x808080, side: THREE.DoubleSide }), // A neutral grey, not affected by light
-    lineBasicMaterial: new THREE.LineBasicMaterial({ color: 0x333333 }) // Dark grey for wireframe, visible on light/dark backgrounds
+    // Initialize wireframe material with a placeholder color; its color will be set dynamically
+    lineBasicMaterial: new THREE.LineBasicMaterial({ color: 0x000000 }) // Placeholder color
 };
 
 // Map to store original materials of meshes, keyed by mesh UUID.
@@ -123,6 +124,19 @@ export const disposeScene = () => {
     currentScene = null;
 };
 
+// Helper function to get wireframe color based on current theme
+function getWireframeColorForTheme() 
+{
+    // Check the body's class list to determine the current theme
+    if (document.body.classList.contains('light-mode')) 
+    {
+        return 0x333333; // Dark grey for light mode (contrasts with white background)
+    } 
+    else 
+    {
+        return 0xcccccc; // Light grey for dark mode (contrasts with dark background)
+    }
+}
 
 // Function to initialize the Three.js scene and load a model (exported)
 export function initThreeJS(modelPath) 
@@ -286,6 +300,9 @@ export function initThreeJS(modelPath)
                             child.material = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0 });
                         }
                         
+                        // Update the color of the cached wireframe material based on the current theme
+                        materialCache.lineBasicMaterial.color.set(getWireframeColorForTheme());
+
                         // Now add the wireframe on top (which your code already does correctly)
                         child.add(new THREE.LineSegments(
                             new THREE.EdgesGeometry(child.geometry),
