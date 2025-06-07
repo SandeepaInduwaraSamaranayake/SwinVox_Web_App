@@ -107,7 +107,8 @@ The SwinVox app backend is implemented using Flask. Open a terminal and enter: <
 `cd SwinVox_Web_App && pip install -r requirements.txt`
 
 ### 5. Run `main.py` 
-`python main.py`
+`python main.py` 
+
 
 ## Usage
 
@@ -160,6 +161,17 @@ The SwinVox app backend is implemented using Flask. Open a terminal and enter: <
   + Click the (hamburger) icon in the header to open the slide-out navigation menu.
   + This menu provides links to external resources like Three.js documentation, help & feedback, and the GitHub repository.
   + Click the "×" button or anywhere outside the menu to close it.
+
+## Backend API Endpoints
+
++ Backend server provides the following API endpoints:
+  + `POST /upload`:  Accepts image files (multipart/form-data), processes them for 3D reconstruction, and returns the reconstructed model (e.g., as a GLB Blob).
+  + `GET /api/models`: Retrieves a list of all saved models.
+  + `DELETE /api/models/{id}`: Deletes a specific model.
+  + `POST /save-model`: Accepts the generated 3D model and its thumbnail, saves them to database, and returns model metadata (ID, filename).
+  + `GET /api/models/{id}`: Retrieves a specific 3D model's binary data by ID.
+  + `PUT /api/models/{id}`: Updates a model's information (e.g., filename).
+  + `GET /api/models/{id}/info`: Retrieves metadata for a specific model by ID.
 
 ## Contributing
 
