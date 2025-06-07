@@ -109,17 +109,18 @@ The SwinVox app backend is implemented using Flask. Open a terminal and enter: <
 ### 5. Run `main.py` 
 `python main.py` 
 
-
 ## Usage
 
 ### 1. Start your web server:
 
   + Navigate to the project's root directory in your terminal (`cd SwinVox_Web_App`).
-  + If using Python: python -m http.server 8000 (or your preferred port).
+  + `python main.py`
+  + :x: If the port 8080 is already in use, you can change the port from line 197 in `main.py`
+
 
 ### 2. Open the application:
 
-  + Open your web browser and navigate to http://localhost:8000 (or the address where your web server is running).
+  + Open your web browser and navigate to http://localhost:8080 (Use the port in line 197 of `main.py`).
 
 ### 3. Upload Images:
 
