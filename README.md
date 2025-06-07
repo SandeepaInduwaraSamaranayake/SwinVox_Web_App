@@ -1,61 +1,146 @@
-# Flask Web App Starter
+# **"SwinVox" 3D Reconstruction**
 
-A Flask starter template as per [these docs](https://flask.palletsprojects.com/en/3.0.x/quickstart/#a-minimal-application).
+## Project Overview
 
-## Getting Started
+SwinVox 3D Reconstruction is a web application designed to facilitate the upload of image datasets for 3D model reconstruction and provides an interactive 3D viewer for the reconstructed models. Users can easily upload images, view the resulting 3D models with various rendering options, and manage their saved models through a gallery interface.
 
-Previews should run automatically when starting a workspace.
+## Features
 
-### Required packages to create python virtual environment
++ Drag & Drop Image Upload: Intuitive interface for selecting multiple images for reconstruction. <br>
++ Interactive 3D Model Viewer: <br>
+  + Load and display reconstructed 3D models (GLB format).
+  + Zoom In/Out: Control model magnification.
+  + Pan: Move the model across the viewport.
+  + Fullscreen Mode: Expand the viewer for an immersive experience.
+  + Material Switching: Change model rendering materials (Standard, Phong, Basic, Wireframe, Original).
+  + Dynamic Wireframe: Wireframe adapts color for visibility in both light and dark themes.
++ Model Gallery:
+  +  Display a list of previously reconstructed and saved 3D models with thumbnails.
+  +  Rename Models: Update the name of saved models.
+  +  Delete Models: Remove models from the gallery.
+  +  Download Models: Download saved GLB models.
++ Theme Switching: Toggle between Light and Dark modes for the entire application interface.
++ Responsive Design: Optimized for viewing and interaction on various devices (desktop, tablet, mobile).
++ Slide-out Navigation Menu: Convenient access to external links and project information.
++ User Notifications: Provides feedback on operations (e.g., success, error, info messages).
 
-Package                  Version
------------------------- -----------
-autopep8                 2.3.1           <br>
-blinker                  1.9.0           <br>
-click                    8.1.8           <br>
-contourpy                1.3.1           <br>
-cycler                   0.12.1          <br>
-filelock                 3.16.1          <br>
-Flask                    3.1.0           <br>
-Flask-Cors               5.0.0           <br>
-fonttools                4.55.3          <br>
-fsspec                   2024.12.0       <br>
-itsdangerous             2.2.0           <br>
-Jinja2                   3.1.5           <br>
-kiwisolver               1.4.8           <br>
-MarkupSafe               3.0.2           <br>
-matplotlib               3.10.0          <br>
-mpmath                   1.3.0           <br>
-networkx                 3.4.2           <br>
-numpy                    2.2.1           <br>
-nvidia-cublas-cu12       12.4.5.8        <br>
-nvidia-cuda-cupti-cu12   12.4.127        <br>
-nvidia-cuda-nvrtc-cu12   12.4.127        <br>
-nvidia-cuda-runtime-cu12 12.4.127        <br>
-nvidia-cudnn-cu12        9.1.0.70        <br>
-nvidia-cufft-cu12        11.2.1.3        <br>
-nvidia-curand-cu12       10.3.5.147      <br>
-nvidia-cusolver-cu12     11.6.1.9        <br>
-nvidia-cusparse-cu12     12.3.1.170      <br>
-nvidia-nccl-cu12         2.21.5          <br>
-nvidia-nvjitlink-cu12    12.4.127        <br>
-nvidia-nvtx-cu12         12.4.127        <br>
-packaging                24.2            <br>
-pillow                   11.0.0          <br>
-pip                      24.0            <br>
-pycodestyle              2.12.1          <br>
-pyparsing                3.2.0           <br>
-python-dateutil          2.9.0.post0     <br>
-setuptools               65.5.0          <br>
-six                      1.17.0          <br>
-sympy                    1.13.1          <br>
-torch                    2.5.1+cpu       <br>
-torchaudio               2.5.1+cpu       <br>
-torchvision              0.20.1+cpu      <br>
-triton                   3.1.0           <br>
-typing_extensions        4.12.2          <br>
-Werkzeug                 3.1.3           <br>
+## Technologies Used
 
++ Frontend:
+  + HTML5
+  + CSS3 (Custom CSS for layout, theming, and responsive design)
+  + JavaScript (ES6+)
+  + Three.js (r129) - For 3D rendering and model interaction.
+  + OrbitControls - For camera controls.
+  + GLTFLoader - For loading GLB/GLTF models.
+  + Font Awesome - For icons.
++ Backend:
+  + Flask server to implement endpoints:
+    +  Image uploads (`/upload`)
+    +  3D model reconstruction processing
+    +  Saving and retrieving 3D models (`/save-model`, `/api/models`)
+
+
+## Folder Structure
+
+```
+.
+├── static/
+│   ├── css/
+│   │   ├── index.css
+│   │   ├── upload_area.css
+│   │   ├── theme.css
+│   │   ├── footer.css (No longer used for links, but might contain other footer styles)
+│   │   ├── uploaded_files_area.css
+│   │   ├── model_container.css
+│   │   ├── model_preview_nav_bar.css
+│   │   ├── notification.css
+│   │   ├── model_gallery.css
+│   │   └── slide_menu.css (NEW)
+│   ├── js/
+│   │   ├── index.js
+│   │   ├── threejs.js
+│   │   └── theme.js
+│   └── icons/
+│       └── icon.png
+├── index.html
+└── ... (Your backend files and other project specific directories)
+```
+
+
+## Setup
+
+To set up and run this project locally, you will need a web server environment and potentially a backend process for the 3D reconstruction and model management.
+
+### 1. Make sure the latest version of Python is installed.
+
+You can download and install latest Python from https://www.python.org/downloads/ if not already installed.
+
+### 2. Install Flask (If not already installed)
+
+The SwinVox app backend is implemented using Flask. Open a terminal and enter: <br>
+`pip install Flask`
+
+### 3. Clone the SwinVox web app repository: <br>
+`git clone https://github.com/SandeepaInduwaraSamaranayake/SwinVox_Web_App.git`
+
+### 4. Navigate to the project directory and install Dependencies in `requirements.txt`
+`cd SwinVox_Web_App && pip install -r requirements.txt`
+
+### 5. Run `main.py` 
+`python main.py`
+
+## Usage
+
+### 1. Start your web server:
+
+  + Navigate to the project's root directory in your terminal (`cd SwinVox_Web_App`).
+  + If using Python: python -m http.server 8000 (or your preferred port).
+
+### 2. Open the application:
+
+  + Open your web browser and navigate to http://localhost:8000 (or the address where your web server is running).
+
+### 3. Upload Images:
+
+  + Drag and Drop: Drag image files directly into the "Drag and drop images here" area.
+  + Choose Images Button: Click the " Choose Images" button to open a file selection dialog.
+  + Selected images will appear in the "Uploaded files area." You can remove individual files using the "✖" button or clear all with the " Clear" button.
+
+### 4. Submit for Reconstruction:
+
+  + Once you've selected your images, click the " Submit" button.
+  + A loading overlay will appear while the model is being reconstructed and saved to the backend.
+  + Upon successful processing, the 3D model viewer will open.
+
+### 5. Interact with the 3D Model Viewer:
+
+  + Rotate: Click and drag the model.
+  + Zoom: Use the mouse wheel or the / buttons.
+  + Pan: Click the button to toggle pan mode, then click and drag.
+  + Fullscreen: Click the button to enter/exit fullscreen.
+  + Material: Use the dropdown menu to switch between Original Material (the model's default), Standard Material, Phong Material, Basic Material, and Wireframe.
+  + Download: Click the button to download the currently viewed model.
+  + Exit Viewer: Click the (back) button or the "×" (close) button.
+
+### 6. Manage Saved Models:
+
+  + The "Saved Models" section displays models you've previously uploaded.
+  + Click on a model card to open it in the 3D viewer.
+  + Click the "⋯" button on a model card to access options:
+    + Rename: Change the model's display name.
+    + Download: Download the model file.
+    + Delete: Remove the model from the gallery.
+
+### 7. Change Theme:
+
+  + Click the (Light Mode) or (Dark Mode) icon in the header to switch the application's theme.
+
+### 8. Access Navigation Menu:
+
+  + Click the (hamburger) icon in the header to open the slide-out navigation menu.
+  + This menu provides links to external resources like Three.js documentation, help & feedback, and the GitHub repository.
+  + Click the "×" button or anywhere outside the menu to close it.
 
 ### Activate virtual environment using
 
