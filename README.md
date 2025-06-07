@@ -48,23 +48,42 @@ SwinVox 3D Reconstruction is a web application designed to facilitate the upload
 ├── static/
 │   ├── css/
 │   │   ├── index.css
-│   │   ├── upload_area.css
-│   │   ├── theme.css
-│   │   ├── footer.css (No longer used for links, but might contain other footer styles)
-│   │   ├── uploaded_files_area.css
 │   │   ├── model_container.css
+│   │   ├── model_gallery.css
 │   │   ├── model_preview_nav_bar.css
 │   │   ├── notification.css
-│   │   ├── model_gallery.css
-│   │   └── slide_menu.css (NEW)
+│   │   ├── slide_menu.css
+│   │   ├── theme.css
+│   │   ├── upload_area.css
+│   │   └── uploaded_files_area.css
 │   ├── js/
 │   │   ├── index.js
+│   │   ├── theme.js
 │   │   ├── threejs.js
-│   │   └── theme.js
+│   │   └── utils.js
 │   └── icons/
 │       └── icon.png
-├── index.html
-└── ... (Your backend files and other project specific directories)
+├── templates/
+│   └── index.html
+├── model/
+│   ├── config.py
+│   ├── decoder.py
+│   ├── encoder.py
+│   ├── merger.py
+│   ├── refiner.py
+│   └── model_architecture.py
+├── lib/
+│   ├── cube.py (Additional helper script)
+│   ├── data_transforms.py
+│   ├── glb_creater.py (Additional helper script)
+│   ├── glb_opener.py (Additional helper script)
+│   ├── helpers.py (Additional helper script)
+│   ├── models.py
+│   └── utils.py
+├── logs/
+│   └──  swinvox.log (log files)
+├── main.py
+└── requirements.txt
 ```
 
 
@@ -142,6 +161,20 @@ The SwinVox app backend is implemented using Flask. Open a terminal and enter: <
   + This menu provides links to external resources like Three.js documentation, help & feedback, and the GitHub repository.
   + Click the "×" button or anywhere outside the menu to close it.
 
-### Activate virtual environment using
+## Contributing
 
-source .venv/bin/activate
+Contributions are welcome! If you have suggestions, bug reports, or want to contribute code, please feel free to:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeatureName`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature/YourFeatureName`).
+6. Open a Pull Request.
+
+# License
+
+This project is licensed under the MIT License 
+
+
+
