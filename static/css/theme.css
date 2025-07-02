@@ -14,6 +14,14 @@
     color: #2a9d8f; /* Change color on hover */
 }
 
+body.light-mode .toggle-container i {
+    color: #333; /* Darker color for light mode */
+}
+
+body.dark-mode .toggle-container i {
+    color: #f5f5f5; /* Lighter color for dark mode */
+}
+
 body.light-mode {
     background-color: #ffffff;
     color: #000000;
@@ -38,7 +46,6 @@ body.dark-mode main {
     border-color: #888; /* Darker border for dark mode */
 }
 
-/* Add this to your theme.css or model_container.css */
 .modal-content.light-mode {
     background-color: #ffffff; /* Light background for light mode */
     color: #000000; /* Text color for light mode */
@@ -49,3 +56,145 @@ body.dark-mode main {
     color: #ffffff; /* Text color for dark mode */
 }
 
+/* Light theme navigation bar */
+body.light-mode .nav-button {
+    background-color: #ffffff; /* Light background */
+    color: #2c2c2c; 
+}
+
+body.dark-mode .nav-button {
+    background-color: #2c2c2c; /* Dark background */
+    color: #ffffff; 
+}
+
+/* Light theme close button */
+body.light-mode .close {
+    color: #2c2c2c; 
+}
+
+body.dark-mode .close {
+    color: #ffffff; 
+}
+
+/* Light theme modal content */
+body.light-mode .modal-content {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark theme modal content */
+body.dark-mode .modal-content {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+/* Model Gallery Styles */
+body.light-mode .model-gallery {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+body.dark-mode .model-gallery {
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+/* Model card Styles */
+body.light-mode .model-card {
+    background: #ffffff;
+    color: #000;
+}
+
+body.dark-mode .model-card {
+    background: #353535;
+    color: #fff;
+}
+
+/* Model menu Styles */
+body.light-mode .model-menu {
+    background: white;
+    border-color: #ddd;
+    color: #333;
+}
+
+body.dark-mode .model-menu {
+    background: #2c2c2c;
+    border-color: #555;
+    color: #f5f5f5;
+}
+
+/* Menu item Styles */
+body.dark-mode .menu-item {
+    color: white;
+}
+
+body.light-mode .menu-item {
+    color: #353535;
+}
+
+/* Menu item Styles */
+body.light-mode .menu-item:hover {
+    background-color: #ccc;
+}
+
+body.dark-mode .menu-item:hover {
+    background-color: #3d3d3d;
+}
+
+/* Model thumbnail Styles */
+body.light-mode .model-thumbnail {
+    background: #e0e0e0;
+}
+
+body.dark-mode .model-thumbnail {
+    background: #444;
+}
+
+/* Slide menu Styles*/
+/* Dark mode adjustment for the menu toggle button */
+body.dark-mode .menu-toggle-btn {
+    color: #f5f5f5;
+}
+
+/* Light mode adjustment for the menu toggle button */
+body.light-mode .menu-toggle-btn {
+    color: #333; /* Darker icon for light theme */
+}
+
+body.light-mode .slide-menu {
+    background-color: #f0f0f0; /* Lighter background for light mode */
+    color: #333333; /* Darker text for light mode */
+}
+
+body.dark-mode .slide-menu {
+    background-color: #353535; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+body.light-mode .slide-menu .close-menu-btn {
+    color: #333333;
+}
+
+body.light-mode .slide-menu .menu-content h3 {
+    color: #666666;
+}
+
+body.light-mode .slide-menu .menu-content a {
+    color: #333333;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .slide-menu .menu-content a:hover {
+    color: #2a9d8f; /* Same accent color */
+}
+
+/* Theme-specific styles for the header */
+body.light-mode header {
+    background: #e0e0e0; /* Lighter background for light mode header */
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+
+body.dark-mode header {
+    background: #353535; /* Darker background for dark mode header */
+    box-shadow: 0 0 8px 2px #0000004d; /* Darker shadow */
+}

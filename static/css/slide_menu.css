@@ -1,0 +1,101 @@
+/* Styling for the hamburger menu button */
+.menu-toggle-btn {
+    background: none;
+    border: none;
+    /*color: #f5f5f5; /* Light icon for dark theme */
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0; /* Remove default padding for better alignment within flex */
+    /* Remove absolute positioning if it was there before: */
+    position: static; /* or remove this property if it's not explicitly set */
+    transform: none; /* Remove any previous transforms */
+}
+
+/* Overlay that appears when the menu is open */
+.menu-overlay {
+    position: fixed;
+    top: 4rem; /* Start below the header */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 4rem); /* Adjust height to fill remaining space */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Below the menu, above content */
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+/* Style for the slide-out menu */
+.slide-menu {
+    position: fixed;
+    top: 4rem; /* Start below the header */
+    left: 0; /* Starts off-screen to the left */
+    width: 250px; /* Adjust width as needed */
+    max-width: 80%; /* Max width for smaller screens */
+    height: calc(100% - 4rem); /*Adjust height to fill remaining space */
+    box-shadow: 2px 10px 10px 0 rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Above the overlay */
+    transform: translateX(-100%); /* Initially completely off-screen */
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Class to show the slide-out menu */
+.slide-menu.open {
+    transform: translateX(0); /* Slides into view */
+}
+
+/* Styles for menu content and links */
+.slide-menu .close-menu-btn {
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 2rem;
+    cursor: pointer;
+    align-self: flex-end; /* Pushes the close button to the top right */
+    margin-bottom: 20px;
+}
+
+.slide-menu .menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between links */
+    width: 100%;
+    padding-top: 10px; /* Space from title */
+}
+
+.slide-menu .menu-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+}
+
+.slide-menu .menu-content a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    transition: color 0.2s ease-in-out;
+}
+
+.slide-menu .menu-content a:hover {
+    color: #2a9d8f; /* Accent color on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .slide-menu {
+        width: 100%; /* Full width on very small screens */
+        max-width: none;
+    }
+
+    .menu-toggle-btn {
+        left: 10px; /* Adjust position for smaller screens */
+        font-size: 1.5rem;
+    }
+}
