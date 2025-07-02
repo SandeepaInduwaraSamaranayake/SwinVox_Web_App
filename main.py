@@ -57,7 +57,6 @@ model = load_model(cfg)
 @app.route('/')
 def root():
     try:
-        app.logger.debug("-----------------------initializing app----------------------")
         return render_template("index.html")
     except Exception as e:
         app.logger.error("Error in app initialization: %s", str(e))
@@ -66,13 +65,11 @@ def root():
 @app.route('/upload', methods=['POST'])
 def upload_images():
     try:
-        app.logger.info("------------------starting upload route----------------------")
         # Get uploaded files
         files = request.files.getlist("images[]")
         app.logger.info("Received files: %s", [file.filename for file in files])
         app.logger.info("Received file count : %d", len(files))
         if not files:
-            app.logger.info("------------------no files received----------------------")    
             return jsonify({"error": "No images uploaded"}), 400
 
         # Process uploaded images
@@ -173,7 +170,7 @@ def update_model(model_id):
             return jsonify({'message': 'Model renamed successfully'})
         
         return jsonify({'error': 'Invalid request'}), 400
-        
+    
     except Exception as e:
         app.logger.error(f"Error updating model: {str(e)}")
         return jsonify({"error": str(e)}), 500
