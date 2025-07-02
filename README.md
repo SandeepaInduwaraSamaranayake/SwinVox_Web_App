@@ -185,6 +185,31 @@ Contributions are welcome! If you have suggestions, bug reports, or want to cont
 5. Push to the branch (`git push origin feature/YourFeatureName`).
 6. Open a Pull Request.
 
+## Screenshots
+
+### Landing Page
+
+![1_L_D](https://github.com/user-attachments/assets/fc2b412d-c6f0-4227-9a76-d5e91e68ba0e)
+
+![1_L_N](https://github.com/user-attachments/assets/3d4b1edb-b7f2-45ae-94b4-5dccf01fff6b)
+
+### Image Upload Screen
+
+![2_U_D](https://github.com/user-attachments/assets/97c69111-6551-4ecd-b8dc-9d7bf5fdd305)
+
+![2_U_L](https://github.com/user-attachments/assets/58fe18e2-c57b-4733-91cc-1b02d6bd2d0d)
+
+### Loading Overlay
+
+![3_O_D](https://github.com/user-attachments/assets/5fb86e26-0713-4f46-b00a-d6875b34247f)
+
+### 3D Voxel Viewer
+
+![4_P_D](https://github.com/user-attachments/assets/74494a3e-faf4-4872-849d-95a7e4060b4e)
+
+![4_P_L](https://github.com/user-attachments/assets/7c95906a-f78b-4159-b4c5-d5c3f94e2986)
+
+
 # License
 
 This project is licensed under the MIT License 
