@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/sandeepainduwarasamaranayake/swinvox_web_app/badge)](https://www.codefactor.io/repository/github/sandeepainduwarasamaranayake/swinvox_web_app)
+
 # **"SwinVox" 3D Reconstruction**
 
 ## Project Overview
