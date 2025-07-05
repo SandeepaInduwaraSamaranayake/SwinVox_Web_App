@@ -133,7 +133,7 @@ def save_model():
             data=file.read(),
             thumbnail=thumbnail.read() if thumbnail else None
         )
-        db.session.add(new_model);
+        db.session.add(new_model)
         db.session.commit()
         # Return the filename along with the ID
         return jsonify({'message': 'Model saved', 'id': new_model.id, 'filename': new_model.filename})
