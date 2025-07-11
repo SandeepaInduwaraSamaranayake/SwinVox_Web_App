@@ -83,7 +83,7 @@ def process_images(images, cfg):
             raise ValueError(f"Error processing image:{str(e)}") 
 
     try:
-        transformed_images  = transformation(np_images)  
+        transformed_images = transformation(np_images)  
 
         logger.info(f"Transformed images shape: {transformed_images.shape}")
         logger.info(f"Tensor dtype: {transformed_images.dtype}")

@@ -159,7 +159,7 @@ const cleanupPreviousScene = () => {
     }
 };
 
-// NEW: Function to open the side menu
+// Function to open the side menu
 const openMenu = () => {
     slideMenu.classList.add('open');
     menuOverlay.style.display = 'block'; // Show overlay
@@ -168,7 +168,7 @@ const openMenu = () => {
     document.body.style.overflow = 'hidden'; // Prevent scrolling background
 };
 
-// NEW: Function to close the side menu
+// Function to close the side menu
 const closeMenu = () => {
     slideMenu.classList.remove('open');
     menuOverlay.style.opacity = 0; // Fade out overlay
