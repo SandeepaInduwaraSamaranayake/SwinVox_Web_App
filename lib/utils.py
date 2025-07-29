@@ -17,7 +17,7 @@ def load_model(cfg):
 
     try:
         # Load the checkpoint. If Dataparallel used for training the weight, use helpers.save_checkpoint_for_cpu to save a .pth weight for CPU. 
-        checkpoint = torch.load("pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth", map_location=torch.device("cpu"), weights_only = False)
+        checkpoint = torch.load("pre_trained_weights/SwinVox_cpu.pth", map_location=torch.device("cpu"), weights_only = False)
 
         # Load state dictionaries for each component
         if "encoder_state_dict" in checkpoint:
@@ -92,10 +92,10 @@ def process_images(images, cfg):
         logger.info(f"length: {len(np_images)}")
 
         # Visualize the first transformed image
-        visualize_transformed_image(transformed_images[0], cfg)
-
+        # visualize_transformed_image(transformed_images[0], cfg)
 
         return transformed_images.unsqueeze(0)
+    
     except Exception as e:
         raise ValueError(f"Error processing images:{str(e)}")
     
@@ -155,5 +155,3 @@ def voxel_to_mesh(voxel_grid, voxel_size=1.0):
     # Combine the meshes into a single mesh using trimesh's concatenate
     combined_mesh = trimesh.util.concatenate(cubes)
     return combined_mesh
-
-

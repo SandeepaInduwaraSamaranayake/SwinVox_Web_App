@@ -49,7 +49,7 @@ def count_parameters(model):
 # The model is trained in a distributed setting using DataParallel, so the model's state dictionary contains
 # the model components with the "module." prefix. We need to remove this prefix and save weight again to load the model on a CPU.
 # Use  helpers.save_checkpoint_for_cpu for this.
-def save_checkpoint_for_cpu(load_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet.pth', save_path = 'pre_trained_weights/Pix2Vox-A-ShapeNet_cpu.pth'):
+def save_checkpoint_for_cpu(load_path = 'pre_trained_weights/SwinVox.pth', save_path = 'pre_trained_weights/SwinVox_cpu.pth'):
     ckpt = torch.load(load_path, map_location=torch.device("cpu"), weights_only = False)
     new_ckpt = {}
     for k1 in ['encoder_state_dict', 'decoder_state_dict', 'refiner_state_dict', 'merger_state_dict']:
